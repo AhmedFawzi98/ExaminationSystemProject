@@ -20,7 +20,7 @@ public partial class LoginContext : DbContext
     public virtual DbSet<Login> Logins { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["LoginConnectionString"].ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
