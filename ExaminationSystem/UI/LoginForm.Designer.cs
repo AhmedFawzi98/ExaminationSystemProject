@@ -115,7 +115,7 @@
             txtboxPasswordLogin.TextAlign = HorizontalAlignment.Left;
             txtboxPasswordLogin.ThemeAuthor = "Narwin";
             txtboxPasswordLogin.ThemeName = "MetroLite";
-            txtboxPasswordLogin.UseSystemPasswordChar = false;
+            txtboxPasswordLogin.UseSystemPasswordChar = true;
             txtboxPasswordLogin.WatermarkText = "password";
             // 
             // btnLogin
