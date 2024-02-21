@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj",
+      "projectUniqueName": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj",
       "projectName": "Loggingx",
-      "projectPath": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj",
+      "projectPath": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj",
       "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\Loggingx\\obj\\",
+      "outputPath": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\Loggingx\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",

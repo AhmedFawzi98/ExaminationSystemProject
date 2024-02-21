@@ -156,6 +156,7 @@
             Controls.Add(metroSetControlBox1);
             Name = "LoginForm";
             Text = "Login";
+            FormClosing += LoginForm_FormClosing;
             Load += LoginForm_Load;
             ResumeLayout(false);
         }

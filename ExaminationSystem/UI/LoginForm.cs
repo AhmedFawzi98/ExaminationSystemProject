@@ -1,14 +1,19 @@
-﻿namespace ExaminationSystem.UI;
+﻿using ExaminationSystem.ContextExaminationSystem;
+
+namespace ExaminationSystem.UI;
 public partial class LoginForm : MetroSetForm
 {
     private readonly ILogger _logger;
     private readonly LoginContext _loginContext;
+    private readonly Examination_SystemContext _examination_SystemContext;
     private List<Login> _accountLogins;
-    public LoginForm(ILogger logger, LoginContext loginContext)
+
+    public LoginForm(ILogger logger, LoginContext loginContext,Examination_SystemContext examination_SystemContext)
     {
         InitializeComponent();
         _logger = logger;
         _loginContext = loginContext;
+        _examination_SystemContext = examination_SystemContext;
     }
     private void LoginForm_Load(object sender, EventArgs e)
     {
@@ -26,19 +31,22 @@ public partial class LoginForm : MetroSetForm
         else if (loginResult.AccountType.Equals('s'))
         {
             this.Hide();
-            //Studentform = new Frontend(_logger, new ReservationContext());
-            //frontendForm.FormClosed += (sender, e) => this.Close();
-            //frontendForm.Show();
+            StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext);
+            studentForm.FormClosed += (sender, e) => this.Close();
+            studentForm.Show();
         }
         else
         {
             this.Hide();
-            //kitchenForm = new Kitchen(_logger, new ReservationContext());
-            //kitchenForm.FormClosed += (sender, e) => this.Close();
-            //kitchenForm.Show();
+            InstructorForm instructorForm = new InstructorForm(_logger, _examination_SystemContext);
+            instructorForm.FormClosed += (sender, e) => this.Close();
+            instructorForm.Show();
         }
     }
 
-    
+    private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        _loginContext.Dispose();
+    }
 }
 

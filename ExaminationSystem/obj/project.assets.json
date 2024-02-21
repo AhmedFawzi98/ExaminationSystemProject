@@ -4266,11 +4266,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\ExaminationSystem\\ExaminationSystem.csproj",
+      "projectUniqueName": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\ExaminationSystem\\ExaminationSystem.csproj",
       "projectName": "ExaminationSystem",
-      "projectPath": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\ExaminationSystem\\ExaminationSystem.csproj",
+      "projectPath": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\ExaminationSystem\\ExaminationSystem.csproj",
       "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\ExaminationSystem\\obj\\",
+      "outputPath": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\ExaminationSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4287,8 +4287,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj": {
-              "projectPath": "C:\\Users\\ahmed\\source\\repos\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj"
+            "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj": {
+              "projectPath": "C:\\iTi 9-months\\month 4\\C#\\ExaminationSystemProject\\Loggingx\\Loggingx.csproj"
             }
           }
         }

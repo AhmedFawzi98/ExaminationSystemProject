@@ -44,3 +44,15 @@ C:\HotelManagementAF\Loggingx\obj\Debug\net8.0\Loggingx.dll
 C:\HotelManagementAF\Loggingx\obj\Debug\net8.0\refint\Loggingx.dll
 C:\HotelManagementAF\Loggingx\obj\Debug\net8.0\Loggingx.pdb
 C:\HotelManagementAF\Loggingx\obj\Debug\net8.0\ref\Loggingx.dll
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\bin\Debug\net8.0\Loggingx.deps.json
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\bin\Debug\net8.0\Loggingx.dll
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\bin\Debug\net8.0\Loggingx.pdb
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.AssemblyInfoInputs.cache
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.AssemblyInfo.cs
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.sourcelink.json
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.dll
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\refint\Loggingx.dll
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\Loggingx.pdb
+C:\Users\ahmed\source\repos\ExaminationSystemProject\Loggingx\obj\Debug\net8.0\ref\Loggingx.dll
