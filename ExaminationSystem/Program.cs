@@ -13,8 +13,9 @@ namespace ExaminationSystem
             try
             {
                 LoginContext loginContext = new LoginContext();
+                Examination_SystemContext examination_SystemContext = new Examination_SystemContext();
                 ApplicationConfiguration.Initialize();
-                Application.Run(new LoginForm(logger, loginContext));
+                Application.Run(new LoginForm(logger, loginContext, examination_SystemContext));
             }
             catch(Exception ex) 
             {
