@@ -20,7 +20,7 @@ namespace ExaminationSystem
             catch(Exception ex) 
             {
                 logger.Log(ex);
-                DialogResult result = MessageBox.Show("sorry, an unexpected error occured, the app will close, please contact developer to check", "unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("an unexpected error occured, the app will close, please contact developer to check", "unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (result == DialogResult.OK)
                     return;
             }  
