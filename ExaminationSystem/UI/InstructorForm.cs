@@ -23,4 +23,10 @@ public partial class InstructorForm : MetroSetForm
         gradesGridView.DataSource = studentCourseGrade;
         gradesGridView.ReadOnly = true;
     }
+
+    private void numericMcq_ValueChanged(object sender, EventArgs e)
+    {
+        numericTFf.Value = 10 - numericMcqf.Value;
+
+    }
 }
