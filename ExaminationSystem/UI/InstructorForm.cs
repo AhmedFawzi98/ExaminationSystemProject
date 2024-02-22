@@ -23,7 +23,7 @@ public partial class InstructorForm : MetroSetForm
 
     private void numericMcq_ValueChanged(object sender, EventArgs e)
     {
-        numericTF.Value = 10 - numericMcq.Value;
+        numericTFf.Value = 10 - numericMcqf.Value;
 
     }
 }

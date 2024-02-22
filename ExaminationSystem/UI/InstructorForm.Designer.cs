@@ -31,13 +31,13 @@
             metroSetTabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
             tabPage0 = new TabPage();
             tabPage2 = new TabPage();
-            metroSetLabel4 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetComboBox1 = new MetroSet_UI.Controls.MetroSetComboBox();
-            metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
+            lblNumTFf = new MetroSet_UI.Controls.MetroSetLabel();
+            lblCoursef = new MetroSet_UI.Controls.MetroSetLabel();
+            comboboxCoursef = new MetroSet_UI.Controls.MetroSetComboBox();
+            lblNumMcqf = new MetroSet_UI.Controls.MetroSetLabel();
             btnGenerateExam = new MetroSet_UI.Controls.MetroSetButton();
-            numericTF = new NumericUpDown();
-            numericMcq = new NumericUpDown();
+            numericTFf = new NumericUpDown();
+            numericMcqf = new NumericUpDown();
             tabPage3 = new TabPage();
             gradesGridView = new DataGridView();
             tabPage4 = new TabPage();
@@ -46,8 +46,8 @@
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             metroSetTabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericTF).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericMcq).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericTFf).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericMcqf).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gradesGridView).BeginInit();
             SuspendLayout();
@@ -89,88 +89,88 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(metroSetLabel4);
-            tabPage2.Controls.Add(metroSetLabel3);
-            tabPage2.Controls.Add(metroSetComboBox1);
-            tabPage2.Controls.Add(metroSetLabel2);
+            tabPage2.Controls.Add(lblNumTFf);
+            tabPage2.Controls.Add(lblCoursef);
+            tabPage2.Controls.Add(comboboxCoursef);
+            tabPage2.Controls.Add(lblNumMcqf);
             tabPage2.Controls.Add(btnGenerateExam);
-            tabPage2.Controls.Add(numericTF);
-            tabPage2.Controls.Add(numericMcq);
+            tabPage2.Controls.Add(numericTFf);
+            tabPage2.Controls.Add(numericMcqf);
             tabPage2.Location = new Point(4, 42);
             tabPage2.Name = "tabPage2";
             tabPage2.Size = new Size(1230, 574);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Generate Exam";
             // 
-            // metroSetLabel4
+            // lblNumTFf
             // 
-            metroSetLabel4.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel4.IsDerivedStyle = true;
-            metroSetLabel4.Location = new Point(19, 198);
-            metroSetLabel4.Name = "metroSetLabel4";
-            metroSetLabel4.Size = new Size(214, 29);
-            metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel4.StyleManager = null;
-            metroSetLabel4.TabIndex = 6;
-            metroSetLabel4.Text = "Number of TF questions";
-            metroSetLabel4.ThemeAuthor = "Narwin";
-            metroSetLabel4.ThemeName = "MetroLite";
+            lblNumTFf.Font = new Font("Microsoft Sans Serif", 10F);
+            lblNumTFf.IsDerivedStyle = true;
+            lblNumTFf.Location = new Point(19, 198);
+            lblNumTFf.Name = "lblNumTFf";
+            lblNumTFf.Size = new Size(214, 29);
+            lblNumTFf.Style = MetroSet_UI.Enums.Style.Light;
+            lblNumTFf.StyleManager = null;
+            lblNumTFf.TabIndex = 6;
+            lblNumTFf.Text = "Number of TF questions";
+            lblNumTFf.ThemeAuthor = "Narwin";
+            lblNumTFf.ThemeName = "MetroLite";
             // 
-            // metroSetLabel3
+            // lblCoursef
             // 
-            metroSetLabel3.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel3.IsDerivedStyle = true;
-            metroSetLabel3.Location = new Point(19, 43);
-            metroSetLabel3.Name = "metroSetLabel3";
-            metroSetLabel3.Size = new Size(85, 29);
-            metroSetLabel3.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel3.StyleManager = null;
-            metroSetLabel3.TabIndex = 5;
-            metroSetLabel3.Text = "Course";
-            metroSetLabel3.ThemeAuthor = "Narwin";
-            metroSetLabel3.ThemeName = "MetroLite";
+            lblCoursef.Font = new Font("Microsoft Sans Serif", 10F);
+            lblCoursef.IsDerivedStyle = true;
+            lblCoursef.Location = new Point(19, 43);
+            lblCoursef.Name = "lblCoursef";
+            lblCoursef.Size = new Size(85, 29);
+            lblCoursef.Style = MetroSet_UI.Enums.Style.Light;
+            lblCoursef.StyleManager = null;
+            lblCoursef.TabIndex = 5;
+            lblCoursef.Text = "Course";
+            lblCoursef.ThemeAuthor = "Narwin";
+            lblCoursef.ThemeName = "MetroLite";
             // 
-            // metroSetComboBox1
+            // comboboxCoursef
             // 
-            metroSetComboBox1.AllowDrop = true;
-            metroSetComboBox1.ArrowColor = Color.FromArgb(150, 150, 150);
-            metroSetComboBox1.BackColor = Color.Transparent;
-            metroSetComboBox1.BackgroundColor = Color.FromArgb(238, 238, 238);
-            metroSetComboBox1.BorderColor = Color.FromArgb(150, 150, 150);
-            metroSetComboBox1.CausesValidation = false;
-            metroSetComboBox1.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            metroSetComboBox1.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            metroSetComboBox1.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            metroSetComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            metroSetComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            metroSetComboBox1.Font = new Font("Microsoft Sans Serif", 11F);
-            metroSetComboBox1.FormattingEnabled = true;
-            metroSetComboBox1.IsDerivedStyle = true;
-            metroSetComboBox1.ItemHeight = 20;
-            metroSetComboBox1.Location = new Point(356, 43);
-            metroSetComboBox1.Name = "metroSetComboBox1";
-            metroSetComboBox1.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
-            metroSetComboBox1.SelectedItemForeColor = Color.White;
-            metroSetComboBox1.Size = new Size(151, 26);
-            metroSetComboBox1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetComboBox1.StyleManager = null;
-            metroSetComboBox1.TabIndex = 4;
-            metroSetComboBox1.ThemeAuthor = "Narwin";
-            metroSetComboBox1.ThemeName = "MetroLite";
+            comboboxCoursef.AllowDrop = true;
+            comboboxCoursef.ArrowColor = Color.FromArgb(150, 150, 150);
+            comboboxCoursef.BackColor = Color.Transparent;
+            comboboxCoursef.BackgroundColor = Color.FromArgb(238, 238, 238);
+            comboboxCoursef.BorderColor = Color.FromArgb(150, 150, 150);
+            comboboxCoursef.CausesValidation = false;
+            comboboxCoursef.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            comboboxCoursef.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            comboboxCoursef.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            comboboxCoursef.DrawMode = DrawMode.OwnerDrawFixed;
+            comboboxCoursef.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboboxCoursef.Font = new Font("Microsoft Sans Serif", 11F);
+            comboboxCoursef.FormattingEnabled = true;
+            comboboxCoursef.IsDerivedStyle = true;
+            comboboxCoursef.ItemHeight = 20;
+            comboboxCoursef.Location = new Point(356, 43);
+            comboboxCoursef.Name = "comboboxCoursef";
+            comboboxCoursef.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
+            comboboxCoursef.SelectedItemForeColor = Color.White;
+            comboboxCoursef.Size = new Size(151, 26);
+            comboboxCoursef.Style = MetroSet_UI.Enums.Style.Light;
+            comboboxCoursef.StyleManager = null;
+            comboboxCoursef.TabIndex = 4;
+            comboboxCoursef.ThemeAuthor = "Narwin";
+            comboboxCoursef.ThemeName = "MetroLite";
             // 
-            // metroSetLabel2
+            // lblNumMcqf
             // 
-            metroSetLabel2.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel2.IsDerivedStyle = true;
-            metroSetLabel2.Location = new Point(19, 122);
-            metroSetLabel2.Name = "metroSetLabel2";
-            metroSetLabel2.Size = new Size(214, 29);
-            metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel2.StyleManager = null;
-            metroSetLabel2.TabIndex = 3;
-            metroSetLabel2.Text = "Number of MCQ questions";
-            metroSetLabel2.ThemeAuthor = "Narwin";
-            metroSetLabel2.ThemeName = "MetroLite";
+            lblNumMcqf.Font = new Font("Microsoft Sans Serif", 10F);
+            lblNumMcqf.IsDerivedStyle = true;
+            lblNumMcqf.Location = new Point(19, 122);
+            lblNumMcqf.Name = "lblNumMcqf";
+            lblNumMcqf.Size = new Size(214, 29);
+            lblNumMcqf.Style = MetroSet_UI.Enums.Style.Light;
+            lblNumMcqf.StyleManager = null;
+            lblNumMcqf.TabIndex = 3;
+            lblNumMcqf.Text = "Number of MCQ questions";
+            lblNumMcqf.ThemeAuthor = "Narwin";
+            lblNumMcqf.ThemeName = "MetroLite";
             // 
             // btnGenerateExam
             // 
@@ -198,22 +198,22 @@
             btnGenerateExam.ThemeAuthor = "Narwin";
             btnGenerateExam.ThemeName = "MetroLite";
             // 
-            // numericTF
+            // numericTFf
             // 
-            numericTF.Enabled = false;
-            numericTF.Location = new Point(357, 195);
-            numericTF.Name = "numericTF";
-            numericTF.Size = new Size(150, 32);
-            numericTF.TabIndex = 1;
+            numericTFf.Enabled = false;
+            numericTFf.Location = new Point(357, 195);
+            numericTFf.Name = "numericTFf";
+            numericTFf.Size = new Size(150, 32);
+            numericTFf.TabIndex = 1;
             // 
-            // numericMcq
+            // numericMcqf
             // 
-            numericMcq.Location = new Point(357, 122);
-            numericMcq.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            numericMcq.Name = "numericMcq";
-            numericMcq.Size = new Size(150, 32);
-            numericMcq.TabIndex = 0;
-            numericMcq.ValueChanged += numericMcq_ValueChanged;
+            numericMcqf.Location = new Point(357, 122);
+            numericMcqf.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericMcqf.Name = "numericMcqf";
+            numericMcqf.Size = new Size(150, 32);
+            numericMcqf.TabIndex = 0;
+            numericMcqf.ValueChanged += numericMcq_ValueChanged;
             // 
             // tabPage3
             // 
@@ -303,8 +303,8 @@
             Load += InstructorForm_Load;
             metroSetTabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericTF).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericMcq).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericTFf).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericMcqf).EndInit();
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gradesGridView).EndInit();
             ResumeLayout(false);
@@ -321,12 +321,12 @@
         private TabPage tabPage5;
         private DataGridView gradesGridView;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
-        private NumericUpDown numericTF;
-        private NumericUpDown numericMcq;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel4;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
-        private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox1;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
+        private NumericUpDown numericTFf;
+        private NumericUpDown numericMcqf;
+        private MetroSet_UI.Controls.MetroSetLabel lblNumTFf;
+        private MetroSet_UI.Controls.MetroSetLabel lblCoursef;
+        private MetroSet_UI.Controls.MetroSetComboBox comboboxCoursef;
+        private MetroSet_UI.Controls.MetroSetLabel lblNumMcqf;
         private MetroSet_UI.Controls.MetroSetButton btnGenerateExam;
     }
 }
