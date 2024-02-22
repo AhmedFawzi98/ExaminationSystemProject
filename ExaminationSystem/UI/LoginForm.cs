@@ -6,14 +6,16 @@ public partial class LoginForm : MetroSetForm
     private readonly ILogger _logger;
     private readonly LoginContext _loginContext;
     private readonly Examination_SystemContext _examination_SystemContext;
+    private readonly Examination_SystemContextProcedures _spContext;
     private List<Login> _accountLogins;
 
-    public LoginForm(ILogger logger, LoginContext loginContext,Examination_SystemContext examination_SystemContext)
+    public LoginForm(ILogger logger, LoginContext loginContext,Examination_SystemContext examination_SystemContext, Examination_SystemContextProcedures spContext)
     {
         InitializeComponent();
         _logger = logger;
         _loginContext = loginContext;
         _examination_SystemContext = examination_SystemContext;
+        _spContext = spContext;
     }
     private void LoginForm_Load(object sender, EventArgs e)
     {
@@ -31,14 +33,14 @@ public partial class LoginForm : MetroSetForm
         else if (loginResult.AccountType.Equals('s'))
         {
             this.Hide();
-            StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext);
+            StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext, _spContext);
             studentForm.FormClosed += (sender, e) => this.Close();
             studentForm.Show();
         }
         else
         {
             this.Hide();
-            InstructorForm instructorForm = new InstructorForm(_logger, _examination_SystemContext);
+            InstructorForm instructorForm = new InstructorForm(_logger, _examination_SystemContext, _spContext);
             instructorForm.FormClosed += (sender, e) => this.Close();
             instructorForm.Show();
         }

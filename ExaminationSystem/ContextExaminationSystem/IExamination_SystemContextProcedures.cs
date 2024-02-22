@@ -43,6 +43,7 @@ namespace ExaminationSystem.ContextExaminationSystem
         Task<List<SP_InsertInto_ExamResult>> SP_InsertInto_ExamAsync(string examName, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_InsertInto_Exam_QuestionsAsync(int? examID, int? QuestionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_InsertInto_TopicAsync(string TopicName, int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<SP_SelectAllInstructorStudentCoursesResult>> SP_SelectAllInstructorStudentCoursesAsync(int? InsID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_Submit_AnswersAsync(int? exam_id, int? stud_id, DataTable answersString, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_UPDATE_CoursesAsync(int? newCrID, string CrName, int? oldCrID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_UPDATE_DepartmentAsync(int? DeptID, string DeptName, string DeptDesc, string Loc, int? MGRID, DateTime? MGRhiredate, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

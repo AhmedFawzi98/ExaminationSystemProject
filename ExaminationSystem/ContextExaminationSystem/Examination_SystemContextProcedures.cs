@@ -41,6 +41,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             modelBuilder.Entity<SP_GetCourseName_and_NumberOFStudentsPerCourse_By_InstructorIDResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_Grade_ExamResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_InsertInto_ExamResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<SP_SelectAllInstructorStudentCoursesResult>().HasNoKey().ToView(null);
         }
     }
 
@@ -1136,6 +1137,32 @@ namespace ExaminationSystem.ContextExaminationSystem
                 parameterreturnValue,
             };
             var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_InsertInto_Topic] @TopicName, @CourseID", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<SP_SelectAllInstructorStudentCoursesResult>> SP_SelectAllInstructorStudentCoursesAsync(int? InsID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "InsID",
+                    Value = InsID ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<SP_SelectAllInstructorStudentCoursesResult>("EXEC @returnValue = [dbo].[SP_SelectAllInstructorStudentCourses] @InsID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

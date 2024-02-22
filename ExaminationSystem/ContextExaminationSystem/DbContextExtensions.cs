@@ -9,50 +9,51 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ExaminationSystem.ContextExaminationSystem;
-
-public static class DbContextExtensions
+namespace ExaminationSystem.ContextExaminationSystem
 {
-    public static async Task<List<T>> SqlQueryAsync<T>(this DbContext db, string sql, object[] parameters = null, CancellationToken cancellationToken = default) where T : class
+    public static class DbContextExtensions
     {
-        if (parameters is null)
+        public static async Task<List<T>> SqlQueryAsync<T>(this DbContext db, string sql, object[] parameters = null, CancellationToken cancellationToken = default) where T : class
         {
-            parameters = new object[] { };
-        }
+            if (parameters is null)
+            {
+                parameters = new object[] { };
+            }
 
-        if (typeof(T).GetProperties().Any())
-        {
-            return await db.Set<T>().FromSqlRaw(sql, parameters).ToListAsync(cancellationToken);
-        }
-        else
-        {
-            await db.Database.ExecuteSqlRawAsync(sql, parameters, cancellationToken);
-            return default;
-        }
-    }
-}
-
-public class OutputParameter<TValue>
-{
-    private bool _valueSet = false;
-
-    public TValue _value;
-
-    public TValue Value
-    {
-        get
-        {
-            if (!_valueSet)
-                throw new InvalidOperationException("Value not set.");
-
-            return _value;
+            if (typeof(T).GetProperties().Any())
+            {
+                return await db.Set<T>().FromSqlRaw(sql, parameters).ToListAsync(cancellationToken);
+            }
+            else
+            {
+                await db.Database.ExecuteSqlRawAsync(sql, parameters, cancellationToken);
+                return default;
+            }
         }
     }
 
-    internal void SetValue(object value)
+    public class OutputParameter<TValue>
     {
-        _valueSet = true;
+        private bool _valueSet = false;
 
-        _value = null == value || Convert.IsDBNull(value) ? default(TValue) : (TValue)value;
+        public TValue _value;
+
+        public TValue Value
+        {
+            get
+            {
+                if (!_valueSet)
+                    throw new InvalidOperationException("Value not set.");
+
+                return _value;
+            }
+        }
+
+        internal void SetValue(object value)
+        {
+            _valueSet = true;
+
+            _value = null == value || Convert.IsDBNull(value) ? default(TValue) : (TValue)value;
+        }
     }
 }
