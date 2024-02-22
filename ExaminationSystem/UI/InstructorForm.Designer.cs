@@ -30,14 +30,20 @@
         {
             metroSetTabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
             tabPage0 = new TabPage();
-            metroSetTextBox2 = new MetroSet_UI.Controls.MetroSetTextBox();
-            metroSetTextBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
-            metroSetNumeric1 = new MetroSet_UI.Controls.MetroSetNumeric();
-            metroSetLabel6 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetLabel5 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetLabel4 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
-            metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
+
+            numInstructorSalaryMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            txtInstructorIDMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            txtInstructorDepartmentMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            lblInstructorDeparmentMA = new MetroSet_UI.Controls.MetroSetLabel();
+            txtInstructorUserNameMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            txtInstructorDegreeMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            txtInstructorNameMA = new MetroSet_UI.Controls.MetroSetTextBox();
+            lblInstructorDegreeMA = new MetroSet_UI.Controls.MetroSetLabel();
+            lblInstructorSalaryMA = new MetroSet_UI.Controls.MetroSetLabel();
+            lblInstructorUserNameMA = new MetroSet_UI.Controls.MetroSetLabel();
+            lblInstrutorNameMA = new MetroSet_UI.Controls.MetroSetLabel();
+            labInstIDMA = new MetroSet_UI.Controls.MetroSetLabel();
+
             tabPage2 = new TabPage();
             lblNumTFf = new MetroSet_UI.Controls.MetroSetLabel();
             lblCoursef = new MetroSet_UI.Controls.MetroSetLabel();
@@ -90,173 +96,289 @@
             // 
             // tabPage0
             // 
-            tabPage0.Controls.Add(metroSetTextBox2);
-            tabPage0.Controls.Add(metroSetTextBox1);
-            tabPage0.Controls.Add(metroSetNumeric1);
-            tabPage0.Controls.Add(metroSetLabel6);
-            tabPage0.Controls.Add(metroSetLabel5);
-            tabPage0.Controls.Add(metroSetLabel4);
-            tabPage0.Controls.Add(metroSetLabel3);
-            tabPage0.Controls.Add(metroSetLabel2);
+            tabPage0.Controls.Add(numInstructorSalaryMA);
+            tabPage0.Controls.Add(txtInstructorIDMA);
+            tabPage0.Controls.Add(txtInstructorDepartmentMA);
+            tabPage0.Controls.Add(lblInstructorDeparmentMA);
+            tabPage0.Controls.Add(txtInstructorUserNameMA);
+            tabPage0.Controls.Add(txtInstructorDegreeMA);
+            tabPage0.Controls.Add(txtInstructorNameMA);
+            tabPage0.Controls.Add(lblInstructorDegreeMA);
+            tabPage0.Controls.Add(lblInstructorSalaryMA);
+            tabPage0.Controls.Add(lblInstructorUserNameMA);
+            tabPage0.Controls.Add(lblInstrutorNameMA);
+            tabPage0.Controls.Add(labInstIDMA);
             tabPage0.Location = new Point(4, 42);
             tabPage0.Name = "tabPage0";
             tabPage0.Size = new Size(1230, 574);
             tabPage0.TabIndex = 0;
             tabPage0.Text = "Profile";
             // 
-            // metroSetTextBox2
+
+            // numInstructorSalaryMA
             // 
-            metroSetTextBox2.AutoCompleteCustomSource = null;
-            metroSetTextBox2.AutoCompleteMode = AutoCompleteMode.None;
-            metroSetTextBox2.AutoCompleteSource = AutoCompleteSource.None;
-            metroSetTextBox2.BorderColor = Color.FromArgb(155, 155, 155);
-            metroSetTextBox2.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            metroSetTextBox2.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            metroSetTextBox2.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            metroSetTextBox2.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetTextBox2.HoverColor = Color.FromArgb(102, 102, 102);
-            metroSetTextBox2.Image = null;
-            metroSetTextBox2.IsDerivedStyle = true;
-            metroSetTextBox2.Lines = null;
-            metroSetTextBox2.Location = new Point(161, 242);
-            metroSetTextBox2.MaxLength = 32767;
-            metroSetTextBox2.Multiline = false;
-            metroSetTextBox2.Name = "metroSetTextBox2";
-            metroSetTextBox2.ReadOnly = false;
-            metroSetTextBox2.Size = new Size(169, 38);
-            metroSetTextBox2.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetTextBox2.StyleManager = null;
-            metroSetTextBox2.TabIndex = 7;
-            metroSetTextBox2.Text = "metroSetTextBox2";
-            metroSetTextBox2.TextAlign = HorizontalAlignment.Left;
-            metroSetTextBox2.ThemeAuthor = "Narwin";
-            metroSetTextBox2.ThemeName = "MetroLite";
-            metroSetTextBox2.UseSystemPasswordChar = false;
-            metroSetTextBox2.WatermarkText = "";
+            numInstructorSalaryMA.AutoCompleteCustomSource = null;
+            numInstructorSalaryMA.AutoCompleteMode = AutoCompleteMode.None;
+            numInstructorSalaryMA.AutoCompleteSource = AutoCompleteSource.None;
+            numInstructorSalaryMA.BorderColor = Color.FromArgb(155, 155, 155);
+            numInstructorSalaryMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            numInstructorSalaryMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            numInstructorSalaryMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            numInstructorSalaryMA.Enabled = false;
+            numInstructorSalaryMA.Font = new Font("Microsoft Sans Serif", 10F);
+            numInstructorSalaryMA.HoverColor = Color.FromArgb(102, 102, 102);
+            numInstructorSalaryMA.Image = null;
+            numInstructorSalaryMA.IsDerivedStyle = true;
+            numInstructorSalaryMA.Lines = null;
+            numInstructorSalaryMA.Location = new Point(588, 29);
+            numInstructorSalaryMA.MaxLength = 32767;
+            numInstructorSalaryMA.Multiline = false;
+            numInstructorSalaryMA.Name = "numInstructorSalaryMA";
+            numInstructorSalaryMA.ReadOnly = true;
+            numInstructorSalaryMA.Size = new Size(169, 38);
+            numInstructorSalaryMA.Style = MetroSet_UI.Enums.Style.Light;
+            numInstructorSalaryMA.StyleManager = null;
+            numInstructorSalaryMA.TabIndex = 17;
+            numInstructorSalaryMA.TextAlign = HorizontalAlignment.Left;
+            numInstructorSalaryMA.ThemeAuthor = "Narwin";
+            numInstructorSalaryMA.ThemeName = "MetroLite";
+            numInstructorSalaryMA.UseSystemPasswordChar = false;
+            numInstructorSalaryMA.WatermarkText = "";
             // 
-            // metroSetTextBox1
+            // txtInstructorIDMA
             // 
-            metroSetTextBox1.AutoCompleteCustomSource = null;
-            metroSetTextBox1.AutoCompleteMode = AutoCompleteMode.None;
-            metroSetTextBox1.AutoCompleteSource = AutoCompleteSource.None;
-            metroSetTextBox1.BorderColor = Color.FromArgb(155, 155, 155);
-            metroSetTextBox1.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            metroSetTextBox1.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            metroSetTextBox1.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            metroSetTextBox1.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetTextBox1.HoverColor = Color.FromArgb(102, 102, 102);
-            metroSetTextBox1.Image = null;
-            metroSetTextBox1.IsDerivedStyle = true;
-            metroSetTextBox1.Lines = null;
-            metroSetTextBox1.Location = new Point(161, 101);
-            metroSetTextBox1.MaxLength = 32767;
-            metroSetTextBox1.Multiline = false;
-            metroSetTextBox1.Name = "metroSetTextBox1";
-            metroSetTextBox1.ReadOnly = false;
-            metroSetTextBox1.Size = new Size(169, 38);
-            metroSetTextBox1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetTextBox1.StyleManager = null;
-            metroSetTextBox1.TabIndex = 6;
-            metroSetTextBox1.Text = "metroSetTextBox1";
-            metroSetTextBox1.TextAlign = HorizontalAlignment.Left;
-            metroSetTextBox1.ThemeAuthor = "Narwin";
-            metroSetTextBox1.ThemeName = "MetroLite";
-            metroSetTextBox1.UseSystemPasswordChar = false;
-            metroSetTextBox1.WatermarkText = "";
+            txtInstructorIDMA.AutoCompleteCustomSource = null;
+            txtInstructorIDMA.AutoCompleteMode = AutoCompleteMode.None;
+            txtInstructorIDMA.AutoCompleteSource = AutoCompleteSource.None;
+            txtInstructorIDMA.BorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorIDMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            txtInstructorIDMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorIDMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            txtInstructorIDMA.Enabled = false;
+            txtInstructorIDMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorIDMA.HoverColor = Color.FromArgb(102, 102, 102);
+            txtInstructorIDMA.Image = null;
+            txtInstructorIDMA.IsDerivedStyle = true;
+            txtInstructorIDMA.Lines = null;
+            txtInstructorIDMA.Location = new Point(196, 29);
+            txtInstructorIDMA.MaxLength = 32767;
+            txtInstructorIDMA.Multiline = false;
+            txtInstructorIDMA.Name = "txtInstructorIDMA";
+            txtInstructorIDMA.ReadOnly = true;
+            txtInstructorIDMA.Size = new Size(169, 38);
+            txtInstructorIDMA.Style = MetroSet_UI.Enums.Style.Light;
+            txtInstructorIDMA.StyleManager = null;
+            txtInstructorIDMA.TabIndex = 16;
+            txtInstructorIDMA.TextAlign = HorizontalAlignment.Left;
+            txtInstructorIDMA.ThemeAuthor = "Narwin";
+            txtInstructorIDMA.ThemeName = "MetroLite";
+            txtInstructorIDMA.UseSystemPasswordChar = false;
+            txtInstructorIDMA.WatermarkText = "";
             // 
-            // metroSetNumeric1
+            // txtInstructorDepartmentMA
             // 
-            metroSetNumeric1.BackColor = Color.Transparent;
-            metroSetNumeric1.BackgroundColor = Color.Empty;
-            metroSetNumeric1.BorderColor = Color.FromArgb(150, 150, 150);
-            metroSetNumeric1.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            metroSetNumeric1.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            metroSetNumeric1.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            metroSetNumeric1.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetNumeric1.IsDerivedStyle = true;
-            metroSetNumeric1.Location = new Point(161, 37);
-            metroSetNumeric1.Maximum = 100;
-            metroSetNumeric1.Minimum = 0;
-            metroSetNumeric1.Name = "metroSetNumeric1";
-            metroSetNumeric1.Size = new Size(169, 26);
-            metroSetNumeric1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetNumeric1.StyleManager = null;
-            metroSetNumeric1.SymbolsColor = Color.FromArgb(128, 128, 128);
-            metroSetNumeric1.TabIndex = 5;
-            metroSetNumeric1.Text = "metroSetNumeric1";
-            metroSetNumeric1.ThemeAuthor = "Narwin";
-            metroSetNumeric1.ThemeName = "MetroLite";
-            metroSetNumeric1.Value = 0;
+            txtInstructorDepartmentMA.AutoCompleteCustomSource = null;
+            txtInstructorDepartmentMA.AutoCompleteMode = AutoCompleteMode.None;
+            txtInstructorDepartmentMA.AutoCompleteSource = AutoCompleteSource.None;
+            txtInstructorDepartmentMA.BorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorDepartmentMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            txtInstructorDepartmentMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorDepartmentMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            txtInstructorDepartmentMA.Enabled = false;
+            txtInstructorDepartmentMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorDepartmentMA.HoverColor = Color.FromArgb(102, 102, 102);
+            txtInstructorDepartmentMA.Image = null;
+            txtInstructorDepartmentMA.IsDerivedStyle = true;
+            txtInstructorDepartmentMA.Lines = null;
+            txtInstructorDepartmentMA.Location = new Point(588, 167);
+            txtInstructorDepartmentMA.MaxLength = 32767;
+            txtInstructorDepartmentMA.Multiline = false;
+            txtInstructorDepartmentMA.Name = "txtInstructorDepartmentMA";
+            txtInstructorDepartmentMA.ReadOnly = true;
+            txtInstructorDepartmentMA.Size = new Size(169, 38);
+            txtInstructorDepartmentMA.Style = MetroSet_UI.Enums.Style.Light;
+            txtInstructorDepartmentMA.StyleManager = null;
+            txtInstructorDepartmentMA.TabIndex = 14;
+            txtInstructorDepartmentMA.TextAlign = HorizontalAlignment.Left;
+            txtInstructorDepartmentMA.ThemeAuthor = "Narwin";
+            txtInstructorDepartmentMA.ThemeName = "MetroLite";
+            txtInstructorDepartmentMA.UseSystemPasswordChar = false;
+            txtInstructorDepartmentMA.WatermarkText = "";
             // 
-            // metroSetLabel6
+            // lblInstructorDeparmentMA
             // 
-            metroSetLabel6.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel6.IsDerivedStyle = true;
-            metroSetLabel6.Location = new Point(17, 322);
-            metroSetLabel6.Name = "metroSetLabel6";
-            metroSetLabel6.Size = new Size(125, 29);
-            metroSetLabel6.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel6.StyleManager = null;
-            metroSetLabel6.TabIndex = 4;
-            metroSetLabel6.Text = "metroSetLabel6";
-            metroSetLabel6.ThemeAuthor = "Narwin";
-            metroSetLabel6.ThemeName = "MetroLite";
+            lblInstructorDeparmentMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorDeparmentMA.IsDerivedStyle = true;
+            lblInstructorDeparmentMA.Location = new Point(444, 176);
+            lblInstructorDeparmentMA.Name = "lblInstructorDeparmentMA";
+            lblInstructorDeparmentMA.Size = new Size(125, 29);
+            lblInstructorDeparmentMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblInstructorDeparmentMA.StyleManager = null;
+            lblInstructorDeparmentMA.TabIndex = 11;
+            lblInstructorDeparmentMA.Text = "Department";
+            lblInstructorDeparmentMA.ThemeAuthor = "Narwin";
+            lblInstructorDeparmentMA.ThemeName = "MetroLite";
             // 
-            // metroSetLabel5
+            // txtInstructorUserNameMA
             // 
-            metroSetLabel5.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel5.IsDerivedStyle = true;
-            metroSetLabel5.Location = new Point(17, 251);
-            metroSetLabel5.Name = "metroSetLabel5";
-            metroSetLabel5.Size = new Size(125, 29);
-            metroSetLabel5.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel5.StyleManager = null;
-            metroSetLabel5.TabIndex = 3;
-            metroSetLabel5.Text = "metroSetLabel5";
-            metroSetLabel5.ThemeAuthor = "Narwin";
-            metroSetLabel5.ThemeName = "MetroLite";
+            txtInstructorUserNameMA.AutoCompleteCustomSource = null;
+            txtInstructorUserNameMA.AutoCompleteMode = AutoCompleteMode.None;
+            txtInstructorUserNameMA.AutoCompleteSource = AutoCompleteSource.None;
+            txtInstructorUserNameMA.BorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorUserNameMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            txtInstructorUserNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorUserNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            txtInstructorUserNameMA.Enabled = false;
+            txtInstructorUserNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorUserNameMA.HoverColor = Color.FromArgb(102, 102, 102);
+            txtInstructorUserNameMA.Image = null;
+            txtInstructorUserNameMA.IsDerivedStyle = true;
+            txtInstructorUserNameMA.Lines = null;
+            txtInstructorUserNameMA.Location = new Point(196, 162);
+            txtInstructorUserNameMA.MaxLength = 32767;
+            txtInstructorUserNameMA.Multiline = false;
+            txtInstructorUserNameMA.Name = "txtInstructorUserNameMA";
+            txtInstructorUserNameMA.ReadOnly = true;
+            txtInstructorUserNameMA.Size = new Size(169, 38);
+            txtInstructorUserNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            txtInstructorUserNameMA.StyleManager = null;
+            txtInstructorUserNameMA.TabIndex = 8;
+            txtInstructorUserNameMA.TextAlign = HorizontalAlignment.Left;
+            txtInstructorUserNameMA.ThemeAuthor = "Narwin";
+            txtInstructorUserNameMA.ThemeName = "MetroLite";
+            txtInstructorUserNameMA.UseSystemPasswordChar = false;
+            txtInstructorUserNameMA.WatermarkText = "";
             // 
-            // metroSetLabel4
+            // txtInstructorDegreeMA
             // 
-            metroSetLabel4.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel4.IsDerivedStyle = true;
-            metroSetLabel4.Location = new Point(17, 186);
-            metroSetLabel4.Name = "metroSetLabel4";
-            metroSetLabel4.Size = new Size(125, 29);
-            metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel4.StyleManager = null;
-            metroSetLabel4.TabIndex = 2;
-            metroSetLabel4.Text = "metroSetLabel4";
-            metroSetLabel4.ThemeAuthor = "Narwin";
-            metroSetLabel4.ThemeName = "MetroLite";
+            txtInstructorDegreeMA.AutoCompleteCustomSource = null;
+            txtInstructorDegreeMA.AutoCompleteMode = AutoCompleteMode.None;
+            txtInstructorDegreeMA.AutoCompleteSource = AutoCompleteSource.None;
+            txtInstructorDegreeMA.BorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorDegreeMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            txtInstructorDegreeMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorDegreeMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            txtInstructorDegreeMA.Enabled = false;
+            txtInstructorDegreeMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorDegreeMA.HoverColor = Color.FromArgb(102, 102, 102);
+            txtInstructorDegreeMA.Image = null;
+            txtInstructorDegreeMA.IsDerivedStyle = true;
+            txtInstructorDegreeMA.Lines = null;
+            txtInstructorDegreeMA.Location = new Point(588, 100);
+            txtInstructorDegreeMA.MaxLength = 32767;
+            txtInstructorDegreeMA.Multiline = false;
+            txtInstructorDegreeMA.Name = "txtInstructorDegreeMA";
+            txtInstructorDegreeMA.ReadOnly = true;
+            txtInstructorDegreeMA.Size = new Size(169, 38);
+            txtInstructorDegreeMA.Style = MetroSet_UI.Enums.Style.Light;
+            txtInstructorDegreeMA.StyleManager = null;
+            txtInstructorDegreeMA.TabIndex = 7;
+            txtInstructorDegreeMA.TextAlign = HorizontalAlignment.Left;
+            txtInstructorDegreeMA.ThemeAuthor = "Narwin";
+            txtInstructorDegreeMA.ThemeName = "MetroLite";
+            txtInstructorDegreeMA.UseSystemPasswordChar = false;
+            txtInstructorDegreeMA.WatermarkText = "";
             // 
-            // metroSetLabel3
+            // txtInstructorNameMA
             // 
-            metroSetLabel3.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel3.IsDerivedStyle = true;
-            metroSetLabel3.Location = new Point(17, 110);
-            metroSetLabel3.Name = "metroSetLabel3";
-            metroSetLabel3.Size = new Size(125, 29);
-            metroSetLabel3.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel3.StyleManager = null;
-            metroSetLabel3.TabIndex = 1;
-            metroSetLabel3.Text = "metroSetLabel3";
-            metroSetLabel3.ThemeAuthor = "Narwin";
-            metroSetLabel3.ThemeName = "MetroLite";
+            txtInstructorNameMA.AutoCompleteCustomSource = null;
+            txtInstructorNameMA.AutoCompleteMode = AutoCompleteMode.None;
+            txtInstructorNameMA.AutoCompleteSource = AutoCompleteSource.None;
+            txtInstructorNameMA.BorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorNameMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            txtInstructorNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            txtInstructorNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            txtInstructorNameMA.Enabled = false;
+            txtInstructorNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorNameMA.HoverColor = Color.FromArgb(102, 102, 102);
+            txtInstructorNameMA.Image = null;
+            txtInstructorNameMA.IsDerivedStyle = true;
+            txtInstructorNameMA.Lines = null;
+            txtInstructorNameMA.Location = new Point(196, 92);
+            txtInstructorNameMA.MaxLength = 32767;
+            txtInstructorNameMA.Multiline = false;
+            txtInstructorNameMA.Name = "txtInstructorNameMA";
+            txtInstructorNameMA.ReadOnly = true;
+            txtInstructorNameMA.Size = new Size(169, 38);
+            txtInstructorNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            txtInstructorNameMA.StyleManager = null;
+            txtInstructorNameMA.TabIndex = 6;
+            txtInstructorNameMA.TextAlign = HorizontalAlignment.Left;
+            txtInstructorNameMA.ThemeAuthor = "Narwin";
+            txtInstructorNameMA.ThemeName = "MetroLite";
+            txtInstructorNameMA.UseSystemPasswordChar = false;
+            txtInstructorNameMA.WatermarkText = "";
             // 
-            // metroSetLabel2
+            // lblInstructorDegreeMA
             // 
-            metroSetLabel2.Font = new Font("Microsoft Sans Serif", 10F);
-            metroSetLabel2.IsDerivedStyle = true;
-            metroSetLabel2.Location = new Point(17, 37);
-            metroSetLabel2.Name = "metroSetLabel2";
-            metroSetLabel2.Size = new Size(125, 29);
-            metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel2.StyleManager = null;
-            metroSetLabel2.TabIndex = 0;
-            metroSetLabel2.Text = "metroSetLabel2";
-            metroSetLabel2.ThemeAuthor = "Narwin";
-            metroSetLabel2.ThemeName = "MetroLite";
+            lblInstructorDegreeMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorDegreeMA.IsDerivedStyle = true;
+            lblInstructorDegreeMA.Location = new Point(444, 109);
+            lblInstructorDegreeMA.Name = "lblInstructorDegreeMA";
+            lblInstructorDegreeMA.Size = new Size(125, 29);
+            lblInstructorDegreeMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblInstructorDegreeMA.StyleManager = null;
+            lblInstructorDegreeMA.TabIndex = 4;
+            lblInstructorDegreeMA.Text = "Degree";
+            lblInstructorDegreeMA.ThemeAuthor = "Narwin";
+            lblInstructorDegreeMA.ThemeName = "MetroLite";
+            // 
+            // lblInstructorSalaryMA
+            // 
+            lblInstructorSalaryMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorSalaryMA.IsDerivedStyle = true;
+            lblInstructorSalaryMA.Location = new Point(444, 38);
+            lblInstructorSalaryMA.Name = "lblInstructorSalaryMA";
+            lblInstructorSalaryMA.Size = new Size(125, 29);
+            lblInstructorSalaryMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblInstructorSalaryMA.StyleManager = null;
+            lblInstructorSalaryMA.TabIndex = 3;
+            lblInstructorSalaryMA.Text = "Salary";
+            lblInstructorSalaryMA.ThemeAuthor = "Narwin";
+            lblInstructorSalaryMA.ThemeName = "MetroLite";
+            // 
+            // lblInstructorUserNameMA
+            // 
+            lblInstructorUserNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorUserNameMA.IsDerivedStyle = true;
+            lblInstructorUserNameMA.Location = new Point(52, 171);
+            lblInstructorUserNameMA.Name = "lblInstructorUserNameMA";
+            lblInstructorUserNameMA.Size = new Size(125, 29);
+            lblInstructorUserNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblInstructorUserNameMA.StyleManager = null;
+            lblInstructorUserNameMA.TabIndex = 2;
+            lblInstructorUserNameMA.Text = "UserName";
+            lblInstructorUserNameMA.ThemeAuthor = "Narwin";
+            lblInstructorUserNameMA.ThemeName = "MetroLite";
+            // 
+            // lblInstrutorNameMA
+            // 
+            lblInstrutorNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstrutorNameMA.IsDerivedStyle = true;
+            lblInstrutorNameMA.Location = new Point(52, 101);
+            lblInstrutorNameMA.Name = "lblInstrutorNameMA";
+            lblInstrutorNameMA.Size = new Size(125, 29);
+            lblInstrutorNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblInstrutorNameMA.StyleManager = null;
+            lblInstrutorNameMA.TabIndex = 1;
+            lblInstrutorNameMA.Text = "Name";
+            lblInstrutorNameMA.ThemeAuthor = "Narwin";
+            lblInstrutorNameMA.ThemeName = "MetroLite";
+            // 
+            // labInstIDMA
+            // 
+            labInstIDMA.Font = new Font("Microsoft Sans Serif", 10F);
+            labInstIDMA.IsDerivedStyle = true;
+            labInstIDMA.Location = new Point(52, 38);
+            labInstIDMA.Name = "labInstIDMA";
+            labInstIDMA.Size = new Size(125, 29);
+            labInstIDMA.Style = MetroSet_UI.Enums.Style.Light;
+            labInstIDMA.StyleManager = null;
+            labInstIDMA.TabIndex = 0;
+            labInstIDMA.Text = "ID";
+            labInstIDMA.ThemeAuthor = "Narwin";
+            labInstIDMA.ThemeName = "MetroLite";
+
             // 
             // tabPage2
             // 
@@ -493,20 +615,19 @@
         private TabPage tabPage5;
         private DataGridView gradesGridView;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
-        private NumericUpDown numericTFf;
-        private NumericUpDown numericMcqf;
-        private MetroSet_UI.Controls.MetroSetLabel lblNumTFf;
-        private MetroSet_UI.Controls.MetroSetLabel lblCoursef;
-        private MetroSet_UI.Controls.MetroSetComboBox comboboxCoursef;
-        private MetroSet_UI.Controls.MetroSetLabel lblNumMcqf;
-        private MetroSet_UI.Controls.MetroSetButton btnGenerateExam;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
-        private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox2;
-        private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox1;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric1;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel6;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel5;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel4;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
+
+        private MetroSet_UI.Controls.MetroSetLabel labInstIDMA;
+        private MetroSet_UI.Controls.MetroSetTextBox txtInstructorDegreeMA;
+        private MetroSet_UI.Controls.MetroSetTextBox txtInstructorNameMA;
+        private MetroSet_UI.Controls.MetroSetLabel lblInstructorDegreeMA;
+        private MetroSet_UI.Controls.MetroSetLabel lblInstructorSalaryMA;
+        private MetroSet_UI.Controls.MetroSetLabel lblInstructorUserNameMA;
+        private MetroSet_UI.Controls.MetroSetLabel lblInstrutorNameMA;
+        private MetroSet_UI.Controls.MetroSetTextBox txtInstructorUserNameMA;
+        private MetroSet_UI.Controls.MetroSetLabel lblInstructorDeparmentMA;
+        private MetroSet_UI.Controls.MetroSetTextBox txtInstructorDepartmentMA;
+        private MetroSet_UI.Controls.MetroSetTextBox numInstructorSalaryMA;
+        private MetroSet_UI.Controls.MetroSetTextBox txtInstructorIDMA;
+
     }
 }

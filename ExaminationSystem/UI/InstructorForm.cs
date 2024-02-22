@@ -1,4 +1,6 @@
-﻿namespace ExaminationSystem.UI;
+﻿using System.Diagnostics;
+
+namespace ExaminationSystem.UI;
 
 public partial class InstructorForm : MetroSetForm
 {
@@ -22,11 +24,23 @@ public partial class InstructorForm : MetroSetForm
 
         gradesGridView.DataSource = studentCourseGrade;
         gradesGridView.ReadOnly = true;
+        LoadProfile();
     }
+    private void LoadProfile()
+    {
+        txtInstructorIDMA.Text = _currentInstructor.InsId.ToString();
+        numInstructorSalaryMA.Text = _currentInstructor.InsSalary.ToString();
+        txtInstructorDegreeMA.Text = _currentInstructor.InsDegree;
+        txtInstructorNameMA.Text = _currentInstructor.InsName;
+        txtInstructorUserNameMA.Text = _currentInstructor.Username;
+        txtInstructorDepartmentMA.Text = _currentInstructor.Dept.DeptName;
+    }
+
 
     private void numericMcq_ValueChanged(object sender, EventArgs e)
     {
         numericTFf.Value = 10 - numericMcqf.Value;
 
     }
+
 }
