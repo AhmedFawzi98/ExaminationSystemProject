@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExaminationSystem.EntitiesExaminationSystem
 {
-    public partial class SP_Get_Student_Grade_By_IDResult
+    public partial class SP_SelectAllInstructorStudentCoursesResult
     {
         [Column("Course Name")]
         public string CourseName { get; set; }
-        [Column("Grade", TypeName = "decimal(5,2)")]
-        public decimal? Grade { get; set; }
+        [Column("Student Name")]
+        public string StudentName { get; set; }
+        [Column("Student Grade", TypeName = "decimal(5,2)")]
+        public decimal? StudentGrade { get; set; }
     }
 }

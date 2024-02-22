@@ -17,6 +17,8 @@ public partial class Instructor
 
     public int? DeptId { get; set; }
 
+    public string Username { get; set; }
+
     public virtual ICollection<Department> Departments { get; set; } = new List<Department>();
 
     public virtual Department Dept { get; set; }
