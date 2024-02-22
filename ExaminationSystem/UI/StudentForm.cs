@@ -26,6 +26,7 @@ public partial class StudentForm : MetroSetForm
 
     private void StudentForm_Load(object sender, EventArgs e)
     {
+        this.StudentTabControlm.SelectedIndex=0;
         ProfileLoad();
     }
 
@@ -41,6 +42,13 @@ public partial class StudentForm : MetroSetForm
         CityTxtBoxm.Text = _currentStudent.City;
         StTxtBoxm.Text = _currentStudent.Street;
         ZipTxtBoxm.Text = _currentStudent.ZipCode;
+    }
+    private async void GradesLoad()
+    {
+        var studentCourseGrade = await _spContext.SP_Get_Student_Grade_By_IDAsync(_currentStudent.StId);
+
+        studentGradesGridViewm.DataSource = studentCourseGrade;
+        studentGradesGridViewm.ReadOnly = true;
     }
 
     private async void SaveBtnm_Click(object sender, EventArgs e)
@@ -60,7 +68,7 @@ public partial class StudentForm : MetroSetForm
 
     private bool ValidateChanged()
     {
-        return((IDTxtBoxm.Text != _currentStudent.StId.ToString()) ||
+        return ((IDTxtBoxm.Text != _currentStudent.StId.ToString()) ||
             (NameTxtBoxm.Text != _currentStudent.StName) ||
             (PhoneTxtBoxm.Text != _currentStudent.StPhone) ||
             (AgeTxtBoxm.Text != _currentStudent.StAge.ToString()) ||
@@ -70,5 +78,19 @@ public partial class StudentForm : MetroSetForm
             (CityTxtBoxm.Text != _currentStudent.City) ||
             (StTxtBoxm.Text != _currentStudent.Street) ||
             (ZipTxtBoxm.Text != _currentStudent.ZipCode));
+    }
+
+    private void StudentTabControlm_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        switch (this.StudentTabControlm.SelectedIndex)
+        {
+            case 0:
+                ProfileLoad();
+                break;
+            case 2:
+                GradesLoad();
+                break;
+        }
+
     }
 }

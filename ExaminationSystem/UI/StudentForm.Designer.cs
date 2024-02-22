@@ -53,10 +53,13 @@
             StuIDm = new MetroSet_UI.Controls.MetroSetLabel();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
+            studentGradesGridViewm = new DataGridView();
             metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             StudentTabControlm.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).BeginInit();
             SuspendLayout();
             // 
             // StudentTabControlm
@@ -71,7 +74,7 @@
             StudentTabControlm.ItemSize = new Size(100, 38);
             StudentTabControlm.Location = new Point(15, 73);
             StudentTabControlm.Name = "StudentTabControlm";
-            StudentTabControlm.SelectedIndex = 0;
+            StudentTabControlm.SelectedIndex = 2;
             StudentTabControlm.SelectedTextColor = Color.White;
             StudentTabControlm.Size = new Size(1211, 648);
             StudentTabControlm.SizeMode = TabSizeMode.Fixed;
@@ -83,6 +86,7 @@
             StudentTabControlm.ThemeName = "MetroLite";
             StudentTabControlm.UnselectedTextColor = Color.Gray;
             StudentTabControlm.UseAnimation = false;
+            StudentTabControlm.SelectedIndexChanged += StudentTabControlm_SelectedIndexChanged;
             // 
             // tabPage1
             // 
@@ -591,11 +595,21 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(studentGradesGridViewm);
             tabPage3.Location = new Point(4, 42);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1203, 602);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "See Grades";
+            tabPage3.Text = "Grades";
+            // 
+            // studentGradesGridViewm
+            // 
+            studentGradesGridViewm.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            studentGradesGridViewm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            studentGradesGridViewm.Location = new Point(3, 3);
+            studentGradesGridViewm.Name = "studentGradesGridViewm";
+            studentGradesGridViewm.Size = new Size(1197, 596);
+            studentGradesGridViewm.TabIndex = 0;
             // 
             // metroSetLabel1
             // 
@@ -651,6 +665,8 @@
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).EndInit();
             ResumeLayout(false);
         }
 
@@ -683,5 +699,6 @@
         private MetroSet_UI.Controls.MetroSetTextBox NameTxtBoxm;
         private MetroSet_UI.Controls.MetroSetButton SaveBtnm;
         private MetroSet_UI.Controls.MetroSetTextBox IDTxtBoxm;
+        private DataGridView studentGradesGridViewm;
     }
 }
