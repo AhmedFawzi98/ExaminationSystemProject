@@ -30,10 +30,11 @@ public partial class LoginForm : MetroSetForm
         var loginResult = _accountLogins.Where(l => l.Username == username && l.Password == password).FirstOrDefault();
         if (loginResult is null)
             MetroSetMessageBox.Show(this, "wrong username or password, try again", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        else if (loginResult.AccountType.Equals('s'))
+        else if (loginResult.AccountType.Equals("s"))
         {
             this.Hide();
-            StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext, _spContext);
+            Student currentStudent = _examination_SystemContext.Students.Include(S=>S.Dept).FirstOrDefault(S => S.Username == username);
+            StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext, _spContext, currentStudent);
             studentForm.FormClosed += (sender, e) => this.Close();
             studentForm.Show();
         }
