@@ -36,5 +36,11 @@ public partial class InstructorForm : MetroSetForm
         txtInstructorDepartmentMA.Text = _currentInstructor.Dept.DeptName;
     }
 
-    
+
+    private void numericMcq_ValueChanged(object sender, EventArgs e)
+    {
+        numericTFf.Value = 10 - numericMcqf.Value;
+
+    }
+
 }
