@@ -188,6 +188,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[SP_SelectAllInstructorStudentCourses]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[SP_Submit_Answers]",
          "ObjectType": 1
       },
