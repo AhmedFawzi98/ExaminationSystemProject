@@ -513,6 +513,7 @@
             btnGenerateExam.Text = "Generate Exam";
             btnGenerateExam.ThemeAuthor = "Narwin";
             btnGenerateExam.ThemeName = "MetroLite";
+            btnGenerateExam.Click += btnGenerateExam_Click;
             // 
             // numericTFf
             // 
