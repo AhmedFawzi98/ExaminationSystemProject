@@ -42,6 +42,8 @@
             tabPage3 = new TabPage();
             gradesGridView = new DataGridView();
             tabPage4 = new TabPage();
+            Save = new MetroSet_UI.Controls.MetroSetButton();
+            dateTime1 = new DateTimePicker();
             numericmf = new NumericUpDown();
             numeric2mf = new NumericUpDown();
             TextBox5mf = new MetroSet_UI.Controls.MetroSetTextBox();
@@ -57,7 +59,6 @@
             tabPage5 = new TabPage();
             metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
-            dateTime1 = new DateTimePicker();
             metroSetTabControl1.SuspendLayout();
             tabPage0.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -293,6 +294,7 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(Save);
             tabPage4.Controls.Add(dateTime1);
             tabPage4.Controls.Add(numericmf);
             tabPage4.Controls.Add(numeric2mf);
@@ -311,6 +313,40 @@
             tabPage4.Size = new Size(1230, 574);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Department Details";
+            // 
+            // Save
+            // 
+            Save.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            Save.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            Save.DisabledForeColor = Color.Gray;
+            Save.Font = new Font("Microsoft Sans Serif", 10F);
+            Save.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            Save.HoverColor = Color.FromArgb(95, 207, 255);
+            Save.HoverTextColor = Color.White;
+            Save.IsDerivedStyle = true;
+            Save.Location = new Point(964, 514);
+            Save.Name = "Save";
+            Save.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            Save.NormalColor = Color.FromArgb(65, 177, 225);
+            Save.NormalTextColor = Color.White;
+            Save.PressBorderColor = Color.FromArgb(35, 147, 195);
+            Save.PressColor = Color.FromArgb(35, 147, 195);
+            Save.PressTextColor = Color.White;
+            Save.Size = new Size(94, 29);
+            Save.Style = MetroSet_UI.Enums.Style.Light;
+            Save.StyleManager = null;
+            Save.TabIndex = 3;
+            Save.Text = "Save";
+            Save.ThemeAuthor = "Narwin";
+            Save.ThemeName = "MetroLite";
+            Save.Click += Save_Click;
+            // 
+            // dateTime1
+            // 
+            dateTime1.Location = new Point(415, 397);
+            dateTime1.Name = "dateTime1";
+            dateTime1.Size = new Size(250, 32);
+            dateTime1.TabIndex = 18;
             // 
             // numericmf
             // 
@@ -559,13 +595,6 @@
             metroSetControlBox1.ThemeAuthor = "Narwin";
             metroSetControlBox1.ThemeName = "MetroLite";
             // 
-            // dateTime1
-            // 
-            dateTime1.Location = new Point(415, 397);
-            dateTime1.Name = "dateTime1";
-            dateTime1.Size = new Size(250, 32);
-            dateTime1.TabIndex = 18;
-            // 
             // InstructorForm
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
@@ -620,5 +649,6 @@
         private NumericUpDown numericmf;
         private NumericUpDown numeric2mf;
         private DateTimePicker dateTime1;
+        private MetroSet_UI.Controls.MetroSetButton Save;
     }
 }
