@@ -25,6 +25,8 @@ public partial class Student
 
     public string StEmail { get; set; }
 
+    public string Username { get; set; }
+
     public virtual Department Dept { get; set; }
 
     public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
