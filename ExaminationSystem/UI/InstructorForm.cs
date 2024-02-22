@@ -13,14 +13,17 @@ public partial class InstructorForm : MetroSetForm
         _examination_SystemContext = examination_SystemContext;
         _spContext = spContext;
     }
-    //my name is fawzi 
-    //dsfewfew
-    //Buffer/fer
     private async void InstructorForm_Load(object sender, EventArgs e)
     {
         var studentCourseGrade = await _spContext.SP_SelectAllInstructorStudentCoursesAsync(1032);
 
         gradesGridView.DataSource = studentCourseGrade;
         gradesGridView.ReadOnly = true;
+    }
+
+    private void numericMcq_ValueChanged(object sender, EventArgs e)
+    {
+        numericTF.Value = 10 - numericMcq.Value;
+
     }
 }
