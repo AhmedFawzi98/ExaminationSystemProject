@@ -40,8 +40,8 @@ public partial class LoginForm : MetroSetForm
         else
         {
             this.Hide();
-            Instructor currentInstructor = _examination_SystemContext.Instructors.FirstOrDefault(
-                I =>I.Username== username);
+            Instructor currentInstructor = _examination_SystemContext.Instructors
+                                                                     .FirstOrDefault(I =>I.Username== username);
             InstructorForm instructorForm = new InstructorForm(_logger, _examination_SystemContext, _spContext, currentInstructor);
             instructorForm.FormClosed += (sender, e) => this.Close();
             instructorForm.Show();
@@ -51,6 +51,7 @@ public partial class LoginForm : MetroSetForm
     private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
     {
         _loginContext.Dispose();
+        _examination_SystemContext.Dispose();
     }
 }
 

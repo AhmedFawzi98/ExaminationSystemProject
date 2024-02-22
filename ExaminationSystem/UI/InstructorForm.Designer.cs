@@ -75,7 +75,7 @@
             metroSetTabControl1.ItemSize = new Size(100, 38);
             metroSetTabControl1.Location = new Point(15, 73);
             metroSetTabControl1.Name = "metroSetTabControl1";
-            metroSetTabControl1.SelectedIndex = 1;
+            metroSetTabControl1.SelectedIndex = 2;
             metroSetTabControl1.SelectedTextColor = Color.White;
             metroSetTabControl1.Size = new Size(1238, 620);
             metroSetTabControl1.SizeMode = TabSizeMode.Fixed;
@@ -368,6 +368,7 @@
             btnGenerateExam.Text = "Generate Exam";
             btnGenerateExam.ThemeAuthor = "Narwin";
             btnGenerateExam.ThemeName = "MetroLite";
+            btnGenerateExam.Click += btnGenerateExam_Click;
             // 
             // numericTFf
             // 
