@@ -32,6 +32,7 @@
             txtboxUsernameLogin = new MetroSet_UI.Controls.MetroSetTextBox();
             txtboxPasswordLogin = new MetroSet_UI.Controls.MetroSetTextBox();
             btnLogin = new MetroSet_UI.Controls.MetroSetButton();
+            metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             SuspendLayout();
             // 
             // metroSetControlBox1
@@ -145,15 +146,32 @@
             btnLogin.ThemeName = "MetroLite";
             btnLogin.Click += btnLogin_Click_1;
             // 
+            // metroSetLabel1
+            // 
+            metroSetLabel1.Font = new Font("Leelawadee UI", 6F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            metroSetLabel1.IsDerivedStyle = true;
+            metroSetLabel1.Location = new Point(5, 427);
+            metroSetLabel1.Name = "metroSetLabel1";
+            metroSetLabel1.Size = new Size(340, 29);
+            metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetLabel1.StyleManager = null;
+            metroSetLabel1.TabIndex = 4;
+            metroSetLabel1.Text = "© Developed by Tigers Team - ITI - Intake 44 ";
+            metroSetLabel1.ThemeAuthor = "Narwin";
+            metroSetLabel1.ThemeName = "MetroLite";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(metroSetLabel1);
             Controls.Add(btnLogin);
             Controls.Add(txtboxPasswordLogin);
             Controls.Add(txtboxUsernameLogin);
             Controls.Add(metroSetControlBox1);
+            MaximumSize = new Size(800, 450);
+            MinimumSize = new Size(800, 450);
             Name = "LoginForm";
             Text = "Login";
             FormClosing += LoginForm_FormClosing;
@@ -167,5 +185,6 @@
         private MetroSet_UI.Controls.MetroSetTextBox txtboxUsernameLogin;
         private MetroSet_UI.Controls.MetroSetTextBox txtboxPasswordLogin;
         private MetroSet_UI.Controls.MetroSetButton btnLogin;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
     }
 }
