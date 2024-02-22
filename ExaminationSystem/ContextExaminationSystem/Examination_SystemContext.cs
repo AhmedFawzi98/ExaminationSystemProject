@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using ExaminationSystem.EntitiesExaminationSystem;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,8 +40,7 @@ public partial class Examination_SystemContext : DbContext
     public virtual DbSet<Topic> Topics { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=26.82.203.83;Initial Catalog=Examination_System;Persist Security Info=True;User ID=ahmedfawzi;Password=1234;Encrypt=False");
+        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
