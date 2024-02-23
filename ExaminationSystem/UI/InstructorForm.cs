@@ -32,12 +32,12 @@ public partial class InstructorForm : MetroSetForm
         List<Course> Courses = _examination_SystemContext.Courses.ToList();
 
         this.IComboBoxCourses.DataSource = Courses;
-        this.IComboBoxCourses.DisplayMember = "CrId";
+        this.IComboBoxCourses.DisplayMember = "CrName";
         this.IComboBoxCourses.ValueMember = "CrId";
         //this.IComboBoxCourses.SelectedIndex = 0;
 
         HidingAll();
-    }
+    
 
         _currentInstructor = currentInstructor;
     }
@@ -45,18 +45,7 @@ public partial class InstructorForm : MetroSetForm
 
     private async void InstructorForm_Load(object sender, EventArgs e)
     {
-        try
-        {
-            await LoadGradesGridViwDataSources();
-            await LoadCoursesNamesComboBoxDataSources();
-        }
-        catch (Exception ex)
-        {
-            _logger.Log(ex);
-            DialogResult result = MetroSetMessageBox.Show(this, $"instructor control panel can't be loaded", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (result == DialogResult.OK)
-                this.Close();
-        }
+        LoadProfile();
     }
     private async Task LoadGradesGridViwDataSources() 
     {
@@ -89,58 +78,91 @@ public partial class InstructorForm : MetroSetForm
 
 
 
-    private void metroSetTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+    private async void metroSetTabControl1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        numericmf.Maximum = 2000000;
-        numeric2mf.Maximum = 2000000;
-
-        if (metroSetTabControl1.SelectedIndex == 4)
+        try
         {
-            var results = _examination_SystemContext.Departments
-                        .Join(_examination_SystemContext.Instructors,
-                         department => department.DeptId,
-                         instructor => instructor.DeptId,
-                         (department, instructor) => new { Department = department, Instructor = instructor })
-                         .Where(joinResult => joinResult.Instructor.DeptId == _currentInstructor.DeptId)
-                         .Select(joinResult => joinResult.Department)
-                          .FirstOrDefault();
-
-
-            TextBox4mf.Text = results.DeptName;
-            TextBox5mf.Text = results.Location;
-            numericmf.Value = Convert.ToDecimal(results.DeptId);
-            numeric2mf.Value = Convert.ToDecimal(results.MgrId);
-            TextBox3mf.Text = results.DeptDescription;
-            dateTime1.Value = (DateTime)results.MgrHireDate;
-
-
-            if (_currentInstructor.InsId != results.MgrId)
+            switch(metroSetTabControl1.SelectedIndex)
             {
-                TextBox4mf.ReadOnly = true;
-                TextBox5mf.ReadOnly = true;
-                numericmf.Enabled = false;
-                numeric2mf.Enabled = false;
-                TextBox3mf.ReadOnly = true;
-                dateTime1.Enabled = false;
-                Save.Visible = false;
-
+                case 0:
+                    LoadProfile();
+                    break;
+                case 1:
+                    await LoadCoursesNamesComboBoxDataSources();
+                    break;
+                case 2:
+                    await LoadGradesGridViwDataSources();
+                    break;
+                case 3:
+                    LoadDepartment();
+                    break;
+                case 4:
+                    HidingAll();
+                    break;
             }
+        }
+        catch (Exception ex)
+        {
+            _logger.Log(ex);
+            DialogResult result = MetroSetMessageBox.Show(this, $"instructor control panel can't be loaded", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+                this.Close();
+        }
+    }
+    private void LoadDepartment()
+    {
+        var results = _examination_SystemContext.Departments
+                       .Join(_examination_SystemContext.Instructors,
+                        department => department.DeptId,
+                        instructor => instructor.DeptId,
+                        (department, instructor) => new { Department = department, Instructor = instructor })
+                        .Where(joinResult => joinResult.Instructor.DeptId == _currentInstructor.DeptId)
+                        .Select(joinResult => joinResult.Department)
+                         .FirstOrDefault();
 
-            Debug.WriteLine(results.DeptName);
+
+        TextBox4mf.Text = results.DeptName;
+        TextBox5mf.Text = results.Location;
+        numericmf.Text = results.DeptId.ToString();
+        TextBox3mf.Text = results.DeptDescription;
+        dateTime1.Value = (DateTime)results.MgrHireDate;
+        numeric2mf.Text = results.MgrId.ToString();
+
+
+        if (_currentInstructor.InsId != results.MgrId)
+        {
+            TextBox4mf.ReadOnly = true;
+            TextBox5mf.ReadOnly = true;
+            numeric2mf.ReadOnly = true;
+            numericmf.ReadOnly = true;
+            TextBox3mf.ReadOnly = true;
+            dateTime1.Enabled = false;
+            Save.Visible = false;
 
         }
+
+        Debug.WriteLine(results.DeptName);
     }
     private async void Save_Click(object sender, EventArgs e)
     {
-        if (numeric2mf.Value != 0) { 
-        Examination_SystemContextProcedures SpContext = new(_examination_SystemContext);
+        var validdept = _examination_SystemContext.Departments.Find(Convert.ToInt32(numericmf.Text));
+        var validmageId = _examination_SystemContext.Instructors.Find(Convert.ToInt32(numeric2mf.Text));
+        if (numeric2mf.Text != null)
+        {
+            Examination_SystemContextProcedures SpContext = new(_examination_SystemContext);
+            if (validdept != null && validmageId != null)
+            {
+                await SpContext.SP_UPDATE_DepartmentAsync(Convert.ToInt32(numericmf.Text), TextBox4mf.Text, TextBox3mf.Text, TextBox5mf.Text, Convert.ToInt32(numeric2mf.Text), Convert.ToDateTime(dateTime1.Value));
+                _examination_SystemContext.SaveChanges();
+                MessageBox.Show("Changes saved successfully!", "Success");
+            }
+            else
+            {
+                MessageBox.Show("there is somthing wrong with the deptID or the mgrID", "Success");
 
-        await SpContext.SP_UPDATE_DepartmentAsync(Convert.ToInt32(numericmf.Value), TextBox4mf.Text, TextBox3mf.Text, TextBox5mf.Text, Convert.ToInt32(numeric2mf.Value), Convert.ToDateTime(dateTime1.Value));
+            }
 
-        _examination_SystemContext.SaveChanges();
-        MessageBox.Show("Changes saved successfully!", "Success");
         }
-       
     }
 
     private void numericMcq_ValueChanged(object sender, EventArgs e)
