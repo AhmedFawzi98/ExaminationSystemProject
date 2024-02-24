@@ -43,7 +43,8 @@
             metroSetControlBox1.CloseNormalForeColor = Color.Gray;
             metroSetControlBox1.DisabledForeColor = Color.DimGray;
             metroSetControlBox1.IsDerivedStyle = true;
-            metroSetControlBox1.Location = new Point(695, 5);
+            metroSetControlBox1.Location = new Point(861, 0);
+            metroSetControlBox1.Margin = new Padding(4, 4, 4, 4);
             metroSetControlBox1.MaximizeBox = true;
             metroSetControlBox1.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             metroSetControlBox1.MaximizeHoverForeColor = Color.Gray;
@@ -75,12 +76,13 @@
             txtboxUsernameLogin.Image = null;
             txtboxUsernameLogin.IsDerivedStyle = true;
             txtboxUsernameLogin.Lines = null;
-            txtboxUsernameLogin.Location = new Point(286, 119);
+            txtboxUsernameLogin.Location = new Point(343, 149);
+            txtboxUsernameLogin.Margin = new Padding(4, 4, 4, 4);
             txtboxUsernameLogin.MaxLength = 32767;
             txtboxUsernameLogin.Multiline = false;
             txtboxUsernameLogin.Name = "txtboxUsernameLogin";
             txtboxUsernameLogin.ReadOnly = false;
-            txtboxUsernameLogin.Size = new Size(253, 38);
+            txtboxUsernameLogin.Size = new Size(304, 48);
             txtboxUsernameLogin.Style = MetroSet_UI.Enums.Style.Light;
             txtboxUsernameLogin.StyleManager = null;
             txtboxUsernameLogin.TabIndex = 1;
@@ -104,12 +106,13 @@
             txtboxPasswordLogin.Image = null;
             txtboxPasswordLogin.IsDerivedStyle = true;
             txtboxPasswordLogin.Lines = null;
-            txtboxPasswordLogin.Location = new Point(286, 183);
+            txtboxPasswordLogin.Location = new Point(343, 229);
+            txtboxPasswordLogin.Margin = new Padding(4, 4, 4, 4);
             txtboxPasswordLogin.MaxLength = 32767;
             txtboxPasswordLogin.Multiline = false;
             txtboxPasswordLogin.Name = "txtboxPasswordLogin";
             txtboxPasswordLogin.ReadOnly = false;
-            txtboxPasswordLogin.Size = new Size(253, 38);
+            txtboxPasswordLogin.Size = new Size(304, 48);
             txtboxPasswordLogin.Style = MetroSet_UI.Enums.Style.Light;
             txtboxPasswordLogin.StyleManager = null;
             txtboxPasswordLogin.TabIndex = 2;
@@ -129,7 +132,8 @@
             btnLogin.HoverColor = Color.FromArgb(95, 207, 255);
             btnLogin.HoverTextColor = Color.White;
             btnLogin.IsDerivedStyle = true;
-            btnLogin.Location = new Point(367, 236);
+            btnLogin.Location = new Point(440, 295);
+            btnLogin.Margin = new Padding(4, 4, 4, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.NormalBorderColor = Color.FromArgb(65, 177, 225);
             btnLogin.NormalColor = Color.FromArgb(65, 177, 225);
@@ -137,7 +141,7 @@
             btnLogin.PressBorderColor = Color.FromArgb(35, 147, 195);
             btnLogin.PressColor = Color.FromArgb(35, 147, 195);
             btnLogin.PressTextColor = Color.White;
-            btnLogin.Size = new Size(89, 29);
+            btnLogin.Size = new Size(107, 36);
             btnLogin.Style = MetroSet_UI.Enums.Style.Light;
             btnLogin.StyleManager = null;
             btnLogin.TabIndex = 3;
@@ -150,9 +154,10 @@
             // 
             metroSetLabel1.Font = new Font("Leelawadee UI", 6F, FontStyle.Regular, GraphicsUnit.Point, 0);
             metroSetLabel1.IsDerivedStyle = true;
-            metroSetLabel1.Location = new Point(5, 427);
+            metroSetLabel1.Location = new Point(6, 534);
+            metroSetLabel1.Margin = new Padding(4, 0, 4, 0);
             metroSetLabel1.Name = "metroSetLabel1";
-            metroSetLabel1.Size = new Size(340, 29);
+            metroSetLabel1.Size = new Size(408, 36);
             metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
             metroSetLabel1.StyleManager = null;
             metroSetLabel1.TabIndex = 4;
@@ -162,18 +167,24 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
+            AllowResize = false;
+            AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(960, 562);
+            Controls.Add(metroSetControlBox1);
             Controls.Add(metroSetLabel1);
             Controls.Add(btnLogin);
             Controls.Add(txtboxPasswordLogin);
             Controls.Add(txtboxUsernameLogin);
-            Controls.Add(metroSetControlBox1);
-            MaximumSize = new Size(800, 450);
-            MinimumSize = new Size(800, 450);
+            Font = new Font("Microsoft YaHei UI", 13.8F, FontStyle.Bold);
+            Margin = new Padding(4, 4, 4, 4);
+            MaximumSize = new Size(960, 562);
+            MinimumSize = new Size(960, 562);
             Name = "LoginForm";
-            Text = "Login";
+            Padding = new Padding(12, 90, 12, 12);
+            ShowLeftRect = false;
+            Text = "Examination System";
+            TextColor = Color.Black;
             FormClosing += LoginForm_FormClosing;
             Load += LoginForm_Load;
             ResumeLayout(false);

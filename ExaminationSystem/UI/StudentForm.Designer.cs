@@ -54,7 +54,6 @@
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
             studentGradesGridViewm = new DataGridView();
-            metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             StudentTabControlm.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -72,11 +71,11 @@
             StudentTabControlm.Controls.Add(tabPage3);
             StudentTabControlm.IsDerivedStyle = true;
             StudentTabControlm.ItemSize = new Size(100, 38);
-            StudentTabControlm.Location = new Point(15, 73);
+            StudentTabControlm.Location = new Point(15, 38);
             StudentTabControlm.Name = "StudentTabControlm";
-            StudentTabControlm.SelectedIndex = 2;
+            StudentTabControlm.SelectedIndex = 0;
             StudentTabControlm.SelectedTextColor = Color.White;
-            StudentTabControlm.Size = new Size(1211, 648);
+            StudentTabControlm.Size = new Size(1211, 737);
             StudentTabControlm.SizeMode = TabSizeMode.Fixed;
             StudentTabControlm.Speed = 100;
             StudentTabControlm.Style = MetroSet_UI.Enums.Style.Light;
@@ -84,7 +83,7 @@
             StudentTabControlm.TabIndex = 0;
             StudentTabControlm.ThemeAuthor = "Narwin";
             StudentTabControlm.ThemeName = "MetroLite";
-            StudentTabControlm.UnselectedTextColor = Color.Gray;
+            StudentTabControlm.UnselectedTextColor = Color.Black;
             StudentTabControlm.UseAnimation = false;
             StudentTabControlm.SelectedIndexChanged += StudentTabControlm_SelectedIndexChanged;
             // 
@@ -113,7 +112,7 @@
             tabPage1.Controls.Add(StuIDm);
             tabPage1.Location = new Point(4, 42);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1203, 602);
+            tabPage1.Size = new Size(1203, 691);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Profile";
             // 
@@ -126,23 +125,23 @@
             SaveBtnm.HoverBorderColor = Color.FromArgb(95, 207, 255);
             SaveBtnm.HoverColor = Color.FromArgb(95, 207, 255);
             SaveBtnm.HoverTextColor = Color.White;
-            SaveBtnm.IsDerivedStyle = true;
-            SaveBtnm.Location = new Point(1071, 549);
-            SaveBtnm.Margin = new Padding(10);
+            SaveBtnm.IsDerivedStyle = false;
+            SaveBtnm.Location = new Point(1071, 631);
+            SaveBtnm.Margin = new Padding(10, 12, 10, 12);
             SaveBtnm.Name = "SaveBtnm";
             SaveBtnm.NormalBorderColor = Color.FromArgb(65, 177, 225);
-            SaveBtnm.NormalColor = Color.FromArgb(65, 177, 225);
+            SaveBtnm.NormalColor = Color.Black;
             SaveBtnm.NormalTextColor = Color.White;
             SaveBtnm.PressBorderColor = Color.FromArgb(35, 147, 195);
             SaveBtnm.PressColor = Color.FromArgb(35, 147, 195);
             SaveBtnm.PressTextColor = Color.White;
-            SaveBtnm.Size = new Size(122, 43);
+            SaveBtnm.Size = new Size(122, 49);
             SaveBtnm.Style = MetroSet_UI.Enums.Style.Light;
             SaveBtnm.StyleManager = null;
             SaveBtnm.TabIndex = 21;
             SaveBtnm.Text = "Save";
-            SaveBtnm.ThemeAuthor = "Narwin";
-            SaveBtnm.ThemeName = "MetroLite";
+            SaveBtnm.ThemeAuthor = "moazSamy";
+            SaveBtnm.ThemeName = "Custom";
             SaveBtnm.Click += SaveBtnm_Click;
             // 
             // ZipTxtBoxm
@@ -159,12 +158,12 @@
             ZipTxtBoxm.Image = null;
             ZipTxtBoxm.IsDerivedStyle = true;
             ZipTxtBoxm.Lines = null;
-            ZipTxtBoxm.Location = new Point(641, 163);
+            ZipTxtBoxm.Location = new Point(641, 187);
             ZipTxtBoxm.MaxLength = 32767;
             ZipTxtBoxm.Multiline = false;
             ZipTxtBoxm.Name = "ZipTxtBoxm";
             ZipTxtBoxm.ReadOnly = false;
-            ZipTxtBoxm.Size = new Size(135, 30);
+            ZipTxtBoxm.Size = new Size(135, 34);
             ZipTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             ZipTxtBoxm.StyleManager = null;
             ZipTxtBoxm.TabIndex = 20;
@@ -188,12 +187,12 @@
             StTxtBoxm.Image = null;
             StTxtBoxm.IsDerivedStyle = true;
             StTxtBoxm.Lines = null;
-            StTxtBoxm.Location = new Point(641, 93);
+            StTxtBoxm.Location = new Point(641, 107);
             StTxtBoxm.MaxLength = 32767;
             StTxtBoxm.Multiline = false;
             StTxtBoxm.Name = "StTxtBoxm";
             StTxtBoxm.ReadOnly = false;
-            StTxtBoxm.Size = new Size(135, 30);
+            StTxtBoxm.Size = new Size(135, 34);
             StTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             StTxtBoxm.StyleManager = null;
             StTxtBoxm.TabIndex = 19;
@@ -217,12 +216,12 @@
             CityTxtBoxm.Image = null;
             CityTxtBoxm.IsDerivedStyle = true;
             CityTxtBoxm.Lines = null;
-            CityTxtBoxm.Location = new Point(641, 23);
+            CityTxtBoxm.Location = new Point(641, 26);
             CityTxtBoxm.MaxLength = 32767;
             CityTxtBoxm.Multiline = false;
             CityTxtBoxm.Name = "CityTxtBoxm";
             CityTxtBoxm.ReadOnly = false;
-            CityTxtBoxm.Size = new Size(135, 30);
+            CityTxtBoxm.Size = new Size(135, 34);
             CityTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             CityTxtBoxm.StyleManager = null;
             CityTxtBoxm.TabIndex = 18;
@@ -246,12 +245,12 @@
             DeptTxtBoxm.Image = null;
             DeptTxtBoxm.IsDerivedStyle = true;
             DeptTxtBoxm.Lines = null;
-            DeptTxtBoxm.Location = new Point(198, 443);
+            DeptTxtBoxm.Location = new Point(198, 509);
             DeptTxtBoxm.MaxLength = 32767;
             DeptTxtBoxm.Multiline = false;
             DeptTxtBoxm.Name = "DeptTxtBoxm";
             DeptTxtBoxm.ReadOnly = true;
-            DeptTxtBoxm.Size = new Size(208, 30);
+            DeptTxtBoxm.Size = new Size(208, 34);
             DeptTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             DeptTxtBoxm.StyleManager = null;
             DeptTxtBoxm.TabIndex = 17;
@@ -275,12 +274,12 @@
             UsernameTxtBoxm.Image = null;
             UsernameTxtBoxm.IsDerivedStyle = true;
             UsernameTxtBoxm.Lines = null;
-            UsernameTxtBoxm.Location = new Point(198, 373);
+            UsernameTxtBoxm.Location = new Point(198, 429);
             UsernameTxtBoxm.MaxLength = 32767;
             UsernameTxtBoxm.Multiline = false;
             UsernameTxtBoxm.Name = "UsernameTxtBoxm";
             UsernameTxtBoxm.ReadOnly = true;
-            UsernameTxtBoxm.Size = new Size(208, 30);
+            UsernameTxtBoxm.Size = new Size(208, 34);
             UsernameTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             UsernameTxtBoxm.StyleManager = null;
             UsernameTxtBoxm.TabIndex = 16;
@@ -304,12 +303,12 @@
             EmailTxtBoxm.Image = null;
             EmailTxtBoxm.IsDerivedStyle = true;
             EmailTxtBoxm.Lines = null;
-            EmailTxtBoxm.Location = new Point(198, 303);
+            EmailTxtBoxm.Location = new Point(198, 348);
             EmailTxtBoxm.MaxLength = 32767;
             EmailTxtBoxm.Multiline = false;
             EmailTxtBoxm.Name = "EmailTxtBoxm";
             EmailTxtBoxm.ReadOnly = false;
-            EmailTxtBoxm.Size = new Size(208, 30);
+            EmailTxtBoxm.Size = new Size(208, 34);
             EmailTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             EmailTxtBoxm.StyleManager = null;
             EmailTxtBoxm.TabIndex = 15;
@@ -333,12 +332,12 @@
             AgeTxtBoxm.Image = null;
             AgeTxtBoxm.IsDerivedStyle = true;
             AgeTxtBoxm.Lines = null;
-            AgeTxtBoxm.Location = new Point(198, 233);
+            AgeTxtBoxm.Location = new Point(198, 268);
             AgeTxtBoxm.MaxLength = 32767;
             AgeTxtBoxm.Multiline = false;
             AgeTxtBoxm.Name = "AgeTxtBoxm";
             AgeTxtBoxm.ReadOnly = false;
-            AgeTxtBoxm.Size = new Size(208, 30);
+            AgeTxtBoxm.Size = new Size(208, 34);
             AgeTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             AgeTxtBoxm.StyleManager = null;
             AgeTxtBoxm.TabIndex = 14;
@@ -362,12 +361,12 @@
             PhoneTxtBoxm.Image = null;
             PhoneTxtBoxm.IsDerivedStyle = true;
             PhoneTxtBoxm.Lines = null;
-            PhoneTxtBoxm.Location = new Point(198, 163);
+            PhoneTxtBoxm.Location = new Point(198, 187);
             PhoneTxtBoxm.MaxLength = 32767;
             PhoneTxtBoxm.Multiline = false;
             PhoneTxtBoxm.Name = "PhoneTxtBoxm";
             PhoneTxtBoxm.ReadOnly = false;
-            PhoneTxtBoxm.Size = new Size(208, 30);
+            PhoneTxtBoxm.Size = new Size(208, 34);
             PhoneTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             PhoneTxtBoxm.StyleManager = null;
             PhoneTxtBoxm.TabIndex = 13;
@@ -391,12 +390,12 @@
             NameTxtBoxm.Image = null;
             NameTxtBoxm.IsDerivedStyle = true;
             NameTxtBoxm.Lines = null;
-            NameTxtBoxm.Location = new Point(198, 93);
+            NameTxtBoxm.Location = new Point(198, 107);
             NameTxtBoxm.MaxLength = 32767;
             NameTxtBoxm.Multiline = false;
             NameTxtBoxm.Name = "NameTxtBoxm";
             NameTxtBoxm.ReadOnly = false;
-            NameTxtBoxm.Size = new Size(208, 30);
+            NameTxtBoxm.Size = new Size(208, 34);
             NameTxtBoxm.Style = MetroSet_UI.Enums.Style.Custom;
             NameTxtBoxm.StyleManager = null;
             NameTxtBoxm.TabIndex = 12;
@@ -420,29 +419,29 @@
             IDTxtBoxm.Image = null;
             IDTxtBoxm.IsDerivedStyle = true;
             IDTxtBoxm.Lines = null;
-            IDTxtBoxm.Location = new Point(198, 23);
+            IDTxtBoxm.Location = new Point(198, 26);
             IDTxtBoxm.MaxLength = 32767;
             IDTxtBoxm.Multiline = false;
             IDTxtBoxm.Name = "IDTxtBoxm";
             IDTxtBoxm.ReadOnly = true;
-            IDTxtBoxm.Size = new Size(208, 30);
+            IDTxtBoxm.Size = new Size(208, 34);
             IDTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             IDTxtBoxm.StyleManager = null;
             IDTxtBoxm.TabIndex = 11;
             IDTxtBoxm.TextAlign = HorizontalAlignment.Center;
             IDTxtBoxm.ThemeAuthor = "Narwin";
-            IDTxtBoxm.ThemeName = "MetroLite";
+            IDTxtBoxm.ThemeName = "Custom";
             IDTxtBoxm.UseSystemPasswordChar = false;
             IDTxtBoxm.WatermarkText = "";
             // 
             // Usernamem
             // 
-            Usernamem.Font = new Font("Microsoft YaHei UI", 13.8F);
+            Usernamem.Font = new Font("Microsoft YaHei UI", 10F);
             Usernamem.IsDerivedStyle = true;
-            Usernamem.Location = new Point(42, 373);
-            Usernamem.Margin = new Padding(20);
+            Usernamem.Location = new Point(42, 429);
+            Usernamem.Margin = new Padding(20, 23, 20, 23);
             Usernamem.Name = "Usernamem";
-            Usernamem.Size = new Size(108, 30);
+            Usernamem.Size = new Size(108, 34);
             Usernamem.Style = MetroSet_UI.Enums.Style.Light;
             Usernamem.StyleManager = null;
             Usernamem.TabIndex = 9;
@@ -452,12 +451,12 @@
             // 
             // StEmailm
             // 
-            StEmailm.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StEmailm.Font = new Font("Microsoft YaHei UI", 10F);
             StEmailm.IsDerivedStyle = true;
-            StEmailm.Location = new Point(42, 303);
-            StEmailm.Margin = new Padding(20);
+            StEmailm.Location = new Point(42, 348);
+            StEmailm.Margin = new Padding(20, 23, 20, 23);
             StEmailm.Name = "StEmailm";
-            StEmailm.Size = new Size(100, 30);
+            StEmailm.Size = new Size(100, 34);
             StEmailm.Style = MetroSet_UI.Enums.Style.Light;
             StEmailm.StyleManager = null;
             StEmailm.TabIndex = 8;
@@ -467,12 +466,12 @@
             // 
             // StZipCodem
             // 
-            StZipCodem.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StZipCodem.Font = new Font("Microsoft YaHei UI", 10F);
             StZipCodem.IsDerivedStyle = true;
-            StZipCodem.Location = new Point(518, 163);
-            StZipCodem.Margin = new Padding(20);
+            StZipCodem.Location = new Point(518, 187);
+            StZipCodem.Margin = new Padding(20, 23, 20, 23);
             StZipCodem.Name = "StZipCodem";
-            StZipCodem.Size = new Size(100, 30);
+            StZipCodem.Size = new Size(100, 34);
             StZipCodem.Style = MetroSet_UI.Enums.Style.Light;
             StZipCodem.StyleManager = null;
             StZipCodem.TabIndex = 7;
@@ -482,12 +481,12 @@
             // 
             // Deptm
             // 
-            Deptm.Font = new Font("Microsoft YaHei UI", 13.8F);
+            Deptm.Font = new Font("Microsoft YaHei UI", 10F);
             Deptm.IsDerivedStyle = true;
-            Deptm.Location = new Point(42, 443);
-            Deptm.Margin = new Padding(20);
+            Deptm.Location = new Point(42, 509);
+            Deptm.Margin = new Padding(20, 23, 20, 23);
             Deptm.Name = "Deptm";
-            Deptm.Size = new Size(133, 30);
+            Deptm.Size = new Size(133, 34);
             Deptm.Style = MetroSet_UI.Enums.Style.Light;
             Deptm.StyleManager = null;
             Deptm.TabIndex = 6;
@@ -497,12 +496,12 @@
             // 
             // StCitym
             // 
-            StCitym.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StCitym.Font = new Font("Microsoft YaHei UI", 10F);
             StCitym.IsDerivedStyle = true;
-            StCitym.Location = new Point(518, 23);
-            StCitym.Margin = new Padding(20);
+            StCitym.Location = new Point(518, 26);
+            StCitym.Margin = new Padding(20, 23, 20, 23);
             StCitym.Name = "StCitym";
-            StCitym.Size = new Size(100, 30);
+            StCitym.Size = new Size(100, 34);
             StCitym.Style = MetroSet_UI.Enums.Style.Light;
             StCitym.StyleManager = null;
             StCitym.TabIndex = 5;
@@ -512,12 +511,12 @@
             // 
             // StStreetm
             // 
-            StStreetm.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StStreetm.Font = new Font("Microsoft YaHei UI", 10F);
             StStreetm.IsDerivedStyle = true;
-            StStreetm.Location = new Point(518, 93);
-            StStreetm.Margin = new Padding(20);
+            StStreetm.Location = new Point(518, 107);
+            StStreetm.Margin = new Padding(20, 23, 20, 23);
             StStreetm.Name = "StStreetm";
-            StStreetm.Size = new Size(100, 30);
+            StStreetm.Size = new Size(100, 34);
             StStreetm.Style = MetroSet_UI.Enums.Style.Light;
             StStreetm.StyleManager = null;
             StStreetm.TabIndex = 4;
@@ -527,12 +526,12 @@
             // 
             // StAgem
             // 
-            StAgem.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StAgem.Font = new Font("Microsoft YaHei UI", 10F);
             StAgem.IsDerivedStyle = true;
-            StAgem.Location = new Point(42, 233);
-            StAgem.Margin = new Padding(20);
+            StAgem.Location = new Point(42, 268);
+            StAgem.Margin = new Padding(20, 23, 20, 23);
             StAgem.Name = "StAgem";
-            StAgem.Size = new Size(100, 30);
+            StAgem.Size = new Size(100, 34);
             StAgem.Style = MetroSet_UI.Enums.Style.Light;
             StAgem.StyleManager = null;
             StAgem.TabIndex = 3;
@@ -542,12 +541,12 @@
             // 
             // StPhonem
             // 
-            StPhonem.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StPhonem.Font = new Font("Microsoft YaHei UI", 10F);
             StPhonem.IsDerivedStyle = true;
-            StPhonem.Location = new Point(42, 163);
-            StPhonem.Margin = new Padding(20);
+            StPhonem.Location = new Point(42, 187);
+            StPhonem.Margin = new Padding(20, 23, 20, 23);
             StPhonem.Name = "StPhonem";
-            StPhonem.Size = new Size(100, 30);
+            StPhonem.Size = new Size(100, 34);
             StPhonem.Style = MetroSet_UI.Enums.Style.Light;
             StPhonem.StyleManager = null;
             StPhonem.TabIndex = 2;
@@ -557,12 +556,12 @@
             // 
             // StNamem
             // 
-            StNamem.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StNamem.Font = new Font("Microsoft YaHei UI", 10F);
             StNamem.IsDerivedStyle = true;
-            StNamem.Location = new Point(42, 93);
-            StNamem.Margin = new Padding(20);
+            StNamem.Location = new Point(42, 107);
+            StNamem.Margin = new Padding(20, 23, 20, 23);
             StNamem.Name = "StNamem";
-            StNamem.Size = new Size(100, 30);
+            StNamem.Size = new Size(100, 34);
             StNamem.Style = MetroSet_UI.Enums.Style.Light;
             StNamem.StyleManager = null;
             StNamem.TabIndex = 1;
@@ -572,12 +571,12 @@
             // 
             // StuIDm
             // 
-            StuIDm.Font = new Font("Microsoft YaHei UI", 13.8F);
+            StuIDm.Font = new Font("Microsoft YaHei UI", 10F);
             StuIDm.IsDerivedStyle = true;
-            StuIDm.Location = new Point(42, 23);
-            StuIDm.Margin = new Padding(20);
+            StuIDm.Location = new Point(42, 26);
+            StuIDm.Margin = new Padding(20, 23, 20, 23);
             StuIDm.Name = "StuIDm";
-            StuIDm.Size = new Size(100, 30);
+            StuIDm.Size = new Size(100, 34);
             StuIDm.Style = MetroSet_UI.Enums.Style.Light;
             StuIDm.StyleManager = null;
             StuIDm.TabIndex = 0;
@@ -589,7 +588,7 @@
             // 
             tabPage2.Location = new Point(4, 42);
             tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(1203, 602);
+            tabPage2.Size = new Size(1203, 691);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Take Exam";
             // 
@@ -598,32 +597,23 @@
             tabPage3.Controls.Add(studentGradesGridViewm);
             tabPage3.Location = new Point(4, 42);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1203, 602);
+            tabPage3.Size = new Size(1203, 691);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Grades";
             // 
             // studentGradesGridViewm
             // 
+            studentGradesGridViewm.AllowUserToAddRows = false;
+            studentGradesGridViewm.AllowUserToDeleteRows = false;
             studentGradesGridViewm.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            studentGradesGridViewm.CellBorderStyle = DataGridViewCellBorderStyle.None;
             studentGradesGridViewm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            studentGradesGridViewm.Enabled = false;
             studentGradesGridViewm.Location = new Point(3, 3);
             studentGradesGridViewm.Name = "studentGradesGridViewm";
-            studentGradesGridViewm.Size = new Size(1197, 596);
+            studentGradesGridViewm.ReadOnly = true;
+            studentGradesGridViewm.Size = new Size(1197, 685);
             studentGradesGridViewm.TabIndex = 0;
-            // 
-            // metroSetLabel1
-            // 
-            metroSetLabel1.Font = new Font("Microsoft YaHei UI", 13.8F, FontStyle.Bold);
-            metroSetLabel1.IsDerivedStyle = true;
-            metroSetLabel1.Location = new Point(15, 20);
-            metroSetLabel1.Name = "metroSetLabel1";
-            metroSetLabel1.Size = new Size(216, 31);
-            metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel1.StyleManager = null;
-            metroSetLabel1.TabIndex = 1;
-            metroSetLabel1.Text = "Student Interface";
-            metroSetLabel1.ThemeAuthor = "Narwin";
-            metroSetLabel1.ThemeName = "MetroLite";
             // 
             // metroSetControlBox1
             // 
@@ -633,7 +623,7 @@
             metroSetControlBox1.CloseNormalForeColor = Color.Gray;
             metroSetControlBox1.DisabledForeColor = Color.DimGray;
             metroSetControlBox1.IsDerivedStyle = true;
-            metroSetControlBox1.Location = new Point(1126, 6);
+            metroSetControlBox1.Location = new Point(1142, 0);
             metroSetControlBox1.MaximizeBox = true;
             metroSetControlBox1.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             metroSetControlBox1.MaximizeHoverForeColor = Color.Gray;
@@ -653,14 +643,18 @@
             // 
             // StudentForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AllowResize = false;
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1241, 736);
+            ClientSize = new Size(1241, 786);
             Controls.Add(metroSetControlBox1);
-            Controls.Add(metroSetLabel1);
             Controls.Add(StudentTabControlm);
+            Font = new Font("Microsoft YaHei UI", 13F);
             Name = "StudentForm";
-            RightToLeftLayout = true;
+            Padding = new Padding(12, 80, 12, 14);
+            ShowLeftRect = false;
+            Text = "Student Interface";
+            TextColor = Color.Black;
             FormClosing += StudentForm_FormClosing;
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
@@ -673,7 +667,6 @@
         #endregion
 
         private MetroSet_UI.Controls.MetroSetTabControl StudentTabControlm;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
         private TabPage tabPage1;
         private TabPage tabPage2;
