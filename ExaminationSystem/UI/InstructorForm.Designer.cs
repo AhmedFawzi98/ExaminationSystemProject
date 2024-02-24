@@ -102,7 +102,6 @@
             ILabel6 = new MetroSet_UI.Controls.MetroSetLabel();
             ILabel5 = new MetroSet_UI.Controls.MetroSetLabel();
             metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
-            metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             metroSetTabControl1.SuspendLayout();
             tabPage0.SuspendLayout();
@@ -131,11 +130,11 @@
             metroSetTabControl1.Controls.Add(tabPage5);
             metroSetTabControl1.IsDerivedStyle = true;
             metroSetTabControl1.ItemSize = new Size(100, 38);
-            metroSetTabControl1.Location = new Point(15, 73);
+            metroSetTabControl1.Location = new Point(15, 38);
             metroSetTabControl1.Name = "metroSetTabControl1";
-            metroSetTabControl1.SelectedIndex = 3;
+            metroSetTabControl1.SelectedIndex = 0;
             metroSetTabControl1.SelectedTextColor = Color.White;
-            metroSetTabControl1.Size = new Size(1238, 620);
+            metroSetTabControl1.Size = new Size(1238, 662);
             metroSetTabControl1.SizeMode = TabSizeMode.Fixed;
             metroSetTabControl1.Speed = 100;
             metroSetTabControl1.Style = MetroSet_UI.Enums.Style.Light;
@@ -163,7 +162,7 @@
             tabPage0.Controls.Add(labInstIDMA);
             tabPage0.Location = new Point(4, 42);
             tabPage0.Name = "tabPage0";
-            tabPage0.Size = new Size(1230, 574);
+            tabPage0.Size = new Size(1230, 616);
             tabPage0.TabIndex = 0;
             tabPage0.Text = "Profile";
             // 
@@ -177,17 +176,17 @@
             numInstructorSalaryMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             numInstructorSalaryMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             numInstructorSalaryMA.Enabled = false;
-            numInstructorSalaryMA.Font = new Font("Microsoft Sans Serif", 10F);
+            numInstructorSalaryMA.Font = new Font("Microsoft YaHei UI", 10F);
             numInstructorSalaryMA.HoverColor = Color.FromArgb(102, 102, 102);
             numInstructorSalaryMA.Image = null;
             numInstructorSalaryMA.IsDerivedStyle = true;
             numInstructorSalaryMA.Lines = null;
-            numInstructorSalaryMA.Location = new Point(588, 29);
+            numInstructorSalaryMA.Location = new Point(196, 241);
             numInstructorSalaryMA.MaxLength = 32767;
             numInstructorSalaryMA.Multiline = false;
             numInstructorSalaryMA.Name = "numInstructorSalaryMA";
             numInstructorSalaryMA.ReadOnly = true;
-            numInstructorSalaryMA.Size = new Size(169, 38);
+            numInstructorSalaryMA.Size = new Size(169, 29);
             numInstructorSalaryMA.Style = MetroSet_UI.Enums.Style.Light;
             numInstructorSalaryMA.StyleManager = null;
             numInstructorSalaryMA.TabIndex = 17;
@@ -207,17 +206,17 @@
             txtInstructorIDMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             txtInstructorIDMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             txtInstructorIDMA.Enabled = false;
-            txtInstructorIDMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorIDMA.Font = new Font("Microsoft YaHei UI", 10F);
             txtInstructorIDMA.HoverColor = Color.FromArgb(102, 102, 102);
             txtInstructorIDMA.Image = null;
             txtInstructorIDMA.IsDerivedStyle = true;
             txtInstructorIDMA.Lines = null;
-            txtInstructorIDMA.Location = new Point(196, 29);
+            txtInstructorIDMA.Location = new Point(196, 38);
             txtInstructorIDMA.MaxLength = 32767;
             txtInstructorIDMA.Multiline = false;
             txtInstructorIDMA.Name = "txtInstructorIDMA";
             txtInstructorIDMA.ReadOnly = true;
-            txtInstructorIDMA.Size = new Size(169, 38);
+            txtInstructorIDMA.Size = new Size(169, 29);
             txtInstructorIDMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorIDMA.StyleManager = null;
             txtInstructorIDMA.TabIndex = 16;
@@ -237,17 +236,17 @@
             txtInstructorDepartmentMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             txtInstructorDepartmentMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             txtInstructorDepartmentMA.Enabled = false;
-            txtInstructorDepartmentMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorDepartmentMA.Font = new Font("Microsoft YaHei UI", 10F);
             txtInstructorDepartmentMA.HoverColor = Color.FromArgb(102, 102, 102);
             txtInstructorDepartmentMA.Image = null;
             txtInstructorDepartmentMA.IsDerivedStyle = true;
             txtInstructorDepartmentMA.Lines = null;
-            txtInstructorDepartmentMA.Location = new Point(588, 167);
+            txtInstructorDepartmentMA.Location = new Point(196, 379);
             txtInstructorDepartmentMA.MaxLength = 32767;
             txtInstructorDepartmentMA.Multiline = false;
             txtInstructorDepartmentMA.Name = "txtInstructorDepartmentMA";
             txtInstructorDepartmentMA.ReadOnly = true;
-            txtInstructorDepartmentMA.Size = new Size(169, 38);
+            txtInstructorDepartmentMA.Size = new Size(169, 29);
             txtInstructorDepartmentMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorDepartmentMA.StyleManager = null;
             txtInstructorDepartmentMA.TabIndex = 14;
@@ -259,9 +258,9 @@
             // 
             // lblInstructorDeparmentMA
             // 
-            lblInstructorDeparmentMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorDeparmentMA.Font = new Font("Microsoft YaHei UI", 10F);
             lblInstructorDeparmentMA.IsDerivedStyle = true;
-            lblInstructorDeparmentMA.Location = new Point(444, 176);
+            lblInstructorDeparmentMA.Location = new Point(52, 379);
             lblInstructorDeparmentMA.Name = "lblInstructorDeparmentMA";
             lblInstructorDeparmentMA.Size = new Size(125, 29);
             lblInstructorDeparmentMA.Style = MetroSet_UI.Enums.Style.Light;
@@ -281,17 +280,17 @@
             txtInstructorUserNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             txtInstructorUserNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             txtInstructorUserNameMA.Enabled = false;
-            txtInstructorUserNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorUserNameMA.Font = new Font("Microsoft YaHei UI", 10F);
             txtInstructorUserNameMA.HoverColor = Color.FromArgb(102, 102, 102);
             txtInstructorUserNameMA.Image = null;
             txtInstructorUserNameMA.IsDerivedStyle = true;
             txtInstructorUserNameMA.Lines = null;
-            txtInstructorUserNameMA.Location = new Point(196, 162);
+            txtInstructorUserNameMA.Location = new Point(196, 167);
             txtInstructorUserNameMA.MaxLength = 32767;
             txtInstructorUserNameMA.Multiline = false;
             txtInstructorUserNameMA.Name = "txtInstructorUserNameMA";
             txtInstructorUserNameMA.ReadOnly = true;
-            txtInstructorUserNameMA.Size = new Size(169, 38);
+            txtInstructorUserNameMA.Size = new Size(169, 29);
             txtInstructorUserNameMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorUserNameMA.StyleManager = null;
             txtInstructorUserNameMA.TabIndex = 8;
@@ -311,17 +310,17 @@
             txtInstructorDegreeMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             txtInstructorDegreeMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             txtInstructorDegreeMA.Enabled = false;
-            txtInstructorDegreeMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorDegreeMA.Font = new Font("Microsoft YaHei UI", 10F);
             txtInstructorDegreeMA.HoverColor = Color.FromArgb(102, 102, 102);
             txtInstructorDegreeMA.Image = null;
             txtInstructorDegreeMA.IsDerivedStyle = true;
             txtInstructorDegreeMA.Lines = null;
-            txtInstructorDegreeMA.Location = new Point(588, 100);
+            txtInstructorDegreeMA.Location = new Point(196, 312);
             txtInstructorDegreeMA.MaxLength = 32767;
             txtInstructorDegreeMA.Multiline = false;
             txtInstructorDegreeMA.Name = "txtInstructorDegreeMA";
             txtInstructorDegreeMA.ReadOnly = true;
-            txtInstructorDegreeMA.Size = new Size(169, 38);
+            txtInstructorDegreeMA.Size = new Size(169, 29);
             txtInstructorDegreeMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorDegreeMA.StyleManager = null;
             txtInstructorDegreeMA.TabIndex = 7;
@@ -341,17 +340,17 @@
             txtInstructorNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             txtInstructorNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
             txtInstructorNameMA.Enabled = false;
-            txtInstructorNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            txtInstructorNameMA.Font = new Font("Microsoft YaHei UI", 10F);
             txtInstructorNameMA.HoverColor = Color.FromArgb(102, 102, 102);
             txtInstructorNameMA.Image = null;
             txtInstructorNameMA.IsDerivedStyle = true;
             txtInstructorNameMA.Lines = null;
-            txtInstructorNameMA.Location = new Point(196, 92);
+            txtInstructorNameMA.Location = new Point(196, 100);
             txtInstructorNameMA.MaxLength = 32767;
             txtInstructorNameMA.Multiline = false;
             txtInstructorNameMA.Name = "txtInstructorNameMA";
             txtInstructorNameMA.ReadOnly = true;
-            txtInstructorNameMA.Size = new Size(169, 38);
+            txtInstructorNameMA.Size = new Size(169, 29);
             txtInstructorNameMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorNameMA.StyleManager = null;
             txtInstructorNameMA.TabIndex = 6;
@@ -363,9 +362,9 @@
             // 
             // lblInstructorDegreeMA
             // 
-            lblInstructorDegreeMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorDegreeMA.Font = new Font("Microsoft YaHei UI", 10F);
             lblInstructorDegreeMA.IsDerivedStyle = true;
-            lblInstructorDegreeMA.Location = new Point(444, 109);
+            lblInstructorDegreeMA.Location = new Point(52, 312);
             lblInstructorDegreeMA.Name = "lblInstructorDegreeMA";
             lblInstructorDegreeMA.Size = new Size(125, 29);
             lblInstructorDegreeMA.Style = MetroSet_UI.Enums.Style.Light;
@@ -377,9 +376,9 @@
             // 
             // lblInstructorSalaryMA
             // 
-            lblInstructorSalaryMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorSalaryMA.Font = new Font("Microsoft YaHei UI", 10F);
             lblInstructorSalaryMA.IsDerivedStyle = true;
-            lblInstructorSalaryMA.Location = new Point(444, 38);
+            lblInstructorSalaryMA.Location = new Point(52, 241);
             lblInstructorSalaryMA.Name = "lblInstructorSalaryMA";
             lblInstructorSalaryMA.Size = new Size(125, 29);
             lblInstructorSalaryMA.Style = MetroSet_UI.Enums.Style.Light;
@@ -391,23 +390,23 @@
             // 
             // lblInstructorUserNameMA
             // 
-            lblInstructorUserNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstructorUserNameMA.Font = new Font("Microsoft YaHei UI", 10F);
             lblInstructorUserNameMA.IsDerivedStyle = true;
-            lblInstructorUserNameMA.Location = new Point(52, 171);
+            lblInstructorUserNameMA.Location = new Point(52, 167);
             lblInstructorUserNameMA.Name = "lblInstructorUserNameMA";
             lblInstructorUserNameMA.Size = new Size(125, 29);
             lblInstructorUserNameMA.Style = MetroSet_UI.Enums.Style.Light;
             lblInstructorUserNameMA.StyleManager = null;
             lblInstructorUserNameMA.TabIndex = 2;
-            lblInstructorUserNameMA.Text = "UserName";
+            lblInstructorUserNameMA.Text = "Username";
             lblInstructorUserNameMA.ThemeAuthor = "Narwin";
             lblInstructorUserNameMA.ThemeName = "MetroLite";
             // 
             // lblInstrutorNameMA
             // 
-            lblInstrutorNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblInstrutorNameMA.Font = new Font("Microsoft YaHei UI", 10F);
             lblInstrutorNameMA.IsDerivedStyle = true;
-            lblInstrutorNameMA.Location = new Point(52, 101);
+            lblInstrutorNameMA.Location = new Point(52, 100);
             lblInstrutorNameMA.Name = "lblInstrutorNameMA";
             lblInstrutorNameMA.Size = new Size(125, 29);
             lblInstrutorNameMA.Style = MetroSet_UI.Enums.Style.Light;
@@ -419,7 +418,7 @@
             // 
             // labInstIDMA
             // 
-            labInstIDMA.Font = new Font("Microsoft Sans Serif", 10F);
+            labInstIDMA.Font = new Font("Microsoft YaHei UI", 10F);
             labInstIDMA.IsDerivedStyle = true;
             labInstIDMA.Location = new Point(52, 38);
             labInstIDMA.Name = "labInstIDMA";
@@ -487,7 +486,7 @@
             comboboxCoursef.DisabledForeColor = Color.FromArgb(136, 136, 136);
             comboboxCoursef.DrawMode = DrawMode.OwnerDrawFixed;
             comboboxCoursef.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboboxCoursef.Font = new Font("Microsoft Sans Serif", 11F);
+            comboboxCoursef.Font = new Font("Microsoft YaHei UI", 11F);
             comboboxCoursef.FormattingEnabled = true;
             comboboxCoursef.IsDerivedStyle = true;
             comboboxCoursef.ItemHeight = 20;
@@ -548,7 +547,7 @@
             numericTFf.Enabled = false;
             numericTFf.Location = new Point(700, 208);
             numericTFf.Name = "numericTFf";
-            numericTFf.Size = new Size(150, 32);
+            numericTFf.Size = new Size(150, 30);
             numericTFf.TabIndex = 1;
             // 
             // numericMcqf
@@ -556,7 +555,7 @@
             numericMcqf.Location = new Point(700, 135);
             numericMcqf.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericMcqf.Name = "numericMcqf";
-            numericMcqf.Size = new Size(150, 32);
+            numericMcqf.Size = new Size(150, 30);
             numericMcqf.TabIndex = 0;
             numericMcqf.ValueChanged += numericMcq_ValueChanged;
             // 
@@ -602,7 +601,7 @@
             // 
             // hireDatemf
             // 
-            hireDatemf.Font = new Font("Microsoft Sans Serif", 10F);
+            hireDatemf.Font = new Font("Microsoft YaHei UI", 10F);
             hireDatemf.IsDerivedStyle = true;
             hireDatemf.Location = new Point(19, 396);
             hireDatemf.Name = "hireDatemf";
@@ -623,7 +622,7 @@
             numeric2mf.DisabledBackColor = Color.FromArgb(204, 204, 204);
             numeric2mf.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             numeric2mf.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            numeric2mf.Font = new Font("Microsoft Sans Serif", 10F);
+            numeric2mf.Font = new Font("Microsoft YaHei UI", 10F);
             numeric2mf.HoverColor = Color.FromArgb(102, 102, 102);
             numeric2mf.Image = null;
             numeric2mf.IsDerivedStyle = true;
@@ -652,7 +651,7 @@
             numericmf.DisabledBackColor = Color.FromArgb(204, 204, 204);
             numericmf.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             numericmf.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            numericmf.Font = new Font("Microsoft Sans Serif", 10F);
+            numericmf.Font = new Font("Microsoft YaHei UI", 10F);
             numericmf.HoverColor = Color.FromArgb(102, 102, 102);
             numericmf.Image = null;
             numericmf.IsDerivedStyle = true;
@@ -677,7 +676,7 @@
             Save.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
             Save.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
             Save.DisabledForeColor = Color.Gray;
-            Save.Font = new Font("Microsoft Sans Serif", 10F);
+            Save.Font = new Font("Microsoft YaHei UI", 10F);
             Save.HoverBorderColor = Color.FromArgb(95, 207, 255);
             Save.HoverColor = Color.FromArgb(95, 207, 255);
             Save.HoverTextColor = Color.White;
@@ -703,7 +702,7 @@
             // 
             dateTime1.Location = new Point(415, 393);
             dateTime1.Name = "dateTime1";
-            dateTime1.Size = new Size(376, 32);
+            dateTime1.Size = new Size(376, 30);
             dateTime1.TabIndex = 18;
             // 
             // TextBox5mf
@@ -715,7 +714,7 @@
             TextBox5mf.DisabledBackColor = Color.FromArgb(204, 204, 204);
             TextBox5mf.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             TextBox5mf.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            TextBox5mf.Font = new Font("Microsoft Sans Serif", 10F);
+            TextBox5mf.Font = new Font("Microsoft YaHei UI", 10F);
             TextBox5mf.HoverColor = Color.FromArgb(102, 102, 102);
             TextBox5mf.Image = null;
             TextBox5mf.IsDerivedStyle = true;
@@ -744,7 +743,7 @@
             TextBox4mf.DisabledBackColor = Color.FromArgb(204, 204, 204);
             TextBox4mf.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             TextBox4mf.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            TextBox4mf.Font = new Font("Microsoft Sans Serif", 10F);
+            TextBox4mf.Font = new Font("Microsoft YaHei UI", 10F);
             TextBox4mf.HoverColor = Color.FromArgb(102, 102, 102);
             TextBox4mf.Image = null;
             TextBox4mf.IsDerivedStyle = true;
@@ -773,7 +772,7 @@
             TextBox3mf.DisabledBackColor = Color.FromArgb(204, 204, 204);
             TextBox3mf.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             TextBox3mf.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            TextBox3mf.Font = new Font("Microsoft Sans Serif", 10F);
+            TextBox3mf.Font = new Font("Microsoft YaHei UI", 10F);
             TextBox3mf.HoverColor = Color.FromArgb(102, 102, 102);
             TextBox3mf.Image = null;
             TextBox3mf.IsDerivedStyle = true;
@@ -795,7 +794,7 @@
             // 
             // Label12mf
             // 
-            Label12mf.Font = new Font("Microsoft Sans Serif", 10F);
+            Label12mf.Font = new Font("Microsoft YaHei UI", 10F);
             Label12mf.IsDerivedStyle = true;
             Label12mf.Location = new Point(19, 341);
             Label12mf.Name = "Label12mf";
@@ -809,7 +808,7 @@
             // 
             // Label11mf
             // 
-            Label11mf.Font = new Font("Microsoft Sans Serif", 10F);
+            Label11mf.Font = new Font("Microsoft YaHei UI", 10F);
             Label11mf.IsDerivedStyle = true;
             Label11mf.Location = new Point(19, 290);
             Label11mf.Name = "Label11mf";
@@ -823,7 +822,7 @@
             // 
             // label10mf
             // 
-            label10mf.Font = new Font("Microsoft Sans Serif", 10F);
+            label10mf.Font = new Font("Microsoft YaHei UI", 10F);
             label10mf.IsDerivedStyle = true;
             label10mf.Location = new Point(19, 224);
             label10mf.Name = "label10mf";
@@ -837,7 +836,7 @@
             // 
             // Label9mf
             // 
-            Label9mf.Font = new Font("Microsoft Sans Serif", 10F);
+            Label9mf.Font = new Font("Microsoft YaHei UI", 10F);
             Label9mf.IsDerivedStyle = true;
             Label9mf.Location = new Point(19, 160);
             Label9mf.Name = "Label9mf";
@@ -851,7 +850,7 @@
             // 
             // Label8mf
             // 
-            Label8mf.Font = new Font("Microsoft Sans Serif", 10F);
+            Label8mf.Font = new Font("Microsoft YaHei UI", 10F);
             Label8mf.IsDerivedStyle = true;
             Label8mf.Location = new Point(19, 94);
             Label8mf.Name = "Label8mf";
@@ -913,7 +912,7 @@
             IComboBoxCourses.FormattingEnabled = true;
             IComboBoxCourses.Location = new Point(30, 225);
             IComboBoxCourses.Name = "IComboBoxCourses";
-            IComboBoxCourses.Size = new Size(121, 34);
+            IComboBoxCourses.Size = new Size(121, 31);
             IComboBoxCourses.TabIndex = 31;
             // 
             // DifficultyGroupBox
@@ -935,7 +934,7 @@
             IQuestionDifficultyHard.CheckSignColor = Color.FromArgb(65, 177, 225);
             IQuestionDifficultyHard.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IQuestionDifficultyHard.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IQuestionDifficultyHard.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionDifficultyHard.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionDifficultyHard.Group = 0;
             IQuestionDifficultyHard.IsDerivedStyle = true;
             IQuestionDifficultyHard.Location = new Point(11, 137);
@@ -956,7 +955,7 @@
             IQuestionDifficultyMedium.CheckSignColor = Color.FromArgb(65, 177, 225);
             IQuestionDifficultyMedium.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IQuestionDifficultyMedium.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IQuestionDifficultyMedium.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionDifficultyMedium.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionDifficultyMedium.Group = 0;
             IQuestionDifficultyMedium.IsDerivedStyle = true;
             IQuestionDifficultyMedium.Location = new Point(11, 87);
@@ -977,7 +976,7 @@
             IQuestionDifficultyEasy.CheckSignColor = Color.FromArgb(65, 177, 225);
             IQuestionDifficultyEasy.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IQuestionDifficultyEasy.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IQuestionDifficultyEasy.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionDifficultyEasy.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionDifficultyEasy.Group = 0;
             IQuestionDifficultyEasy.IsDerivedStyle = true;
             IQuestionDifficultyEasy.Location = new Point(11, 37);
@@ -992,7 +991,7 @@
             // 
             // metroSetLabel2
             // 
-            metroSetLabel2.Font = new Font("Microsoft Sans Serif", 10F);
+            metroSetLabel2.Font = new Font("Microsoft YaHei UI", 10F);
             metroSetLabel2.IsDerivedStyle = true;
             metroSetLabel2.Location = new Point(192, 173);
             metroSetLabel2.Name = "metroSetLabel2";
@@ -1006,7 +1005,7 @@
             // 
             // ILabel10
             // 
-            ILabel10.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel10.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel10.IsDerivedStyle = true;
             ILabel10.Location = new Point(390, 112);
             ILabel10.Name = "ILabel10";
@@ -1036,7 +1035,7 @@
             IModelAnswerT.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerT.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerT.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerT.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerT.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerT.Group = 0;
             IModelAnswerT.ImeMode = ImeMode.NoControl;
             IModelAnswerT.IsDerivedStyle = true;
@@ -1058,7 +1057,7 @@
             IModelAnswerF.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerF.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerF.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerF.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerF.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerF.Group = 0;
             IModelAnswerF.ImeMode = ImeMode.NoControl;
             IModelAnswerF.IsDerivedStyle = true;
@@ -1074,7 +1073,7 @@
             // 
             // ILabel9
             // 
-            ILabel9.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel9.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel9.IsDerivedStyle = true;
             ILabel9.Location = new Point(883, 98);
             ILabel9.Name = "ILabel9";
@@ -1106,7 +1105,7 @@
             IModelAnswerA.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerA.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerA.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerA.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerA.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerA.Group = 0;
             IModelAnswerA.ImeMode = ImeMode.NoControl;
             IModelAnswerA.IsDerivedStyle = true;
@@ -1128,7 +1127,7 @@
             IModelAnswerB.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerB.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerB.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerB.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerB.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerB.Group = 0;
             IModelAnswerB.ImeMode = ImeMode.NoControl;
             IModelAnswerB.IsDerivedStyle = true;
@@ -1150,7 +1149,7 @@
             IModelAnswerC.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerC.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerC.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerC.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerC.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerC.Group = 0;
             IModelAnswerC.ImeMode = ImeMode.NoControl;
             IModelAnswerC.IsDerivedStyle = true;
@@ -1172,7 +1171,7 @@
             IModelAnswerD.CheckSignColor = Color.FromArgb(65, 177, 225);
             IModelAnswerD.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IModelAnswerD.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IModelAnswerD.Font = new Font("Microsoft Sans Serif", 10F);
+            IModelAnswerD.Font = new Font("Microsoft YaHei UI", 10F);
             IModelAnswerD.Group = 0;
             IModelAnswerD.ImeMode = ImeMode.NoControl;
             IModelAnswerD.IsDerivedStyle = true;
@@ -1188,7 +1187,7 @@
             // 
             // ILabel0
             // 
-            ILabel0.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel0.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel0.IsDerivedStyle = true;
             ILabel0.Location = new Point(30, 33);
             ILabel0.Name = "ILabel0";
@@ -1218,7 +1217,7 @@
             ITFRadio.CheckSignColor = Color.FromArgb(65, 177, 225);
             ITFRadio.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             ITFRadio.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            ITFRadio.Font = new Font("Microsoft Sans Serif", 10F);
+            ITFRadio.Font = new Font("Microsoft YaHei UI", 10F);
             ITFRadio.Group = 0;
             ITFRadio.ImeMode = ImeMode.NoControl;
             ITFRadio.IsDerivedStyle = true;
@@ -1241,7 +1240,7 @@
             IMCQ.CheckSignColor = Color.FromArgb(65, 177, 225);
             IMCQ.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
             IMCQ.DisabledBorderColor = Color.FromArgb(205, 205, 205);
-            IMCQ.Font = new Font("Microsoft Sans Serif", 10F);
+            IMCQ.Font = new Font("Microsoft YaHei UI", 10F);
             IMCQ.Group = 0;
             IMCQ.ImeMode = ImeMode.NoControl;
             IMCQ.IsDerivedStyle = true;
@@ -1258,7 +1257,7 @@
             // 
             // ILabel4
             // 
-            ILabel4.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel4.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel4.IsDerivedStyle = true;
             ILabel4.Location = new Point(37, 173);
             ILabel4.Name = "ILabel4";
@@ -1272,7 +1271,7 @@
             // 
             // ILabel3
             // 
-            ILabel3.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel3.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel3.IsDerivedStyle = true;
             ILabel3.Location = new Point(390, 40);
             ILabel3.Name = "ILabel3";
@@ -1293,7 +1292,7 @@
             IQuestionGrade.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionGrade.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionGrade.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionGrade.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionGrade.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionGrade.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionGrade.Image = null;
             IQuestionGrade.IsDerivedStyle = true;
@@ -1315,7 +1314,7 @@
             // 
             // ILabel2
             // 
-            ILabel2.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel2.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel2.IsDerivedStyle = true;
             ILabel2.Location = new Point(192, 33);
             ILabel2.Name = "ILabel2";
@@ -1336,7 +1335,7 @@
             IQuestionHead.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionHead.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionHead.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionHead.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionHead.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionHead.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionHead.Image = null;
             IQuestionHead.IsDerivedStyle = true;
@@ -1365,7 +1364,7 @@
             IQuestionAnswerB.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionAnswerB.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionAnswerB.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionAnswerB.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionAnswerB.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionAnswerB.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionAnswerB.Image = null;
             IQuestionAnswerB.IsDerivedStyle = true;
@@ -1394,7 +1393,7 @@
             IQuestionAnswerC.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionAnswerC.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionAnswerC.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionAnswerC.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionAnswerC.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionAnswerC.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionAnswerC.Image = null;
             IQuestionAnswerC.IsDerivedStyle = true;
@@ -1423,7 +1422,7 @@
             IQuestionAnswerD.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionAnswerD.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionAnswerD.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionAnswerD.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionAnswerD.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionAnswerD.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionAnswerD.Image = null;
             IQuestionAnswerD.IsDerivedStyle = true;
@@ -1452,7 +1451,7 @@
             IQuestionAnswerA.DisabledBackColor = Color.FromArgb(204, 204, 204);
             IQuestionAnswerA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
             IQuestionAnswerA.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            IQuestionAnswerA.Font = new Font("Microsoft Sans Serif", 10F);
+            IQuestionAnswerA.Font = new Font("Microsoft YaHei UI", 10F);
             IQuestionAnswerA.HoverColor = Color.FromArgb(102, 102, 102);
             IQuestionAnswerA.Image = null;
             IQuestionAnswerA.IsDerivedStyle = true;
@@ -1474,7 +1473,7 @@
             // 
             // ILabel7
             // 
-            ILabel7.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel7.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel7.IsDerivedStyle = true;
             ILabel7.Location = new Point(390, 302);
             ILabel7.Name = "ILabel7";
@@ -1488,7 +1487,7 @@
             // 
             // ILabel8
             // 
-            ILabel8.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel8.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel8.IsDerivedStyle = true;
             ILabel8.Location = new Point(390, 366);
             ILabel8.Name = "ILabel8";
@@ -1502,7 +1501,7 @@
             // 
             // ILabel6
             // 
-            ILabel6.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel6.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel6.IsDerivedStyle = true;
             ILabel6.Location = new Point(390, 236);
             ILabel6.Name = "ILabel6";
@@ -1516,7 +1515,7 @@
             // 
             // ILabel5
             // 
-            ILabel5.Font = new Font("Microsoft Sans Serif", 10F);
+            ILabel5.Font = new Font("Microsoft YaHei UI", 10F);
             ILabel5.IsDerivedStyle = true;
             ILabel5.Location = new Point(390, 169);
             ILabel5.Name = "ILabel5";
@@ -1533,7 +1532,7 @@
             metroSetButton1.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
             metroSetButton1.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
             metroSetButton1.DisabledForeColor = Color.Gray;
-            metroSetButton1.Font = new Font("Microsoft Sans Serif", 10F);
+            metroSetButton1.Font = new Font("Microsoft YaHei UI", 10F);
             metroSetButton1.HoverBorderColor = Color.FromArgb(95, 207, 255);
             metroSetButton1.HoverColor = Color.FromArgb(95, 207, 255);
             metroSetButton1.HoverTextColor = Color.White;
@@ -1555,20 +1554,6 @@
             metroSetButton1.ThemeName = "MetroLite";
             metroSetButton1.Click += metroSetButton1_Click;
             // 
-            // metroSetLabel1
-            // 
-            metroSetLabel1.Font = new Font("Microsoft YaHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            metroSetLabel1.IsDerivedStyle = true;
-            metroSetLabel1.Location = new Point(15, 22);
-            metroSetLabel1.Name = "metroSetLabel1";
-            metroSetLabel1.Size = new Size(317, 29);
-            metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
-            metroSetLabel1.StyleManager = null;
-            metroSetLabel1.TabIndex = 1;
-            metroSetLabel1.Text = "Instructor's Control Panel";
-            metroSetLabel1.ThemeAuthor = "Narwin";
-            metroSetLabel1.ThemeName = "MetroLite";
-            // 
             // metroSetControlBox1
             // 
             metroSetControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -1577,7 +1562,7 @@
             metroSetControlBox1.CloseNormalForeColor = Color.Gray;
             metroSetControlBox1.DisabledForeColor = Color.DimGray;
             metroSetControlBox1.IsDerivedStyle = true;
-            metroSetControlBox1.Location = new Point(1153, 6);
+            metroSetControlBox1.Location = new Point(1168, 0);
             metroSetControlBox1.MaximizeBox = true;
             metroSetControlBox1.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             metroSetControlBox1.MaximizeHoverForeColor = Color.Gray;
@@ -1597,15 +1582,17 @@
             // 
             // InstructorForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 26F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1268, 708);
             Controls.Add(metroSetControlBox1);
-            Controls.Add(metroSetLabel1);
             Controls.Add(metroSetTabControl1);
+            Font = new Font("Microsoft YaHei UI", 13F);
             Name = "InstructorForm";
+            ShowLeftRect = false;
             SmallLineColor1 = Color.FromArgb(0, 0, 0, 1);
             SmallLineColor2 = Color.FromArgb(0, 0, 0, 1);
+            Text = "Instructor's Control Panel";
+            TextColor = Color.Black;
             Load += InstructorForm_Load;
             metroSetTabControl1.ResumeLayout(false);
             tabPage0.ResumeLayout(false);
@@ -1626,7 +1613,6 @@
         #endregion
 
         private MetroSet_UI.Controls.MetroSetTabControl metroSetTabControl1;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private TabPage tabPage0;
         private TabPage tabPage2;
         private TabPage tabPage3;
