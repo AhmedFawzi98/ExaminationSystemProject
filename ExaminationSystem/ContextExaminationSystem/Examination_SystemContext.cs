@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using ExaminationSystem.EntitiesExaminationSystem;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,7 +39,7 @@ public partial class Examination_SystemContext : DbContext
     public virtual DbSet<Topic> Topics { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        => optionsBuilder.UseSqlServer("Data Source=26.82.203.83;Initial Catalog=Examination_System;Persist Security Info=True;User ID=ahmedfawzi;Password=1234;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

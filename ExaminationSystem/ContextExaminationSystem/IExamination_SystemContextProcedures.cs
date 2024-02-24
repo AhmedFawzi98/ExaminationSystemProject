@@ -22,7 +22,7 @@ namespace ExaminationSystem.ContextExaminationSystem
         Task<int> SP_Delete_StudentAsync(int? id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_Delete_Student_CourseAsync(int? St_ID, int? Cr_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_DELETE_Student_Exam_QuestionsAsync(int? st_id, int? exam_id, int? q_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<int> SP_DeleteFrom_ExamAsync(int? TopicID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> SP_DeleteFrom_ExamAsync(int? examID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_DeleteFrom_Exam_QuestionsAsync(int? examID, int? QuestionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> SP_Generate_ExamAsync(string Course_Name, int? Mcq, int? TF, OutputParameter<int?> Generated_Exam_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<SP_Get_Questions_and_Choices_By_ExamIDResult>> SP_Get_Questions_and_Choices_By_ExamIDAsync(int? ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

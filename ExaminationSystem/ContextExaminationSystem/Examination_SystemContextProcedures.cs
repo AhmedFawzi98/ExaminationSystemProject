@@ -348,7 +348,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_DeleteFrom_ExamAsync(int? TopicID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_DeleteFrom_ExamAsync(int? examID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -361,13 +361,13 @@ namespace ExaminationSystem.ContextExaminationSystem
             {
                 new SqlParameter
                 {
-                    ParameterName = "TopicID",
-                    Value = TopicID ?? Convert.DBNull,
+                    ParameterName = "examID",
+                    Value = examID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_DeleteFrom_Exam] @TopicID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_DeleteFrom_Exam] @examID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
