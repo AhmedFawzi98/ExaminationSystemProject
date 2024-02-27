@@ -33,7 +33,7 @@ public partial class LoginForm : MetroSetForm
         else if (loginResult.AccountType.Equals("s"))
         {
             this.Hide();
-            Student currentStudent = _examination_SystemContext.Students.Include(S=>S.Dept).FirstOrDefault(S => S.Username == username);
+            Student currentStudent = _examination_SystemContext.Students.Include(S=>S.Dept).Include(S=>S.StudentCourses).ThenInclude(sc=>sc.Cr).FirstOrDefault(S => S.Username == username);
             StudentForm studentForm = new StudentForm(_logger, _examination_SystemContext, _spContext, currentStudent);
             studentForm.FormClosed += (sender, e) => this.Close();
             studentForm.Show();

@@ -1,4 +1,7 @@
-﻿namespace ExaminationSystem.UI
+﻿
+using System.Windows.Forms;
+
+namespace ExaminationSystem.UI
 {
     partial class StudentForm
     {
@@ -52,30 +55,36 @@
             StNamem = new MetroSet_UI.Controls.MetroSetLabel();
             StuIDm = new MetroSet_UI.Controls.MetroSetLabel();
             tabPage2 = new TabPage();
+            btnTakeExamMA = new MetroSet_UI.Controls.MetroSetButton();
+            comboCrsNameMA = new MetroSet_UI.Controls.MetroSetComboBox();
+            lblCourseNameMA = new MetroSet_UI.Controls.MetroSetLabel();
             tabPage3 = new TabPage();
             studentGradesGridViewm = new DataGridView();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             StudentTabControlm.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).BeginInit();
             SuspendLayout();
             // 
             // StudentTabControlm
             // 
+            StudentTabControlm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             StudentTabControlm.AnimateEasingType = MetroSet_UI.Enums.EasingType.CubeOut;
             StudentTabControlm.AnimateTime = 200;
             StudentTabControlm.BackgroundColor = Color.White;
             StudentTabControlm.Controls.Add(tabPage1);
             StudentTabControlm.Controls.Add(tabPage2);
             StudentTabControlm.Controls.Add(tabPage3);
-            StudentTabControlm.IsDerivedStyle = true;
+            StudentTabControlm.DrawMode = TabDrawMode.OwnerDrawFixed;
+            StudentTabControlm.IsDerivedStyle = false;
             StudentTabControlm.ItemSize = new Size(100, 38);
             StudentTabControlm.Location = new Point(15, 38);
             StudentTabControlm.Name = "StudentTabControlm";
             StudentTabControlm.SelectedIndex = 0;
-            StudentTabControlm.SelectedTextColor = Color.White;
-            StudentTabControlm.Size = new Size(1211, 737);
+            StudentTabControlm.SelectedTextColor = Color.Black;
+            StudentTabControlm.Size = new Size(970, 552);
             StudentTabControlm.SizeMode = TabSizeMode.Fixed;
             StudentTabControlm.Speed = 100;
             StudentTabControlm.Style = MetroSet_UI.Enums.Style.Light;
@@ -112,7 +121,7 @@
             tabPage1.Controls.Add(StuIDm);
             tabPage1.Location = new Point(4, 42);
             tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1203, 691);
+            tabPage1.Size = new Size(962, 506);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Profile";
             // 
@@ -122,26 +131,26 @@
             SaveBtnm.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
             SaveBtnm.DisabledForeColor = Color.Gray;
             SaveBtnm.Font = new Font("Microsoft Sans Serif", 10F);
-            SaveBtnm.HoverBorderColor = Color.FromArgb(95, 207, 255);
-            SaveBtnm.HoverColor = Color.FromArgb(95, 207, 255);
+            SaveBtnm.HoverBorderColor = Color.DarkGray;
+            SaveBtnm.HoverColor = Color.Black;
             SaveBtnm.HoverTextColor = Color.White;
             SaveBtnm.IsDerivedStyle = false;
-            SaveBtnm.Location = new Point(1071, 631);
+            SaveBtnm.Location = new Point(830, 445);
             SaveBtnm.Margin = new Padding(10, 12, 10, 12);
             SaveBtnm.Name = "SaveBtnm";
-            SaveBtnm.NormalBorderColor = Color.FromArgb(65, 177, 225);
-            SaveBtnm.NormalColor = Color.Black;
-            SaveBtnm.NormalTextColor = Color.White;
-            SaveBtnm.PressBorderColor = Color.FromArgb(35, 147, 195);
-            SaveBtnm.PressColor = Color.FromArgb(35, 147, 195);
+            SaveBtnm.NormalBorderColor = Color.Black;
+            SaveBtnm.NormalColor = Color.Transparent;
+            SaveBtnm.NormalTextColor = Color.Black;
+            SaveBtnm.PressBorderColor = Color.Black;
+            SaveBtnm.PressColor = Color.Black;
             SaveBtnm.PressTextColor = Color.White;
             SaveBtnm.Size = new Size(122, 49);
             SaveBtnm.Style = MetroSet_UI.Enums.Style.Light;
             SaveBtnm.StyleManager = null;
             SaveBtnm.TabIndex = 21;
             SaveBtnm.Text = "Save";
-            SaveBtnm.ThemeAuthor = "moazSamy";
-            SaveBtnm.ThemeName = "Custom";
+            SaveBtnm.ThemeAuthor = "Narwin";
+            SaveBtnm.ThemeName = "MetroLight";
             SaveBtnm.Click += SaveBtnm_Click;
             // 
             // ZipTxtBoxm
@@ -169,7 +178,7 @@
             ZipTxtBoxm.TabIndex = 20;
             ZipTxtBoxm.TextAlign = HorizontalAlignment.Center;
             ZipTxtBoxm.ThemeAuthor = "Narwin";
-            ZipTxtBoxm.ThemeName = "MetroLite";
+            ZipTxtBoxm.ThemeName = "MetroLight";
             ZipTxtBoxm.UseSystemPasswordChar = false;
             ZipTxtBoxm.WatermarkText = "";
             // 
@@ -198,7 +207,7 @@
             StTxtBoxm.TabIndex = 19;
             StTxtBoxm.TextAlign = HorizontalAlignment.Center;
             StTxtBoxm.ThemeAuthor = "Narwin";
-            StTxtBoxm.ThemeName = "MetroLite";
+            StTxtBoxm.ThemeName = "MetroLight";
             StTxtBoxm.UseSystemPasswordChar = false;
             StTxtBoxm.WatermarkText = "";
             // 
@@ -227,7 +236,7 @@
             CityTxtBoxm.TabIndex = 18;
             CityTxtBoxm.TextAlign = HorizontalAlignment.Center;
             CityTxtBoxm.ThemeAuthor = "Narwin";
-            CityTxtBoxm.ThemeName = "MetroLite";
+            CityTxtBoxm.ThemeName = "MetroLight";
             CityTxtBoxm.UseSystemPasswordChar = false;
             CityTxtBoxm.WatermarkText = "";
             // 
@@ -245,18 +254,18 @@
             DeptTxtBoxm.Image = null;
             DeptTxtBoxm.IsDerivedStyle = true;
             DeptTxtBoxm.Lines = null;
-            DeptTxtBoxm.Location = new Point(198, 509);
+            DeptTxtBoxm.Location = new Point(641, 347);
             DeptTxtBoxm.MaxLength = 32767;
             DeptTxtBoxm.Multiline = false;
             DeptTxtBoxm.Name = "DeptTxtBoxm";
             DeptTxtBoxm.ReadOnly = true;
-            DeptTxtBoxm.Size = new Size(208, 34);
+            DeptTxtBoxm.Size = new Size(135, 34);
             DeptTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             DeptTxtBoxm.StyleManager = null;
             DeptTxtBoxm.TabIndex = 17;
             DeptTxtBoxm.TextAlign = HorizontalAlignment.Center;
             DeptTxtBoxm.ThemeAuthor = "Narwin";
-            DeptTxtBoxm.ThemeName = "MetroLite";
+            DeptTxtBoxm.ThemeName = "MetroLight";
             DeptTxtBoxm.UseSystemPasswordChar = false;
             DeptTxtBoxm.WatermarkText = "";
             // 
@@ -274,7 +283,7 @@
             UsernameTxtBoxm.Image = null;
             UsernameTxtBoxm.IsDerivedStyle = true;
             UsernameTxtBoxm.Lines = null;
-            UsernameTxtBoxm.Location = new Point(198, 429);
+            UsernameTxtBoxm.Location = new Point(198, 347);
             UsernameTxtBoxm.MaxLength = 32767;
             UsernameTxtBoxm.Multiline = false;
             UsernameTxtBoxm.Name = "UsernameTxtBoxm";
@@ -285,7 +294,7 @@
             UsernameTxtBoxm.TabIndex = 16;
             UsernameTxtBoxm.TextAlign = HorizontalAlignment.Center;
             UsernameTxtBoxm.ThemeAuthor = "Narwin";
-            UsernameTxtBoxm.ThemeName = "MetroLite";
+            UsernameTxtBoxm.ThemeName = "MetroLight";
             UsernameTxtBoxm.UseSystemPasswordChar = false;
             UsernameTxtBoxm.WatermarkText = "";
             // 
@@ -303,7 +312,7 @@
             EmailTxtBoxm.Image = null;
             EmailTxtBoxm.IsDerivedStyle = true;
             EmailTxtBoxm.Lines = null;
-            EmailTxtBoxm.Location = new Point(198, 348);
+            EmailTxtBoxm.Location = new Point(198, 267);
             EmailTxtBoxm.MaxLength = 32767;
             EmailTxtBoxm.Multiline = false;
             EmailTxtBoxm.Name = "EmailTxtBoxm";
@@ -314,7 +323,7 @@
             EmailTxtBoxm.TabIndex = 15;
             EmailTxtBoxm.TextAlign = HorizontalAlignment.Center;
             EmailTxtBoxm.ThemeAuthor = "Narwin";
-            EmailTxtBoxm.ThemeName = "MetroLite";
+            EmailTxtBoxm.ThemeName = "MetroLight";
             EmailTxtBoxm.UseSystemPasswordChar = false;
             EmailTxtBoxm.WatermarkText = "";
             // 
@@ -332,18 +341,18 @@
             AgeTxtBoxm.Image = null;
             AgeTxtBoxm.IsDerivedStyle = true;
             AgeTxtBoxm.Lines = null;
-            AgeTxtBoxm.Location = new Point(198, 268);
+            AgeTxtBoxm.Location = new Point(641, 267);
             AgeTxtBoxm.MaxLength = 32767;
             AgeTxtBoxm.Multiline = false;
             AgeTxtBoxm.Name = "AgeTxtBoxm";
             AgeTxtBoxm.ReadOnly = false;
-            AgeTxtBoxm.Size = new Size(208, 34);
+            AgeTxtBoxm.Size = new Size(135, 34);
             AgeTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
             AgeTxtBoxm.StyleManager = null;
             AgeTxtBoxm.TabIndex = 14;
             AgeTxtBoxm.TextAlign = HorizontalAlignment.Center;
             AgeTxtBoxm.ThemeAuthor = "Narwin";
-            AgeTxtBoxm.ThemeName = "MetroLite";
+            AgeTxtBoxm.ThemeName = "MetroLight";
             AgeTxtBoxm.UseSystemPasswordChar = false;
             AgeTxtBoxm.WatermarkText = "";
             // 
@@ -372,7 +381,7 @@
             PhoneTxtBoxm.TabIndex = 13;
             PhoneTxtBoxm.TextAlign = HorizontalAlignment.Center;
             PhoneTxtBoxm.ThemeAuthor = "Narwin";
-            PhoneTxtBoxm.ThemeName = "MetroLite";
+            PhoneTxtBoxm.ThemeName = "MetroLight";
             PhoneTxtBoxm.UseSystemPasswordChar = false;
             PhoneTxtBoxm.WatermarkText = "";
             // 
@@ -381,12 +390,12 @@
             NameTxtBoxm.AutoCompleteCustomSource = null;
             NameTxtBoxm.AutoCompleteMode = AutoCompleteMode.None;
             NameTxtBoxm.AutoCompleteSource = AutoCompleteSource.None;
-            NameTxtBoxm.BorderColor = Color.FromArgb(110, 110, 110);
-            NameTxtBoxm.DisabledBackColor = Color.FromArgb(80, 80, 80);
-            NameTxtBoxm.DisabledBorderColor = Color.FromArgb(109, 109, 109);
-            NameTxtBoxm.DisabledForeColor = Color.FromArgb(109, 109, 109);
+            NameTxtBoxm.BorderColor = Color.FromArgb(155, 155, 155);
+            NameTxtBoxm.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            NameTxtBoxm.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            NameTxtBoxm.DisabledForeColor = Color.FromArgb(136, 136, 136);
             NameTxtBoxm.Font = new Font("Microsoft Sans Serif", 10F);
-            NameTxtBoxm.HoverColor = Color.FromArgb(65, 177, 225);
+            NameTxtBoxm.HoverColor = Color.FromArgb(102, 102, 102);
             NameTxtBoxm.Image = null;
             NameTxtBoxm.IsDerivedStyle = true;
             NameTxtBoxm.Lines = null;
@@ -400,8 +409,8 @@
             NameTxtBoxm.StyleManager = null;
             NameTxtBoxm.TabIndex = 12;
             NameTxtBoxm.TextAlign = HorizontalAlignment.Center;
-            NameTxtBoxm.ThemeAuthor = "";
-            NameTxtBoxm.ThemeName = "";
+            NameTxtBoxm.ThemeAuthor = "Narwin";
+            NameTxtBoxm.ThemeName = "MetroLite";
             NameTxtBoxm.UseSystemPasswordChar = false;
             NameTxtBoxm.WatermarkText = "";
             // 
@@ -417,7 +426,7 @@
             IDTxtBoxm.Font = new Font("Microsoft Sans Serif", 10F);
             IDTxtBoxm.HoverColor = Color.FromArgb(102, 102, 102);
             IDTxtBoxm.Image = null;
-            IDTxtBoxm.IsDerivedStyle = true;
+            IDTxtBoxm.IsDerivedStyle = false;
             IDTxtBoxm.Lines = null;
             IDTxtBoxm.Location = new Point(198, 26);
             IDTxtBoxm.MaxLength = 32767;
@@ -425,12 +434,12 @@
             IDTxtBoxm.Name = "IDTxtBoxm";
             IDTxtBoxm.ReadOnly = true;
             IDTxtBoxm.Size = new Size(208, 34);
-            IDTxtBoxm.Style = MetroSet_UI.Enums.Style.Light;
+            IDTxtBoxm.Style = MetroSet_UI.Enums.Style.Custom;
             IDTxtBoxm.StyleManager = null;
             IDTxtBoxm.TabIndex = 11;
             IDTxtBoxm.TextAlign = HorizontalAlignment.Center;
             IDTxtBoxm.ThemeAuthor = "Narwin";
-            IDTxtBoxm.ThemeName = "Custom";
+            IDTxtBoxm.ThemeName = "";
             IDTxtBoxm.UseSystemPasswordChar = false;
             IDTxtBoxm.WatermarkText = "";
             // 
@@ -438,7 +447,7 @@
             // 
             Usernamem.Font = new Font("Microsoft YaHei UI", 10F);
             Usernamem.IsDerivedStyle = true;
-            Usernamem.Location = new Point(42, 429);
+            Usernamem.Location = new Point(42, 347);
             Usernamem.Margin = new Padding(20, 23, 20, 23);
             Usernamem.Name = "Usernamem";
             Usernamem.Size = new Size(108, 34);
@@ -447,13 +456,13 @@
             Usernamem.TabIndex = 9;
             Usernamem.Text = "Username";
             Usernamem.ThemeAuthor = "Narwin";
-            Usernamem.ThemeName = "MetroLite";
+            Usernamem.ThemeName = "MetroLight";
             // 
             // StEmailm
             // 
             StEmailm.Font = new Font("Microsoft YaHei UI", 10F);
             StEmailm.IsDerivedStyle = true;
-            StEmailm.Location = new Point(42, 348);
+            StEmailm.Location = new Point(42, 267);
             StEmailm.Margin = new Padding(20, 23, 20, 23);
             StEmailm.Name = "StEmailm";
             StEmailm.Size = new Size(100, 34);
@@ -462,7 +471,7 @@
             StEmailm.TabIndex = 8;
             StEmailm.Text = "Email";
             StEmailm.ThemeAuthor = "Narwin";
-            StEmailm.ThemeName = "MetroLite";
+            StEmailm.ThemeName = "MetroLight";
             // 
             // StZipCodem
             // 
@@ -477,13 +486,13 @@
             StZipCodem.TabIndex = 7;
             StZipCodem.Text = "Zip Code";
             StZipCodem.ThemeAuthor = "Narwin";
-            StZipCodem.ThemeName = "MetroLite";
+            StZipCodem.ThemeName = "MetroLight";
             // 
             // Deptm
             // 
             Deptm.Font = new Font("Microsoft YaHei UI", 10F);
             Deptm.IsDerivedStyle = true;
-            Deptm.Location = new Point(42, 509);
+            Deptm.Location = new Point(518, 347);
             Deptm.Margin = new Padding(20, 23, 20, 23);
             Deptm.Name = "Deptm";
             Deptm.Size = new Size(133, 34);
@@ -492,7 +501,7 @@
             Deptm.TabIndex = 6;
             Deptm.Text = "Department";
             Deptm.ThemeAuthor = "Narwin";
-            Deptm.ThemeName = "MetroLite";
+            Deptm.ThemeName = "MetroLight";
             // 
             // StCitym
             // 
@@ -507,7 +516,7 @@
             StCitym.TabIndex = 5;
             StCitym.Text = "City";
             StCitym.ThemeAuthor = "Narwin";
-            StCitym.ThemeName = "MetroLite";
+            StCitym.ThemeName = "MetroLight";
             // 
             // StStreetm
             // 
@@ -522,13 +531,13 @@
             StStreetm.TabIndex = 4;
             StStreetm.Text = "Street";
             StStreetm.ThemeAuthor = "Narwin";
-            StStreetm.ThemeName = "MetroLite";
+            StStreetm.ThemeName = "MetroLight";
             // 
             // StAgem
             // 
             StAgem.Font = new Font("Microsoft YaHei UI", 10F);
             StAgem.IsDerivedStyle = true;
-            StAgem.Location = new Point(42, 268);
+            StAgem.Location = new Point(518, 267);
             StAgem.Margin = new Padding(20, 23, 20, 23);
             StAgem.Name = "StAgem";
             StAgem.Size = new Size(100, 34);
@@ -537,7 +546,7 @@
             StAgem.TabIndex = 3;
             StAgem.Text = "Age";
             StAgem.ThemeAuthor = "Narwin";
-            StAgem.ThemeName = "MetroLite";
+            StAgem.ThemeName = "MetroLight";
             // 
             // StPhonem
             // 
@@ -552,7 +561,7 @@
             StPhonem.TabIndex = 2;
             StPhonem.Text = "Phone";
             StPhonem.ThemeAuthor = "Narwin";
-            StPhonem.ThemeName = "MetroLite";
+            StPhonem.ThemeName = "MetroLight";
             // 
             // StNamem
             // 
@@ -567,7 +576,7 @@
             StNamem.TabIndex = 1;
             StNamem.Text = "Name";
             StNamem.ThemeAuthor = "Narwin";
-            StNamem.ThemeName = "MetroLite";
+            StNamem.ThemeName = "MetroLight";
             // 
             // StuIDm
             // 
@@ -582,22 +591,94 @@
             StuIDm.TabIndex = 0;
             StuIDm.Text = "ID";
             StuIDm.ThemeAuthor = "Narwin";
-            StuIDm.ThemeName = "MetroLite";
+            StuIDm.ThemeName = "MetroLight";
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnTakeExamMA);
+            tabPage2.Controls.Add(comboCrsNameMA);
+            tabPage2.Controls.Add(lblCourseNameMA);
             tabPage2.Location = new Point(4, 42);
             tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(1203, 691);
+            tabPage2.Size = new Size(1203, 506);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Take Exam";
+            // 
+            // btnTakeExamMA
+            // 
+            btnTakeExamMA.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnTakeExamMA.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnTakeExamMA.DisabledForeColor = Color.Gray;
+            btnTakeExamMA.Font = new Font("Microsoft Sans Serif", 10F);
+            btnTakeExamMA.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnTakeExamMA.HoverColor = Color.FromArgb(95, 207, 255);
+            btnTakeExamMA.HoverTextColor = Color.White;
+            btnTakeExamMA.IsDerivedStyle = true;
+            btnTakeExamMA.Location = new Point(523, 298);
+            btnTakeExamMA.Name = "btnTakeExamMA";
+            btnTakeExamMA.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnTakeExamMA.NormalColor = Color.FromArgb(65, 177, 225);
+            btnTakeExamMA.NormalTextColor = Color.White;
+            btnTakeExamMA.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnTakeExamMA.PressColor = Color.FromArgb(35, 147, 195);
+            btnTakeExamMA.PressTextColor = Color.White;
+            btnTakeExamMA.Size = new Size(148, 39);
+            btnTakeExamMA.Style = MetroSet_UI.Enums.Style.Light;
+            btnTakeExamMA.StyleManager = null;
+            btnTakeExamMA.TabIndex = 2;
+            btnTakeExamMA.Text = "Take Exam";
+            btnTakeExamMA.ThemeAuthor = "Narwin";
+            btnTakeExamMA.ThemeName = "MetroLite";
+            btnTakeExamMA.Click += btnTakeExamMA_Click;
+            // 
+            // comboCrsNameMA
+            // 
+            comboCrsNameMA.AllowDrop = true;
+            comboCrsNameMA.ArrowColor = Color.FromArgb(150, 150, 150);
+            comboCrsNameMA.BackColor = Color.Transparent;
+            comboCrsNameMA.BackgroundColor = Color.FromArgb(238, 238, 238);
+            comboCrsNameMA.BorderColor = Color.FromArgb(150, 150, 150);
+            comboCrsNameMA.CausesValidation = false;
+            comboCrsNameMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            comboCrsNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            comboCrsNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            comboCrsNameMA.DrawMode = DrawMode.OwnerDrawFixed;
+            comboCrsNameMA.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboCrsNameMA.Font = new Font("Microsoft Sans Serif", 11F);
+            comboCrsNameMA.FormattingEnabled = true;
+            comboCrsNameMA.IsDerivedStyle = true;
+            comboCrsNameMA.ItemHeight = 20;
+            comboCrsNameMA.Location = new Point(643, 148);
+            comboCrsNameMA.Name = "comboCrsNameMA";
+            comboCrsNameMA.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
+            comboCrsNameMA.SelectedItemForeColor = Color.White;
+            comboCrsNameMA.Size = new Size(151, 26);
+            comboCrsNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            comboCrsNameMA.StyleManager = null;
+            comboCrsNameMA.TabIndex = 1;
+            comboCrsNameMA.ThemeAuthor = "Narwin";
+            comboCrsNameMA.ThemeName = "MetroLite";
+            // 
+            // lblCourseNameMA
+            // 
+            lblCourseNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblCourseNameMA.IsDerivedStyle = true;
+            lblCourseNameMA.Location = new Point(458, 148);
+            lblCourseNameMA.Name = "lblCourseNameMA";
+            lblCourseNameMA.Size = new Size(125, 29);
+            lblCourseNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblCourseNameMA.StyleManager = null;
+            lblCourseNameMA.TabIndex = 0;
+            lblCourseNameMA.Text = "Course";
+            lblCourseNameMA.ThemeAuthor = "Narwin";
+            lblCourseNameMA.ThemeName = "MetroLite";
             // 
             // tabPage3
             // 
             tabPage3.Controls.Add(studentGradesGridViewm);
             tabPage3.Location = new Point(4, 42);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1203, 691);
+            tabPage3.Size = new Size(1203, 506);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Grades";
             // 
@@ -609,10 +690,10 @@
             studentGradesGridViewm.CellBorderStyle = DataGridViewCellBorderStyle.None;
             studentGradesGridViewm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentGradesGridViewm.Enabled = false;
-            studentGradesGridViewm.Location = new Point(3, 3);
+            studentGradesGridViewm.Location = new Point(4, 3);
             studentGradesGridViewm.Name = "studentGradesGridViewm";
             studentGradesGridViewm.ReadOnly = true;
-            studentGradesGridViewm.Size = new Size(1197, 685);
+            studentGradesGridViewm.Size = new Size(1196, 500);
             studentGradesGridViewm.TabIndex = 0;
             // 
             // metroSetControlBox1
@@ -623,7 +704,7 @@
             metroSetControlBox1.CloseNormalForeColor = Color.Gray;
             metroSetControlBox1.DisabledForeColor = Color.DimGray;
             metroSetControlBox1.IsDerivedStyle = true;
-            metroSetControlBox1.Location = new Point(1142, 0);
+            metroSetControlBox1.Location = new Point(901, 0);
             metroSetControlBox1.MaximizeBox = true;
             metroSetControlBox1.MaximizeHoverBackColor = Color.FromArgb(238, 238, 238);
             metroSetControlBox1.MaximizeHoverForeColor = Color.Gray;
@@ -639,26 +720,31 @@
             metroSetControlBox1.TabIndex = 2;
             metroSetControlBox1.Text = "metroSetControlBox1";
             metroSetControlBox1.ThemeAuthor = "Narwin";
-            metroSetControlBox1.ThemeName = "MetroLite";
+            metroSetControlBox1.ThemeName = "MetroLight";
             // 
             // StudentForm
             // 
             AllowResize = false;
-            AutoScaleDimensions = new SizeF(10F, 23F);
+            AutoScaleDimensions = new SizeF(13F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1241, 786);
+            AutoSize = true;
+            ClientSize = new Size(1000, 607);
             Controls.Add(metroSetControlBox1);
             Controls.Add(StudentTabControlm);
             Font = new Font("Microsoft YaHei UI", 13F);
+            MaximumSize = new Size(1000, 607);
+            MinimumSize = new Size(1000, 607);
             Name = "StudentForm";
             Padding = new Padding(12, 80, 12, 14);
             ShowLeftRect = false;
             Text = "Student Interface";
             TextColor = Color.Black;
+            ThemeName = "MetroLight";
             FormClosing += StudentForm_FormClosing;
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).EndInit();
             ResumeLayout(false);
@@ -693,5 +779,8 @@
         private MetroSet_UI.Controls.MetroSetButton SaveBtnm;
         private MetroSet_UI.Controls.MetroSetTextBox IDTxtBoxm;
         private DataGridView studentGradesGridViewm;
+        private MetroSet_UI.Controls.MetroSetLabel lblCourseNameMA;
+        private MetroSet_UI.Controls.MetroSetButton btnTakeExamMA;
+        private MetroSet_UI.Controls.MetroSetComboBox comboCrsNameMA;
     }
 }

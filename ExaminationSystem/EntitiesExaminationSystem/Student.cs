@@ -11,6 +11,8 @@ public partial class Student
 
     public string StName { get; set; }
 
+    public string StEmail { get; set; }
+
     public string StPhone { get; set; }
 
     public int? StAge { get; set; }
@@ -23,13 +25,9 @@ public partial class Student
 
     public int? DeptId { get; set; }
 
-    public string StEmail { get; set; }
-
     public string Username { get; set; }
 
     public virtual Department Dept { get; set; }
 
     public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
-
-    public virtual ICollection<StudentExamQuestion> StudentExamQuestions { get; set; } = new List<StudentExamQuestion>();
 }
