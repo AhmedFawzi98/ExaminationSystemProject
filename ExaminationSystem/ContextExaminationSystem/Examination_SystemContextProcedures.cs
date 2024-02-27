@@ -40,7 +40,6 @@ namespace ExaminationSystem.ContextExaminationSystem
             modelBuilder.Entity<SP_Get_Topics_By_CourseIDResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_GetCourseName_and_NumberOFStudentsPerCourse_By_InstructorIDResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_Grade_ExamResult>().HasNoKey().ToView(null);
-            modelBuilder.Entity<SP_InsertInto_ExamResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<SP_SelectAllInstructorStudentCoursesResult>().HasNoKey().ToView(null);
         }
     }
@@ -54,7 +53,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             _context = context;
         }
 
-        public virtual async Task<int> SP_Assign_Student_ExamAsync(OutputParameter<int?> ExamId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_Assign_Student_ExamAsync(int? CrID, OutputParameter<int?> ExamId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterExamId = new SqlParameter
             {
@@ -72,10 +71,16 @@ namespace ExaminationSystem.ContextExaminationSystem
 
             var sqlParameters = new []
             {
+                new SqlParameter
+                {
+                    ParameterName = "CrID",
+                    Value = CrID ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
                 parameterExamId,
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Assign_Student_Exam] @ExamId OUTPUT", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Assign_Student_Exam] @CrID, @ExamId OUTPUT", sqlParameters, cancellationToken);
 
             ExamId.SetValue(parameterExamId.Value);
             returnValue?.SetValue(parameterreturnValue.Value);
@@ -348,7 +353,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_DeleteFrom_ExamAsync(int? examID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_DeleteFrom_ExamAsync(int? TopicID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -361,13 +366,13 @@ namespace ExaminationSystem.ContextExaminationSystem
             {
                 new SqlParameter
                 {
-                    ParameterName = "examID",
-                    Value = examID ?? Convert.DBNull,
+                    ParameterName = "TopicID",
+                    Value = TopicID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_DeleteFrom_Exam] @examID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_DeleteFrom_Exam] @TopicID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -590,8 +595,16 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<List<SP_Grade_ExamResult>> SP_Grade_ExamAsync(int? stID, int? ExamID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<List<SP_Grade_ExamResult>> SP_Grade_ExamAsync(int? stID, int? Cr_ID, int? ExamID, OutputParameter<decimal?> Grade_OUT, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
+            var parameterGrade_OUT = new SqlParameter
+            {
+                ParameterName = "Grade_OUT",
+                Precision = 18,
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = Grade_OUT?._value ?? Convert.DBNull,
+                SqlDbType = System.Data.SqlDbType.Decimal,
+            };
             var parameterreturnValue = new SqlParameter
             {
                 ParameterName = "returnValue",
@@ -609,14 +622,22 @@ namespace ExaminationSystem.ContextExaminationSystem
                 },
                 new SqlParameter
                 {
+                    ParameterName = "Cr_ID",
+                    Value = Cr_ID ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
                     ParameterName = "ExamID",
                     Value = ExamID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
                 },
+                parameterGrade_OUT,
                 parameterreturnValue,
             };
-            var _ = await _context.SqlQueryAsync<SP_Grade_ExamResult>("EXEC @returnValue = [dbo].[SP_Grade_Exam] @stID, @ExamID", sqlParameters, cancellationToken);
+            var _ = await _context.SqlQueryAsync<SP_Grade_ExamResult>("EXEC @returnValue = [dbo].[SP_Grade_Exam] @stID, @Cr_ID, @ExamID, @Grade_OUT OUTPUT", sqlParameters, cancellationToken);
 
+            Grade_OUT.SetValue(parameterGrade_OUT.Value);
             returnValue?.SetValue(parameterreturnValue.Value);
 
             return _;
@@ -740,7 +761,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_Insert_InstructorAsync(string Ins_Name, int? Ins_Salary, string Ins_Degree, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_Insert_InstructorAsync(string Ins_Name, string UserName, int? Ins_Salary, string Ins_Degree, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -757,6 +778,13 @@ namespace ExaminationSystem.ContextExaminationSystem
                     Size = 100,
                     Value = Ins_Name ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "UserName",
+                    Size = 50,
+                    Value = UserName ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
@@ -779,7 +807,7 @@ namespace ExaminationSystem.ContextExaminationSystem
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Insert_Instructor] @Ins_Name, @Ins_Salary, @Ins_Degree, @Dept_ID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Insert_Instructor] @Ins_Name, @UserName, @Ins_Salary, @Ins_Degree, @Dept_ID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -892,7 +920,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_Insert_StudentAsync(string Name, string Email, string Phone, int? Age, string Street, string City, string Zip_Code, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_Insert_StudentAsync(string Name, string UserName, string Email, string Phone, int? Age, string Street, string City, string Zip_Code, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -909,6 +937,13 @@ namespace ExaminationSystem.ContextExaminationSystem
                     Size = 100,
                     Value = Name ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "UserName",
+                    Size = 50,
+                    Value = UserName ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
@@ -959,7 +994,7 @@ namespace ExaminationSystem.ContextExaminationSystem
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Insert_Student] @Name, @Email, @Phone, @Age, @Street, @City, @Zip_Code, @Dept_ID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Insert_Student] @Name, @UserName, @Email, @Phone, @Age, @Street, @City, @Zip_Code, @Dept_ID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -1051,7 +1086,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<List<SP_InsertInto_ExamResult>> SP_InsertInto_ExamAsync(string examName, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_InsertInto_ExamAsync(int? crID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -1064,14 +1099,13 @@ namespace ExaminationSystem.ContextExaminationSystem
             {
                 new SqlParameter
                 {
-                    ParameterName = "examName",
-                    Size = 100,
-                    Value = examName ?? Convert.DBNull,
-                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                    ParameterName = "crID",
+                    Value = crID ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.SqlQueryAsync<SP_InsertInto_ExamResult>("EXEC @returnValue = [dbo].[SP_InsertInto_Exam] @examName", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_InsertInto_Exam] @crID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -1382,7 +1416,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_Update_InstructorAsync(int? Ins_ID, string Ins_Name, int? Ins_Salary, string Ins_Degree, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_Update_InstructorAsync(int? Ins_ID, string UserName, string Ins_Name, int? Ins_Salary, string Ins_Degree, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -1398,6 +1432,13 @@ namespace ExaminationSystem.ContextExaminationSystem
                     ParameterName = "Ins_ID",
                     Value = Ins_ID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "UserName",
+                    Size = 50,
+                    Value = UserName ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
@@ -1427,7 +1468,7 @@ namespace ExaminationSystem.ContextExaminationSystem
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Update_Instructor] @Ins_ID, @Ins_Name, @Ins_Salary, @Ins_Degree, @Dept_ID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Update_Instructor] @Ins_ID, @UserName, @Ins_Name, @Ins_Salary, @Ins_Degree, @Dept_ID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -1472,6 +1513,72 @@ namespace ExaminationSystem.ContextExaminationSystem
                 parameterreturnValue,
             };
             var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Update_Instructor_Course] @Ins_ID_OLD, @Cr_ID_OLD, @Ins_ID_New, @Cr_ID_New", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<int> SP_UPDATE_QuestionAsync(int? id, string head, int? grade, string difficulty, string type, string model, int? course, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "id",
+                    Value = id ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "head",
+                    Size = -1,
+                    Value = head ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "grade",
+                    Value = grade ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "difficulty",
+                    Size = 10,
+                    Value = difficulty ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "type",
+                    Size = 20,
+                    Value = type ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.NVarChar,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "model",
+                    Size = 1,
+                    Value = model ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Char,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "course",
+                    Value = course ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_UPDATE_Question] @id, @head, @grade, @difficulty, @type, @model, @course", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -1525,7 +1632,7 @@ namespace ExaminationSystem.ContextExaminationSystem
             return _;
         }
 
-        public virtual async Task<int> SP_Update_StudentAsync(int? ID, string Name, string Email, int? Age, string Street, string Phone, string City, string Zip_Code, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> SP_Update_StudentAsync(int? ID, string UserName, string Name, string Email, int? Age, string Street, string Phone, string City, string Zip_Code, int? Dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
             var parameterreturnValue = new SqlParameter
             {
@@ -1541,6 +1648,13 @@ namespace ExaminationSystem.ContextExaminationSystem
                     ParameterName = "ID",
                     Value = ID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "UserName",
+                    Size = 50,
+                    Value = UserName ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
                 },
                 new SqlParameter
                 {
@@ -1598,7 +1712,7 @@ namespace ExaminationSystem.ContextExaminationSystem
                 },
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Update_Student] @ID, @Name, @Email, @Age, @Street, @Phone, @City, @Zip_Code, @Dept_ID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[SP_Update_Student] @ID, @UserName, @Name, @Email, @Age, @Street, @Phone, @City, @Zip_Code, @Dept_ID", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

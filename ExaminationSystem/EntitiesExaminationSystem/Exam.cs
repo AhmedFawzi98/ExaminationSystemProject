@@ -12,10 +12,4 @@ public partial class Exam
     public int? CrId { get; set; }
 
     public string IsAssigned { get; set; }
-
-    public virtual Course Cr { get; set; }
-
-    public virtual ICollection<StudentExamQuestion> StudentExamQuestions { get; set; } = new List<StudentExamQuestion>();
-
-    public virtual ICollection<Question> QIds { get; set; } = new List<Question>();
 }

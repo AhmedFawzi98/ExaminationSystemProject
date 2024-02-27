@@ -1,5 +1,7 @@
 ﻿using ExaminationSystem.ContextLogins;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Diagnostics;
 
 namespace ExaminationSystem.UI;
 
@@ -26,7 +28,7 @@ public partial class StudentForm : MetroSetForm
 
     private void StudentForm_Load(object sender, EventArgs e)
     {
-        this.StudentTabControlm.SelectedIndex=0;
+        this.StudentTabControlm.SelectedIndex = 0;
         ProfileLoad();
     }
 
@@ -55,7 +57,7 @@ public partial class StudentForm : MetroSetForm
     {
         if (ValidateChanged())
         {
-            await _spContext.SP_Update_StudentAsync(int.Parse(IDTxtBoxm.Text), NameTxtBoxm.Text, EmailTxtBoxm.Text,
+            await _spContext.SP_Update_StudentAsync(int.Parse(IDTxtBoxm.Text), UsernameTxtBoxm.Text, NameTxtBoxm.Text, EmailTxtBoxm.Text,
                 int.Parse(AgeTxtBoxm.Text), StTxtBoxm.Text, PhoneTxtBoxm.Text, CityTxtBoxm.Text,
                 ZipTxtBoxm.Text, _currentStudent.DeptId);
             MetroSetMessageBox.Show(this, "Changes saved successfully", "Saved changes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -79,6 +81,19 @@ public partial class StudentForm : MetroSetForm
             (StTxtBoxm.Text != _currentStudent.Street) ||
             (ZipTxtBoxm.Text != _currentStudent.ZipCode));
     }
+    private void TakeExam()
+    {
+        var res = _examContext.Courses.Include(c => c.StudentCourses)
+       .Where(course => course.StudentCourses.Any(SC => SC.StId == _currentStudent.StId))
+       .Select(course => new { id = course.CrId, name = course.CrName })
+       .ToList();
+
+        comboCrsNameMA.DataSource = res;
+        comboCrsNameMA.DisplayMember = "name";
+        comboCrsNameMA.ValueMember = "id";
+
+    }
+
 
     private void StudentTabControlm_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -87,10 +102,32 @@ public partial class StudentForm : MetroSetForm
             case 0:
                 ProfileLoad();
                 break;
+            case 1:
+                TakeExam();
+                break;
             case 2:
                 GradesLoad();
                 break;
         }
 
+    }
+
+    private async void btnTakeExamMA_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            int.TryParse(comboCrsNameMA.SelectedValue.ToString(), out int crID);
+            OutputParameter<int?> examid = new OutputParameter<int?>();
+            await _spContext.SP_Assign_Student_ExamAsync(crID, examid);
+           
+            int.TryParse(examid.Value.ToString(), out int examIdInt);
+            ExamPage exampage = new ExamPage(_logger,_examContext,_spContext,_currentStudent, examIdInt, crID);
+            this.Hide();
+            exampage.Show();
+        }
+        catch(Exception ex) 
+        {
+            _logger.Log(ex);
+        }
     }
 }

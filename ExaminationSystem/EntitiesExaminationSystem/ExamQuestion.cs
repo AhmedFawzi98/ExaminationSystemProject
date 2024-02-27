@@ -5,13 +5,9 @@ using System.Collections.Generic;
 
 namespace ExaminationSystem.EntitiesExaminationSystem;
 
-public partial class StudentExamQuestion
+public partial class ExamQuestion
 {
-    public int StId { get; set; }
-
-    public int ExamId { get; set; }
-
     public int QId { get; set; }
 
-    public string StAnswer { get; set; }
+    public int ExId { get; set; }
 }
