@@ -52,11 +52,15 @@
             StNamem = new MetroSet_UI.Controls.MetroSetLabel();
             StuIDm = new MetroSet_UI.Controls.MetroSetLabel();
             tabPage2 = new TabPage();
+            btnTakeExamMA = new MetroSet_UI.Controls.MetroSetButton();
+            comboCrsNameMA = new MetroSet_UI.Controls.MetroSetComboBox();
+            lblCourseNameMA = new MetroSet_UI.Controls.MetroSetLabel();
             tabPage3 = new TabPage();
             studentGradesGridViewm = new DataGridView();
             metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             StudentTabControlm.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).BeginInit();
             SuspendLayout();
@@ -73,7 +77,7 @@
             StudentTabControlm.ItemSize = new Size(100, 38);
             StudentTabControlm.Location = new Point(15, 38);
             StudentTabControlm.Name = "StudentTabControlm";
-            StudentTabControlm.SelectedIndex = 0;
+            StudentTabControlm.SelectedIndex = 1;
             StudentTabControlm.SelectedTextColor = Color.White;
             StudentTabControlm.Size = new Size(1211, 737);
             StudentTabControlm.SizeMode = TabSizeMode.Fixed;
@@ -586,11 +590,83 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnTakeExamMA);
+            tabPage2.Controls.Add(comboCrsNameMA);
+            tabPage2.Controls.Add(lblCourseNameMA);
             tabPage2.Location = new Point(4, 42);
             tabPage2.Name = "tabPage2";
             tabPage2.Size = new Size(1203, 691);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Take Exam";
+            // 
+            // btnTakeExamMA
+            // 
+            btnTakeExamMA.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnTakeExamMA.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnTakeExamMA.DisabledForeColor = Color.Gray;
+            btnTakeExamMA.Font = new Font("Microsoft Sans Serif", 10F);
+            btnTakeExamMA.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnTakeExamMA.HoverColor = Color.FromArgb(95, 207, 255);
+            btnTakeExamMA.HoverTextColor = Color.White;
+            btnTakeExamMA.IsDerivedStyle = true;
+            btnTakeExamMA.Location = new Point(523, 298);
+            btnTakeExamMA.Name = "btnTakeExamMA";
+            btnTakeExamMA.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnTakeExamMA.NormalColor = Color.FromArgb(65, 177, 225);
+            btnTakeExamMA.NormalTextColor = Color.White;
+            btnTakeExamMA.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnTakeExamMA.PressColor = Color.FromArgb(35, 147, 195);
+            btnTakeExamMA.PressTextColor = Color.White;
+            btnTakeExamMA.Size = new Size(148, 39);
+            btnTakeExamMA.Style = MetroSet_UI.Enums.Style.Light;
+            btnTakeExamMA.StyleManager = null;
+            btnTakeExamMA.TabIndex = 2;
+            btnTakeExamMA.Text = "Take Exam";
+            btnTakeExamMA.ThemeAuthor = "Narwin";
+            btnTakeExamMA.ThemeName = "MetroLite";
+            btnTakeExamMA.Click += btnTakeExamMA_Click;
+            // 
+            // comboCrsNameMA
+            // 
+            comboCrsNameMA.AllowDrop = true;
+            comboCrsNameMA.ArrowColor = Color.FromArgb(150, 150, 150);
+            comboCrsNameMA.BackColor = Color.Transparent;
+            comboCrsNameMA.BackgroundColor = Color.FromArgb(238, 238, 238);
+            comboCrsNameMA.BorderColor = Color.FromArgb(150, 150, 150);
+            comboCrsNameMA.CausesValidation = false;
+            comboCrsNameMA.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            comboCrsNameMA.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            comboCrsNameMA.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            comboCrsNameMA.DrawMode = DrawMode.OwnerDrawFixed;
+            comboCrsNameMA.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboCrsNameMA.Font = new Font("Microsoft Sans Serif", 11F);
+            comboCrsNameMA.FormattingEnabled = true;
+            comboCrsNameMA.IsDerivedStyle = true;
+            comboCrsNameMA.ItemHeight = 20;
+            comboCrsNameMA.Location = new Point(643, 148);
+            comboCrsNameMA.Name = "comboCrsNameMA";
+            comboCrsNameMA.SelectedItemBackColor = Color.FromArgb(65, 177, 225);
+            comboCrsNameMA.SelectedItemForeColor = Color.White;
+            comboCrsNameMA.Size = new Size(151, 26);
+            comboCrsNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            comboCrsNameMA.StyleManager = null;
+            comboCrsNameMA.TabIndex = 1;
+            comboCrsNameMA.ThemeAuthor = "Narwin";
+            comboCrsNameMA.ThemeName = "MetroLite";
+            // 
+            // lblCourseNameMA
+            // 
+            lblCourseNameMA.Font = new Font("Microsoft Sans Serif", 10F);
+            lblCourseNameMA.IsDerivedStyle = true;
+            lblCourseNameMA.Location = new Point(458, 148);
+            lblCourseNameMA.Name = "lblCourseNameMA";
+            lblCourseNameMA.Size = new Size(125, 29);
+            lblCourseNameMA.Style = MetroSet_UI.Enums.Style.Light;
+            lblCourseNameMA.StyleManager = null;
+            lblCourseNameMA.TabIndex = 0;
+            lblCourseNameMA.Text = "Course";
+            lblCourseNameMA.ThemeAuthor = "Narwin";
+            lblCourseNameMA.ThemeName = "MetroLite";
             // 
             // tabPage3
             // 
@@ -612,6 +688,7 @@
             studentGradesGridViewm.Location = new Point(3, 3);
             studentGradesGridViewm.Name = "studentGradesGridViewm";
             studentGradesGridViewm.ReadOnly = true;
+            studentGradesGridViewm.RowHeadersWidth = 51;
             studentGradesGridViewm.Size = new Size(1197, 685);
             studentGradesGridViewm.TabIndex = 0;
             // 
@@ -644,7 +721,7 @@
             // StudentForm
             // 
             AllowResize = false;
-            AutoScaleDimensions = new SizeF(10F, 23F);
+            AutoScaleDimensions = new SizeF(13F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1241, 786);
             Controls.Add(metroSetControlBox1);
@@ -659,6 +736,7 @@
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)studentGradesGridViewm).EndInit();
             ResumeLayout(false);
@@ -693,5 +771,8 @@
         private MetroSet_UI.Controls.MetroSetButton SaveBtnm;
         private MetroSet_UI.Controls.MetroSetTextBox IDTxtBoxm;
         private DataGridView studentGradesGridViewm;
+        private MetroSet_UI.Controls.MetroSetLabel lblCourseNameMA;
+        private MetroSet_UI.Controls.MetroSetButton btnTakeExamMA;
+        private MetroSet_UI.Controls.MetroSetComboBox comboCrsNameMA;
     }
 }
