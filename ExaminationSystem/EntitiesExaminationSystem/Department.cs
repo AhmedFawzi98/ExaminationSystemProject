@@ -21,7 +21,5 @@ public partial class Department
 
     public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
 
-    public virtual Instructor Mgr { get; set; }
-
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
 }
