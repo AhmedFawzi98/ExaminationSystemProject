@@ -1,5 +1,5 @@
 
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 
 namespace ExaminationSystem.UI;
@@ -37,7 +37,7 @@ public partial class InstructorForm : MetroSetForm
         //this.IComboBoxCourses.SelectedIndex = 0;
 
         HidingAll();
-    
+
 
         _currentInstructor = currentInstructor;
     }
@@ -47,7 +47,7 @@ public partial class InstructorForm : MetroSetForm
     {
         LoadProfile();
     }
-    private async Task LoadGradesGridViwDataSources() 
+    private async Task LoadGradesGridViwDataSources()
     {
         var studentCourseGrade = await _spContext.SP_SelectAllInstructorStudentCoursesAsync(1032);
         gradesGridView.DataSource = studentCourseGrade;
@@ -121,50 +121,75 @@ public partial class InstructorForm : MetroSetForm
                          .FirstOrDefault();
 
 
-        TextBox4mf.Text = results.DeptName;
-        TextBox5mf.Text = results.Location;
-        numericmf.Text = results.DeptId.ToString();
-        TextBox3mf.Text = results.DeptDescription;
-        dateTime1.Value = (DateTime)results.MgrHireDate;
-        numeric2mf.Text = results.MgrId.ToString();
+        DeptNameInputmf.Text = results.DeptName;
+        DeptLocationinptmf.Text = results.Location;
+        DeptIdInputmf.Text = results.DeptId.ToString();
+        DeptDescInputmf.Text = results.DeptDescription;
+        MgrHireDateInputmf.Value = (DateTime)results.MgrHireDate;
+        MgrIDInputmf.Text = results.MgrId.ToString();
 
 
         if (_currentInstructor.InsId != results.MgrId)
         {
-            TextBox4mf.ReadOnly = true;
-            TextBox5mf.ReadOnly = true;
-            numeric2mf.ReadOnly = true;
-            numericmf.ReadOnly = true;
-            TextBox3mf.ReadOnly = true;
-            dateTime1.Enabled = false;
+            DeptNameInputmf.ReadOnly = true;
+            DeptLocationinptmf.ReadOnly = true;
+            MgrIDInputmf.ReadOnly = true;
+            DeptIdInputmf.ReadOnly = true;
+            DeptDescInputmf.ReadOnly = true;
+            MgrHireDateInputmf.Enabled = false;
             Save.Visible = false;
 
         }
 
-        Debug.WriteLine(results.DeptName);
     }
     private async void Save_Click(object sender, EventArgs e)
     {
-        var validdept = _examination_SystemContext.Departments.Find(Convert.ToInt32(numericmf.Text));
-        var validmageId = _examination_SystemContext.Instructors.Find(Convert.ToInt32(numeric2mf.Text));
-        if (numeric2mf.Text != null)
+        var validdept = _examination_SystemContext.Departments.Find(Convert.ToInt32(DeptIdInputmf.Text));
+        var validmageId = _examination_SystemContext.Instructors.Find(Convert.ToInt32(MgrIDInputmf.Text));
+        if (ValidateChanged())
         {
-            Examination_SystemContextProcedures SpContext = new(_examination_SystemContext);
-            if (validdept != null && validmageId != null)
+            if (MgrIDInputmf.Text != null)
             {
-                await SpContext.SP_UPDATE_DepartmentAsync(Convert.ToInt32(numericmf.Text), TextBox4mf.Text, TextBox3mf.Text, TextBox5mf.Text, Convert.ToInt32(numeric2mf.Text), Convert.ToDateTime(dateTime1.Value));
-                _examination_SystemContext.SaveChanges();
-                MessageBox.Show("Changes saved successfully!", "Success");
-            }
-            else
-            {
-                MessageBox.Show("there is somthing wrong with the deptID or the mgrID", "Success");
+                Examination_SystemContextProcedures SpContext = new(_examination_SystemContext);
+                if (validdept != null && validmageId != null)
+                {
+                    await SpContext.SP_UPDATE_DepartmentAsync(Convert.ToInt32(DeptIdInputmf.Text), DeptNameInputmf.Text, DeptDescInputmf.Text, DeptLocationinptmf.Text, Convert.ToInt32(MgrIDInputmf.Text), Convert.ToDateTime(MgrHireDateInputmf.Value));
+                    _examination_SystemContext.SaveChanges();
+                    MetroSetMessageBox.Show(this, "Changes saved successfully", "Saved changes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (MgrIDInputmf.Text != _currentInstructor.InsId.ToString())
+                    {
+                        MetroSetMessageBox.Show(this, $"You are no longer the manager, you can't edit in this form!!!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DeptNameInputmf.ReadOnly = true;
+                        DeptLocationinptmf.ReadOnly = true;
+                        MgrIDInputmf.ReadOnly = true;
+                        DeptIdInputmf.ReadOnly = true;
+                        DeptDescInputmf.ReadOnly = true;
+                        MgrHireDateInputmf.Enabled = false;
+                        Save.Visible = false;
+                    }
+                }
+                else
+                {
+                    MetroSetMessageBox.Show(this, $"There is somthing wrong with the Instructor or the Department ID", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
             }
-
+        }
+        else
+        {
+            MetroSetMessageBox.Show(this, "You did't change anything to save!!!", "Nothing changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
+    private bool ValidateChanged()
+    {
+        return ((DeptNameInputmf.Text != _currentInstructor.Dept.DeptName) ||
+            (DeptLocationinptmf.Text != _currentInstructor.Dept.Location) ||
+            (DeptIdInputmf.Text != _currentInstructor.DeptId.ToString()) ||
+            (DeptDescInputmf.Text != _currentInstructor.Dept.DeptDescription) ||
+            (MgrHireDateInputmf.Value != (DateTime)_currentInstructor.Dept.MgrHireDate) ||
+            (MgrIDInputmf.Text != _currentInstructor.Dept.MgrId.ToString()));
+    }
     private void numericMcq_ValueChanged(object sender, EventArgs e)
     {
         numericTFf.Value = 10 - numericMcqf.Value;
@@ -181,7 +206,7 @@ public partial class InstructorForm : MetroSetForm
 
             await _spContext.SP_Generate_ExamAsync(comboboxCoursef.SelectedItem?.ToString(), numOfMcq, numOfTF, generatedExamId);
             MetroSetMessageBox.Show(this, $"a new exam with ExamId={generatedExamId.Value} was generated successfully", "notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             GeneratedExamForm generatedExamForm = new GeneratedExamForm(_logger, _spContext, generatedExamId.Value);
             generatedExamForm.Show();
         }
