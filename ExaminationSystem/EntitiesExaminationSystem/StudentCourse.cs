@@ -13,7 +13,7 @@ public partial class StudentCourse
 
     public decimal? StGrade { get; set; }
 
-    public virtual Course Cr { get; set; }
+    public virtual Course? Cr { get; set; }
 
-    public virtual Student St { get; set; }
+    public virtual Student? St { get; set; }
 }

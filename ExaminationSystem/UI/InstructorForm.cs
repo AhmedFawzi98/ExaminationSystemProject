@@ -10,14 +10,6 @@ public partial class InstructorForm : MetroSetForm
     private readonly Examination_SystemContext _examination_SystemContext;
     private readonly Examination_SystemContextProcedures _spContext;
 
-    private int _id;
-    private string _questionHead;
-    private string _grade;
-    private string _difficulty;
-    private string _type;
-    private string _model;
-    private string _course;
-    private List<Course> Courses;
 
     private readonly Instructor _currentInstructor;
 
@@ -28,23 +20,16 @@ public partial class InstructorForm : MetroSetForm
         _logger = logger;
         _examination_SystemContext = examination_SystemContext;
         _spContext = spContext;
-
-        List<Course> Courses = _examination_SystemContext.Courses.ToList();
-
-        this.IComboBoxCourses.DataSource = Courses;
-        this.IComboBoxCourses.DisplayMember = "CrName";
-        this.IComboBoxCourses.ValueMember = "CrId";
-        //this.IComboBoxCourses.SelectedIndex = 0;
-
-        HidingAll();
-
-
         _currentInstructor = currentInstructor;
     }
 
-
     private async void InstructorForm_Load(object sender, EventArgs e)
     {
+        List<Course> Courses = _examination_SystemContext.Courses.FromSql($"SP_SELECT_Courses").ToList();
+        this.IComboBoxCourses.DataSource = Courses;
+        this.IComboBoxCourses.DisplayMember = "CrName";
+        this.IComboBoxCourses.ValueMember = "CrId";
+        HidingAll();
         LoadProfile();
     }
     private async Task LoadGradesGridViwDataSources()
@@ -58,7 +43,8 @@ public partial class InstructorForm : MetroSetForm
     }
     private async Task LoadCoursesNamesComboBoxDataSources()
     {
-        var coursesNamesOfCurrentIns = (await _spContext.SP_GetCourseName_and_NumberOFStudentsPerCourse_By_InstructorIDAsync(_currentInstructor.InsId))
+        var coursesNamesOfCurrentIns = (await 
+            _spContext.SP_GetCourseName_and_NumberOFStudentsPerCourse_By_InstructorIDAsync(_currentInstructor.InsId))
                         .AsEnumerable()
                         .Select(c => c.CourseName).ToList();
 
@@ -72,11 +58,8 @@ public partial class InstructorForm : MetroSetForm
         txtInstructorDegreeMA.Text = _currentInstructor.InsDegree;
         txtInstructorNameMA.Text = _currentInstructor.InsName;
         txtInstructorUserNameMA.Text = _currentInstructor.Username;
-        txtInstructorDepartmentMA.Text = _currentInstructor.Dept.DeptName;
+        txtInstructorDepartmentMA.Text = _currentInstructor.Dept?.DeptName??"NA";
     }
-
-
-
 
     private async void metroSetTabControl1_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -111,6 +94,7 @@ public partial class InstructorForm : MetroSetForm
     }
     private void LoadDepartment()
     {
+
         var results = _examination_SystemContext.Departments
                        .Join(_examination_SystemContext.Instructors,
                         department => department.DeptId,
@@ -138,7 +122,7 @@ public partial class InstructorForm : MetroSetForm
             DeptDescInputmf.ReadOnly = true;
             MgrHireDateInputmf.Enabled = false;
             Save.Visible = false;
-
+            
         }
 
     }
@@ -230,13 +214,6 @@ public partial class InstructorForm : MetroSetForm
         ShowMcq();
         HideTF();
     }
-
-    //int result = await _spContext.SP_INSERT_QuestionAsync(id, head, grade, difficulty, type, model, course);
-    //int result2 = await _spContext.SP_INSERT_Question_ChoicesAsync(int ? id, string desc, string selector, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-    // SP   SP_INSERT_Question
-    // SP   SP_INSERT_Question_Choices
-
-
     private void HidingAll()
     {
         this.IQuestionAnswerA.Visible = false;
@@ -368,7 +345,7 @@ public partial class InstructorForm : MetroSetForm
                     await _spContext.SP_INSERT_Question_ChoicesAsync(QuestionID, this.IQuestionAnswerB.Text, "b");
                     await _spContext.SP_INSERT_Question_ChoicesAsync(QuestionID, this.IQuestionAnswerC.Text, "c");
                     await _spContext.SP_INSERT_Question_ChoicesAsync(QuestionID, this.IQuestionAnswerD.Text, "d");
-                    MessageBox.Show("Question inserted successfully");
+                    //MessageBox.Show("Question inserted successfully");
                 }
                 else
                 {
@@ -421,16 +398,16 @@ public partial class InstructorForm : MetroSetForm
                 await _spContext.SP_INSERT_QuestionAsync(QuestionID, this.IQuestionHead.Text, Grade, difficulty, type, model, Course_ID);
                 await _spContext.SP_INSERT_Question_ChoicesAsync(QuestionID, "True", "a");
                 await _spContext.SP_INSERT_Question_ChoicesAsync(QuestionID, "False", "b");
-                MessageBox.Show("Question inserted successfully");
+                MetroSetMessageBox.Show(this, $"Question has been created successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("You must check for Difficulty Type");
+                MetroSetMessageBox.Show(this, $"You must check for Difficulty Type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         else
         {
-            MessageBox.Show("Please fill in all fields");
+            MetroSetMessageBox.Show(this, $"Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

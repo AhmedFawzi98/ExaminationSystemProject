@@ -13,5 +13,5 @@ public partial class Topic
 
     public int? CrId { get; set; }
 
-    public virtual Course Cr { get; set; }
+    public virtual Course? Cr { get; set; }
 }
