@@ -33,3 +33,28 @@ exception message: Object reference not set to an instance of an object.,
 with the following stack trace:    at ExaminationSystem.UI.InstructorForm.LoadGradesGridViwDataSources() in C:\iTi 9-months\month 4\C#\ExaminationSystemProject\ExaminationSystem\UI\InstructorForm.cs:line 44
    at ExaminationSystem.UI.InstructorForm.InstructorForm_Load(Object sender, EventArgs e) in C:\iTi 9-months\month 4\C#\ExaminationSystemProject\ExaminationSystem\UI\InstructorForm.cs:line 26
 
+
+
+on 2/29/2024 7:34:06 PM an unhandled exception was thrown,
+
+exception message: Trying to pass a table-valued parameter with 1 column(s) where the corresponding user-defined table type requires 2 column(s).,
+
+with the following stack trace:    at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlRawAsync(DatabaseFacade databaseFacade, String sql, IEnumerable`1 parameters, CancellationToken cancellationToken)
+   at ExaminationSystem.ContextExaminationSystem.Examination_SystemContextProcedures.SP_Submit_AnswersAsync(Nullable`1 exam_id, Nullable`1 stud_id, DataTable answersString, OutputParameter`1 returnValue, CancellationToken cancellationToken) in D:\Work\ITI-SD\C#\Project\ExaminationSystem\ContextExaminationSystem\Examination_SystemContextProcedures.cs:line 1238
+   at ExaminationSystem.UI.ExamPage.btnSubmitMA_Click(Object sender, EventArgs e) in D:\Work\ITI-SD\C#\Project\ExaminationSystem\UI\ExamPage.cs:line 191
+
