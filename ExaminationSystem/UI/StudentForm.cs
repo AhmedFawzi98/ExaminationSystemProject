@@ -61,7 +61,7 @@ public partial class StudentForm : MetroSetForm
         catch (Exception ex)
         {
             _logger.Log(ex);
-            var res = MetroSetMessageBox.Show(this, "Unexpected Error has ouccured during" +
+            var res = MetroSetMessageBox.Show(this, "Un expected Error has ouccured during" +
                 "Loading your Grades",
                 null, MessageBoxButtons.OK, MessageBoxIcon.Error);
             if (res == DialogResult.OK)
@@ -199,18 +199,12 @@ public partial class StudentForm : MetroSetForm
             int.TryParse(comboCrsNameMA.SelectedValue.ToString(), out int crID);
             OutputParameter<int?> examid = new OutputParameter<int?>();
             await _spContext.SP_Assign_Student_ExamAsync(crID, examid);
+           
             int.TryParse(examid.Value.ToString(), out int examIdInt);
-            if(examIdInt == 0)
-            {
-                var res = MetroSetMessageBox.Show(this, "There are no available exams in the selected course",null, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                ExamPage exampage = new ExamPage(_logger,_examContext,_spContext,_currentStudent, examIdInt, crID);
-                this.Hide();
-                exampage.FormClosed += (sender, e) => this.Show();
-                exampage.Show();
-            }
+            ExamPage exampage = new ExamPage(_logger,_examContext,_spContext,_currentStudent, examIdInt, crID);
+            this.Hide();
+            exampage.FormClosed += (sender, e) => this.Show();
+            exampage.Show();
         }
         catch (Exception ex)
         {

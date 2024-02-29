@@ -1022,7 +1022,8 @@ GO
 ------------------------------------ 2- Stored procedure for SUBMITTING ANSWERS ------------------------------------------------------------------------
 CREATE TYPE storedTable AS TABLE
 (
-    ans CHAR(1)
+    Q_ID INT,
+    Answer CHAR(1)
 );
 GO
 
@@ -1035,7 +1036,7 @@ AS
     WHERE Ex_id = @exam_id
 
     DECLARE c1 CURSOR
-    FOR SELECT ans
+    FOR SELECT Answer
         FROM @answersString
     FOR READ only
 

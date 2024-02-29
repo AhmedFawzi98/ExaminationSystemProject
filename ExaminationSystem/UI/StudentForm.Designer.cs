@@ -741,7 +741,7 @@ namespace ExaminationSystem.UI
             TextColor = Color.Black;
 
             ThemeName = "MetroLight";
-            //FormClosing += StudentForm_FormClosing;
+            FormClosing += StudentForm_FormClosing;
 
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
