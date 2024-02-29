@@ -732,7 +732,7 @@
             ShowLeftRect = false;
             Text = "Student Interface";
             TextColor = Color.Black;
-            FormClosing += StudentForm_FormClosing;
+           
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

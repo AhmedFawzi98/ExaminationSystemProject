@@ -19,7 +19,7 @@ public partial class Instructor
 
     public string Username { get; set; }
 
-    public virtual Department Dept { get; set; }
+    public virtual Department? Dept { get; set; }
 
-    public virtual ICollection<Course> Crs { get; set; } = new List<Course>();
+    public virtual ICollection<Course>? Crs { get; set; } = new List<Course>();
 }

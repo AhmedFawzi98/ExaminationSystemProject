@@ -27,7 +27,7 @@ public partial class Student
 
     public string Username { get; set; }
 
-    public virtual Department Dept { get; set; }
+    public virtual Department? Dept { get; set; }
 
-    public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+    public virtual ICollection<StudentCourse>? StudentCourses { get; set; } = new List<StudentCourse>();
 }

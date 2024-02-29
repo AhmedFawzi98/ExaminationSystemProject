@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
+
 
 namespace ExaminationSystem.UI
 {
     public partial class ExamPage : MetroSetForm
     {
         private readonly ILogger _logger;
-        private readonly Examination_SystemContext _examContext;
         private readonly Examination_SystemContextProcedures _spContext;
         private readonly Student _currentStudent;
         private readonly int _examid;
@@ -26,7 +18,6 @@ namespace ExaminationSystem.UI
         {
             InitializeComponent();
             _logger = logger;
-            _examContext = examContext;
             _spContext = spContext;
             _currentStudent = currentStudent;
             _examid = examid;
@@ -45,7 +36,7 @@ namespace ExaminationSystem.UI
             for (int i = 0; i < res.Count; i++)
             {
                 if (!QuestionChoicesDict.ContainsKey(res[i].Q_Head))
-                    QuestionChoicesDict.Add(res[i].Q_Head, new List<choices>());
+                    QuestionChoicesDict.Add(res[i].Q_Head, new List<choices>());   
                 QuestionChoicesDict[res[i].Q_Head].Add(new choices(res[i].Choice_Desc, res[i].Choice_Selector));
             }
             foreach (var pair in QuestionChoicesDict)
@@ -90,9 +81,9 @@ namespace ExaminationSystem.UI
                 radioDMA.Text = QuestionChoicesDict[current.Q_Head][3].Choice_Desc;
             }
         }
-
-        private void btnBackMA_Click(object sender, EventArgs e)
+        private void GetAnswerOfCurrentQuestion()
         {
+
             if (radioAMA.Checked)
                 Answers[currentIdx] = 'a';
             else if (radioBMA.Checked)
@@ -103,58 +94,93 @@ namespace ExaminationSystem.UI
                 Answers[currentIdx] = 'd';
             else
                 Answers[currentIdx] = 'X';
-
-            currentIdx--;
-
+        }
+        private void ChangeQuestion(bool isNext)
+        {
             string curQuestion = ((SP_Get_Questions_and_Choices_By_ExamIDResult)_bindingSource.Current).Q_Head;
             string newQuestion = string.Empty;
             do
             {
-                _bindingSource.MovePrevious();
+                if(isNext)
+                    _bindingSource.MoveNext();
+                else
+                    _bindingSource.MovePrevious();
                 newQuestion = ((SP_Get_Questions_and_Choices_By_ExamIDResult)_bindingSource.Current).Q_Head;
             } while (curQuestion == newQuestion);
-            radioAMA.Checked = false;
-            radioBMA.Checked=false;
-            radioCMA.Checked=false;
-            radioDMA.Checked=false;
-            ControlVisablity();
-            AttatchSimpleBinding();
         }
 
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void PrepareRadioeButtons()
         {
-
-        }
-
-        private void btnNextMA_Click(object sender, EventArgs e)
-        {
-            if (radioAMA.Checked)
-                Answers[currentIdx] = 'a';
-            else if (radioBMA.Checked)
-                Answers[currentIdx] = 'b';
-            else if (radioCMA.Checked)
-                Answers[currentIdx] = 'c';
-            else if (radioDMA.Checked)
-                Answers[currentIdx] = 'd';
-            else
-                Answers[currentIdx] = 'X';
-
-            currentIdx++;
-
-            string curQuestion = ((SP_Get_Questions_and_Choices_By_ExamIDResult)_bindingSource.Current).Q_Head;
-            string newQuestion = string.Empty;
-            do
-            {
-                _bindingSource.MoveNext();
-                newQuestion = ((SP_Get_Questions_and_Choices_By_ExamIDResult)_bindingSource.Current).Q_Head;
-            } while (curQuestion == newQuestion);
             radioAMA.Checked = false;
             radioBMA.Checked = false;
             radioCMA.Checked = false;
             radioDMA.Checked = false;
-            ControlVisablity();
-            AttatchSimpleBinding();
+
+            switch(Answers[currentIdx])
+            {
+                case 'a':
+                    radioAMA.Checked = true;
+                    break;
+                case 'b':
+                    radioBMA.Checked = true;
+                    break;
+                case 'c':
+                    radioCMA.Checked = true;
+                    break;
+                case 'd':
+                    radioDMA.Checked = true;
+                    break;
+            }
+        }
+        private void btnBackMA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetAnswerOfCurrentQuestion();
+                currentIdx--;
+                ChangeQuestion(false);
+                PrepareRadioeButtons();
+                ControlVisablity();
+                AttatchSimpleBinding();
+
+            }
+           
+            catch (Exception ex)
+            {
+                _logger.Log(ex);
+                var res = MetroSetMessageBox.Show(this, "Un expected Error has ouccured during " +
+                    "your exam please contact your instructor",
+                    null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (res == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+        }
+            
+        private void btnNextMA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetAnswerOfCurrentQuestion();
+                currentIdx++;
+                ChangeQuestion(true);
+                PrepareRadioeButtons();
+                ControlVisablity();
+                AttatchSimpleBinding();
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(ex);
+                var res = MetroSetMessageBox.Show(this, "Un expected Error has ouccured during " +
+                    "your exam please contact your instructor",
+                    null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (res == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+
         }
 
         private async void btnSubmitMA_Click(object sender, EventArgs e)
@@ -166,18 +192,29 @@ namespace ExaminationSystem.UI
                 OutputParameter<decimal?> Grade=new OutputParameter<decimal?>();
                 
                 await _spContext.SP_Grade_ExamAsync(_currentStudent.StId, _CRID,_examid, Grade);
-                MetroSetMessageBox.Show(this, $"Your Grade is {Grade.Value}%",null,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                var res=MetroSetMessageBox.Show(this, $"Your Grade is {Grade.Value}%",null,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if(res == DialogResult.OK) 
+                {
+                    this.Close();
+                }
             }
             catch(Exception ex) 
             {
                 _logger.Log(ex);
+                var res = MetroSetMessageBox.Show(this, "Un expected Error has ouccured during " +
+                    "submitting your answers please contact your instructor", 
+                    null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (res == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
         }
         private DataTable GenrateDataTable()
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("ans", typeof(string));
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < QuestionChoicesDict.Count; i++)
             {
                 DataRow row = dataTable.NewRow();
                 row["ans"] = Answers[i].ToString();

@@ -21,7 +21,7 @@ public partial class Question
 
     public int? CrId { get; set; }
 
-    public virtual Course Cr { get; set; }
+    public virtual Course? Cr { get; set; }
 
-    public virtual ICollection<QuestionChoice> QuestionChoices { get; set; } = new List<QuestionChoice>();
+    public virtual ICollection<QuestionChoice>? QuestionChoices { get; set; } = new List<QuestionChoice>();
 }
