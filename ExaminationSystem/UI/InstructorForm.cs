@@ -95,34 +95,42 @@ public partial class InstructorForm : MetroSetForm
     private void LoadDepartment()
     {
 
-        var results = _examination_SystemContext.Departments
-                       .Join(_examination_SystemContext.Instructors,
-                        department => department.DeptId,
-                        instructor => instructor.DeptId,
-                        (department, instructor) => new { Department = department, Instructor = instructor })
-                        .Where(joinResult => joinResult.Instructor.DeptId == _currentInstructor.DeptId)
-                        .Select(joinResult => joinResult.Department)
-                         .FirstOrDefault();
-
-
-        DeptNameInputmf.Text = results.DeptName;
-        DeptLocationinptmf.Text = results.Location;
-        DeptIdInputmf.Text = results.DeptId.ToString();
-        DeptDescInputmf.Text = results.DeptDescription;
-        MgrHireDateInputmf.Value = (DateTime)results.MgrHireDate;
-        MgrIDInputmf.Text = results.MgrId.ToString();
-
-
-        if (_currentInstructor.InsId != results.MgrId)
+        if (_currentInstructor.DeptId != null)
         {
-            DeptNameInputmf.ReadOnly = true;
-            DeptLocationinptmf.ReadOnly = true;
-            MgrIDInputmf.ReadOnly = true;
-            DeptIdInputmf.ReadOnly = true;
-            DeptDescInputmf.ReadOnly = true;
-            MgrHireDateInputmf.Enabled = false;
-            Save.Visible = false;
-            
+            var results = _examination_SystemContext.Departments
+                      .Join(_examination_SystemContext.Instructors,
+                       department => department.DeptId,
+                       instructor => instructor.DeptId,
+                       (department, instructor) => new { Department = department, Instructor = instructor })
+                       .Where(joinResult => joinResult.Instructor.DeptId == _currentInstructor.DeptId)
+                       .Select(joinResult => joinResult.Department)
+                        .FirstOrDefault();
+
+
+            DeptNameInputmf.Text = results.DeptName;
+            DeptLocationinptmf.Text = results.Location;
+            DeptIdInputmf.Text = results.DeptId.ToString();
+            DeptDescInputmf.Text = results.DeptDescription;
+            MgrHireDateInputmf.Value = (DateTime)results.MgrHireDate;
+            MgrIDInputmf.Text = results.MgrId.ToString();
+
+
+            if (_currentInstructor.InsId != results.MgrId)
+            {
+                DeptNameInputmf.ReadOnly = true;
+                DeptLocationinptmf.ReadOnly = true;
+                MgrIDInputmf.ReadOnly = true;
+                DeptIdInputmf.ReadOnly = true;
+                DeptDescInputmf.ReadOnly = true;
+                MgrHireDateInputmf.Enabled = false;
+                Save.Visible = false;
+
+            }
+        }
+        else
+        {
+            metroSetTabControl1.SelectedIndex = 0;
+            MetroSetMessageBox.Show(this, $"instructor {_currentInstructor.InsName} has no department", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
