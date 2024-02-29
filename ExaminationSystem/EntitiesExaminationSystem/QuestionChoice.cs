@@ -13,5 +13,5 @@ public partial class QuestionChoice
 
     public string ChoiceSelector { get; set; }
 
-    public virtual Question QIdNavigation { get; set; }
+    public virtual Question? QIdNavigation { get; set; }
 }

@@ -739,8 +739,10 @@ namespace ExaminationSystem.UI
             ShowLeftRect = false;
             Text = "Student Interface";
             TextColor = Color.Black;
+
             ThemeName = "MetroLight";
             FormClosing += StudentForm_FormClosing;
+
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

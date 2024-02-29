@@ -19,7 +19,7 @@ public partial class Department
 
     public DateTime? MgrHireDate { get; set; }
 
-    public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
+    public virtual ICollection<Instructor>? Instructors { get; set; } = new List<Instructor>();
 
-    public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    public virtual ICollection<Student>? Students { get; set; } = new List<Student>();
 }

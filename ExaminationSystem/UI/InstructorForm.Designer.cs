@@ -187,7 +187,7 @@
             numInstructorSalaryMA.Multiline = false;
             numInstructorSalaryMA.Name = "numInstructorSalaryMA";
             numInstructorSalaryMA.ReadOnly = true;
-            numInstructorSalaryMA.Size = new Size(169, 29);
+            numInstructorSalaryMA.Size = new Size(248, 29);
             numInstructorSalaryMA.Style = MetroSet_UI.Enums.Style.Light;
             numInstructorSalaryMA.StyleManager = null;
             numInstructorSalaryMA.TabIndex = 17;
@@ -217,7 +217,7 @@
             txtInstructorIDMA.Multiline = false;
             txtInstructorIDMA.Name = "txtInstructorIDMA";
             txtInstructorIDMA.ReadOnly = true;
-            txtInstructorIDMA.Size = new Size(169, 29);
+            txtInstructorIDMA.Size = new Size(248, 29);
             txtInstructorIDMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorIDMA.StyleManager = null;
             txtInstructorIDMA.TabIndex = 16;
@@ -247,7 +247,7 @@
             txtInstructorDepartmentMA.Multiline = false;
             txtInstructorDepartmentMA.Name = "txtInstructorDepartmentMA";
             txtInstructorDepartmentMA.ReadOnly = true;
-            txtInstructorDepartmentMA.Size = new Size(169, 29);
+            txtInstructorDepartmentMA.Size = new Size(248, 29);
             txtInstructorDepartmentMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorDepartmentMA.StyleManager = null;
             txtInstructorDepartmentMA.TabIndex = 14;
@@ -291,7 +291,7 @@
             txtInstructorUserNameMA.Multiline = false;
             txtInstructorUserNameMA.Name = "txtInstructorUserNameMA";
             txtInstructorUserNameMA.ReadOnly = true;
-            txtInstructorUserNameMA.Size = new Size(169, 29);
+            txtInstructorUserNameMA.Size = new Size(248, 29);
             txtInstructorUserNameMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorUserNameMA.StyleManager = null;
             txtInstructorUserNameMA.TabIndex = 8;
@@ -321,7 +321,7 @@
             txtInstructorDegreeMA.Multiline = false;
             txtInstructorDegreeMA.Name = "txtInstructorDegreeMA";
             txtInstructorDegreeMA.ReadOnly = true;
-            txtInstructorDegreeMA.Size = new Size(169, 29);
+            txtInstructorDegreeMA.Size = new Size(248, 29);
             txtInstructorDegreeMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorDegreeMA.StyleManager = null;
             txtInstructorDegreeMA.TabIndex = 7;
@@ -351,7 +351,7 @@
             txtInstructorNameMA.Multiline = false;
             txtInstructorNameMA.Name = "txtInstructorNameMA";
             txtInstructorNameMA.ReadOnly = true;
-            txtInstructorNameMA.Size = new Size(169, 29);
+            txtInstructorNameMA.Size = new Size(248, 29);
             txtInstructorNameMA.Style = MetroSet_UI.Enums.Style.Light;
             txtInstructorNameMA.StyleManager = null;
             txtInstructorNameMA.TabIndex = 6;
@@ -600,6 +600,7 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Department Details";
             // 
+
             // mgrhireDateLblmf
             // 
             mgrhireDateLblmf.Font = new Font("Microsoft YaHei UI", 10F);
@@ -671,6 +672,7 @@
             DeptIdInputmf.ThemeName = "MetroLite";
             DeptIdInputmf.UseSystemPasswordChar = false;
             DeptIdInputmf.WatermarkText = "";
+
             // 
             // Save
             // 
@@ -682,7 +684,10 @@
             Save.HoverColor = Color.FromArgb(95, 207, 255);
             Save.HoverTextColor = Color.White;
             Save.IsDerivedStyle = true;
+
             Save.Location = new Point(1073, 568);
+
+           
             Save.Name = "Save";
             Save.NormalBorderColor = Color.FromArgb(65, 177, 225);
             Save.NormalColor = Color.FromArgb(65, 177, 225);
@@ -690,7 +695,7 @@
             Save.PressBorderColor = Color.FromArgb(35, 147, 195);
             Save.PressColor = Color.FromArgb(35, 147, 195);
             Save.PressTextColor = Color.White;
-            Save.Size = new Size(94, 29);
+            Save.Size = new Size(94, 52);
             Save.Style = MetroSet_UI.Enums.Style.Light;
             Save.StyleManager = null;
             Save.TabIndex = 3;
@@ -699,6 +704,7 @@
             Save.ThemeName = "MetroLite";
             Save.Click += Save_Click;
             // 
+
             // MgrHireDateInputmf
             // 
             MgrHireDateInputmf.Location = new Point(415, 519);
@@ -862,6 +868,9 @@
             DeptIdLblmf.Text = "Department ID";
             DeptIdLblmf.ThemeAuthor = "Narwin";
             DeptIdLblmf.ThemeName = "MetroLite";
+
+           
+
             // 
             // Label7
             // 
@@ -940,7 +949,7 @@
             IQuestionDifficultyHard.IsDerivedStyle = true;
             IQuestionDifficultyHard.Location = new Point(11, 137);
             IQuestionDifficultyHard.Name = "IQuestionDifficultyHard";
-            IQuestionDifficultyHard.Size = new Size(75, 17);
+            IQuestionDifficultyHard.Size = new Size(95, 17);
             IQuestionDifficultyHard.Style = MetroSet_UI.Enums.Style.Light;
             IQuestionDifficultyHard.StyleManager = null;
             IQuestionDifficultyHard.TabIndex = 2;
@@ -961,7 +970,7 @@
             IQuestionDifficultyMedium.IsDerivedStyle = true;
             IQuestionDifficultyMedium.Location = new Point(11, 87);
             IQuestionDifficultyMedium.Name = "IQuestionDifficultyMedium";
-            IQuestionDifficultyMedium.Size = new Size(75, 17);
+            IQuestionDifficultyMedium.Size = new Size(101, 17);
             IQuestionDifficultyMedium.Style = MetroSet_UI.Enums.Style.Light;
             IQuestionDifficultyMedium.StyleManager = null;
             IQuestionDifficultyMedium.TabIndex = 1;
@@ -982,7 +991,7 @@
             IQuestionDifficultyEasy.IsDerivedStyle = true;
             IQuestionDifficultyEasy.Location = new Point(11, 37);
             IQuestionDifficultyEasy.Name = "IQuestionDifficultyEasy";
-            IQuestionDifficultyEasy.Size = new Size(75, 17);
+            IQuestionDifficultyEasy.Size = new Size(95, 17);
             IQuestionDifficultyEasy.Style = MetroSet_UI.Enums.Style.Light;
             IQuestionDifficultyEasy.StyleManager = null;
             IQuestionDifficultyEasy.TabIndex = 0;
@@ -996,7 +1005,7 @@
             metroSetLabel2.IsDerivedStyle = true;
             metroSetLabel2.Location = new Point(192, 173);
             metroSetLabel2.Name = "metroSetLabel2";
-            metroSetLabel2.Size = new Size(133, 23);
+            metroSetLabel2.Size = new Size(192, 23);
             metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
             metroSetLabel2.StyleManager = null;
             metroSetLabel2.TabIndex = 29;
@@ -1078,7 +1087,7 @@
             ILabel9.IsDerivedStyle = true;
             ILabel9.Location = new Point(883, 98);
             ILabel9.Name = "ILabel9";
-            ILabel9.Size = new Size(139, 23);
+            ILabel9.Size = new Size(174, 23);
             ILabel9.Style = MetroSet_UI.Enums.Style.Light;
             ILabel9.StyleManager = null;
             ILabel9.TabIndex = 26;
@@ -1112,7 +1121,7 @@
             IModelAnswerA.IsDerivedStyle = true;
             IModelAnswerA.Location = new Point(6, 33);
             IModelAnswerA.Name = "IModelAnswerA";
-            IModelAnswerA.Size = new Size(122, 17);
+            IModelAnswerA.Size = new Size(168, 17);
             IModelAnswerA.Style = MetroSet_UI.Enums.Style.Light;
             IModelAnswerA.StyleManager = null;
             IModelAnswerA.TabIndex = 12;
@@ -1134,7 +1143,7 @@
             IModelAnswerB.IsDerivedStyle = true;
             IModelAnswerB.Location = new Point(6, 101);
             IModelAnswerB.Name = "IModelAnswerB";
-            IModelAnswerB.Size = new Size(122, 17);
+            IModelAnswerB.Size = new Size(157, 17);
             IModelAnswerB.Style = MetroSet_UI.Enums.Style.Light;
             IModelAnswerB.StyleManager = null;
             IModelAnswerB.TabIndex = 13;
@@ -1156,7 +1165,7 @@
             IModelAnswerC.IsDerivedStyle = true;
             IModelAnswerC.Location = new Point(6, 167);
             IModelAnswerC.Name = "IModelAnswerC";
-            IModelAnswerC.Size = new Size(122, 17);
+            IModelAnswerC.Size = new Size(168, 17);
             IModelAnswerC.Style = MetroSet_UI.Enums.Style.Light;
             IModelAnswerC.StyleManager = null;
             IModelAnswerC.TabIndex = 14;
@@ -1178,7 +1187,7 @@
             IModelAnswerD.IsDerivedStyle = true;
             IModelAnswerD.Location = new Point(6, 231);
             IModelAnswerD.Name = "IModelAnswerD";
-            IModelAnswerD.Size = new Size(122, 17);
+            IModelAnswerD.Size = new Size(168, 17);
             IModelAnswerD.Style = MetroSet_UI.Enums.Style.Light;
             IModelAnswerD.StyleManager = null;
             IModelAnswerD.TabIndex = 15;
@@ -1206,7 +1215,7 @@
             groupBox1.Controls.Add(IMCQ);
             groupBox1.Location = new Point(37, 59);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(114, 100);
+            groupBox1.Size = new Size(133, 100);
             groupBox1.TabIndex = 24;
             groupBox1.TabStop = false;
             // 
@@ -1224,7 +1233,7 @@
             ITFRadio.IsDerivedStyle = true;
             ITFRadio.Location = new Point(6, 26);
             ITFRadio.Name = "ITFRadio";
-            ITFRadio.Size = new Size(97, 17);
+            ITFRadio.Size = new Size(121, 17);
             ITFRadio.Style = MetroSet_UI.Enums.Style.Light;
             ITFRadio.StyleManager = null;
             ITFRadio.TabIndex = 20;
@@ -1262,7 +1271,7 @@
             ILabel4.IsDerivedStyle = true;
             ILabel4.Location = new Point(37, 173);
             ILabel4.Name = "ILabel4";
-            ILabel4.Size = new Size(110, 23);
+            ILabel4.Size = new Size(149, 23);
             ILabel4.Style = MetroSet_UI.Enums.Style.Light;
             ILabel4.StyleManager = null;
             ILabel4.TabIndex = 22;
@@ -1276,7 +1285,7 @@
             ILabel3.IsDerivedStyle = true;
             ILabel3.Location = new Point(390, 40);
             ILabel3.Name = "ILabel3";
-            ILabel3.Size = new Size(100, 23);
+            ILabel3.Size = new Size(151, 23);
             ILabel3.Style = MetroSet_UI.Enums.Style.Light;
             ILabel3.StyleManager = null;
             ILabel3.TabIndex = 19;
@@ -1303,7 +1312,7 @@
             IQuestionGrade.Multiline = false;
             IQuestionGrade.Name = "IQuestionGrade";
             IQuestionGrade.ReadOnly = false;
-            IQuestionGrade.Size = new Size(121, 30);
+            IQuestionGrade.Size = new Size(151, 30);
             IQuestionGrade.Style = MetroSet_UI.Enums.Style.Light;
             IQuestionGrade.StyleManager = null;
             IQuestionGrade.TabIndex = 18;
@@ -1319,7 +1328,7 @@
             ILabel2.IsDerivedStyle = true;
             ILabel2.Location = new Point(192, 33);
             ILabel2.Name = "ILabel2";
-            ILabel2.Size = new Size(121, 23);
+            ILabel2.Size = new Size(151, 23);
             ILabel2.Style = MetroSet_UI.Enums.Style.Light;
             ILabel2.StyleManager = null;
             ILabel2.TabIndex = 17;
@@ -1538,7 +1547,7 @@
             metroSetButton1.HoverColor = Color.FromArgb(95, 207, 255);
             metroSetButton1.HoverTextColor = Color.White;
             metroSetButton1.IsDerivedStyle = true;
-            metroSetButton1.Location = new Point(37, 366);
+            metroSetButton1.Location = new Point(37, 336);
             metroSetButton1.Name = "metroSetButton1";
             metroSetButton1.NormalBorderColor = Color.FromArgb(65, 177, 225);
             metroSetButton1.NormalColor = Color.FromArgb(65, 177, 225);
@@ -1546,7 +1555,7 @@
             metroSetButton1.PressBorderColor = Color.FromArgb(35, 147, 195);
             metroSetButton1.PressColor = Color.FromArgb(35, 147, 195);
             metroSetButton1.PressTextColor = Color.White;
-            metroSetButton1.Size = new Size(101, 32);
+            metroSetButton1.Size = new Size(114, 62);
             metroSetButton1.Style = MetroSet_UI.Enums.Style.Light;
             metroSetButton1.StyleManager = null;
             metroSetButton1.TabIndex = 0;

@@ -11,9 +11,9 @@ public partial class Course
 
     public string CrName { get; set; }
 
-    public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
+    public virtual ICollection<Question>? Questions { get; set; } = new List<Question>();
 
-    public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
+    public virtual ICollection<StudentCourse>? StudentCourses { get; set; } = new List<StudentCourse>();
 
-    public virtual ICollection<Instructor> Ins { get; set; } = new List<Instructor>();
+    public virtual ICollection<Instructor>? Ins { get; set; } = new List<Instructor>();
 }
