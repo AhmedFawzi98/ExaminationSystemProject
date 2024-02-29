@@ -78,7 +78,7 @@
             // 
             lblGradeMA.Font = new Font("Microsoft Sans Serif", 10F);
             lblGradeMA.IsDerivedStyle = true;
-            lblGradeMA.Location = new Point(404, 399);
+            lblGradeMA.Location = new Point(661, 394);
             lblGradeMA.Name = "lblGradeMA";
             lblGradeMA.Size = new Size(125, 29);
             lblGradeMA.Style = MetroSet_UI.Enums.Style.Light;
@@ -147,7 +147,7 @@
             radioAMA.AutoSize = true;
             radioAMA.BackColor = Color.White;
             radioAMA.ForeColor = Color.Gray;
-            radioAMA.Location = new Point(-1, 0);
+            radioAMA.Location = new Point(-1, -1);
             radioAMA.Name = "radioAMA";
             radioAMA.Size = new Size(156, 30);
             radioAMA.TabIndex = 10;
@@ -285,15 +285,15 @@
             groupBox1.Controls.Add(radioDMA);
             groupBox1.Location = new Point(89, 208);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(440, 174);
+            groupBox1.Size = new Size(697, 174);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // ExamPage
             // 
             AutoScaleDimensions = new SizeF(13F, 26F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundColor = Color.WhiteSmoke;
             ClientSize = new Size(801, 538);
             Controls.Add(groupBox1);
             Controls.Add(metroSetLabel5);

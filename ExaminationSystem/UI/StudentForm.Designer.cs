@@ -82,7 +82,7 @@ namespace ExaminationSystem.UI
             StudentTabControlm.ItemSize = new Size(100, 38);
             StudentTabControlm.Location = new Point(15, 38);
             StudentTabControlm.Name = "StudentTabControlm";
-            StudentTabControlm.SelectedIndex = 0;
+            StudentTabControlm.SelectedIndex = 1;
             StudentTabControlm.SelectedTextColor = Color.Black;
             StudentTabControlm.Size = new Size(970, 552);
             StudentTabControlm.SizeMode = TabSizeMode.Fixed;
@@ -739,8 +739,10 @@ namespace ExaminationSystem.UI
             ShowLeftRect = false;
             Text = "Student Interface";
             TextColor = Color.Black;
+
             ThemeName = "MetroLight";
             FormClosing += StudentForm_FormClosing;
+
             Load += StudentForm_Load;
             StudentTabControlm.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
