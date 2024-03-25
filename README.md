@@ -1,7 +1,7 @@
 # Examination System Desktop Application 
 ***
 
-### breif:
+### project overview:
 
 ### A full examniation system to streamline instructors' work and students' examination process.
 
@@ -46,7 +46,7 @@
 ### Project Team On Linked-In: 
 
 #### Ahmed Fawzi: 
-  (https://www.linkedin.com/in/ahmed-fawzi-136225269/)
+  (https://www.linkedin.com/in/ahmed-fawzi-elarabi/)
 
 #### Mostafa Ayman:
   (https://www.linkedin.com/in/mostafa-ayman-/)
